@@ -7,3 +7,18 @@ pesquisar uma forma de adicionar varios elementos detro de uma unica coluna, no 
 ver o que pode ser implementado no banco de dados para segurança, e descrever como esse tratamento é feito na documentação.
 
 backup do DER na pasta de arquivos da Adriana
+
+adicionar telas de cadastro de funcionáriuos no figma/documentação
+
+dar referência para o dono da imagem de background
+
+
+
+
+
+
+views - telas front end, popups
+
+controlles - validações de dados
+
+models - executa códigos de crud e os demais comandos
