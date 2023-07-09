@@ -1,6 +1,6 @@
 /* geral */
 body{
-    color: #fff;
+    
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
@@ -14,7 +14,8 @@ a{
 /* tela de login */
 
 .TelaLogin{
-    background-image: url("/images/background-moblile.png");
+    color: #fff;
+    background-image: url("../images/background-moblile.png");
     background-size: cover;
     background-repeat: no-repeat;
     background-color: black;
@@ -43,7 +44,7 @@ a{
     /* tela de login */
 
     .TelaLogin{
-        background-image: url("/images/background-tablet.png");
+        background-image: url("../images/background-tablet.png");
     }
 
     .TICar{
@@ -61,7 +62,7 @@ a{
     /* tela de login */
     
     .TelaLogin{
-        background-image: url("/images/background-desktop.png");
+        background-image: url("../images/background-desktop.png");
     }
 
     .TICar{
@@ -78,7 +79,7 @@ a{
    
     /* tela de login */
     .TelaLogin{
-        background-image: url("/images/background-desktop.png");
+        background-image: url("../images/background-desktop.png");
     }
 
     .TICar{
