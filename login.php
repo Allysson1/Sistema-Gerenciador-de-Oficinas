@@ -1,6 +1,3 @@
-<?php
-
-?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -10,7 +7,7 @@
     <link rel="stylesheet" href="../TGFATEC/css/bootstrap.min.css">
     <link rel="stylesheet" href="../TGFATEC/css/style.css"> 
     <title>Login - SGO</title>
-    <link rel="shortcut icon" type="imagex/png" href="/images/icon.volante.svg">
+    <link rel="shortcut icon" type="imagex/png" href="../TGFATEC/images/icon.volante.svg">
 </head>
 
 <body class="TelaLogin container-fluid row justify-content-center">
@@ -27,7 +24,7 @@
             <h1 class="p-5">Login</h1>
 
             <label class="col-12" for="email">Usuário:</label>
-            <input class="col-12 p-3 textBox" type="email" placeholder="Digite seu usuário:" autofocus="true"/>
+            <input class="col-12 p-3 textBox" type="text" placeholder="Digite seu usuário:" autofocus="true"/>
             <label class="col-12 mt-5" for="password">Senha:</label>
             <input class="col-12 p-3 textBox" type="password" placeholder="Digite sua senha:"/>
             <a class="col-12 p-3" href="">Esqueci minha senha</a>
