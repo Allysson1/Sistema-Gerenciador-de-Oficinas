@@ -10,7 +10,7 @@
 
 <body>
 
-<div class="container-fluid">
+<div class="fixed-top">
   <div class="collapse" id="navbarToggleExternalContent">
     <div class="bg-dark p-4">
       <h5 class="text-white h4">Collapsed content</h5>
