@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 require 'conexao.php';
 
 //class Usuario{
@@ -26,36 +26,79 @@ require 'conexao.php';
         // private $nome = $_POST['nomeFuncionario'];
         // private $usuario = $_POST['usuario'];
         // private $senha = $_POST['senha'];
+
+
+        // login do usuário
+        // if (isset($_POST['login'])){
+
+        //     $usuario = $_POST['usuario'];
+        //     $senha = $_POST['senha'];
+
+        //     $query = $dbh->exec("select * from usuario
+        //     where usuario = '$usuario'
+        //     and senha = md5('$senha')");
+
+        //     // $query_run = mysqli_query($query);
+
+        //     if ($query > 1){
+        //         header("location: V_cadastraUsuario.php");
+        //     }
+        //     else {
+                
+        //         exit(0);
+        //     }
+
+
+        // }
+
+
         
-        if (isset($_POST['save_funcionario'])){
-            
-            $nome = mysqli_real_escape_string($con, $_POST['nomeFuncionario']);
-            $usuario = mysqli_real_escape_string($con, $_POST['usuario']);
-            $senha = mysqli_real_escape_string($con, $_POST['senha']);
 
-            $query = "INSERT INTO usuario (Nome, Usuario, Senha) 
-                        VALUES ('$nome', '$usuario', md5('$senha'))";
-            
-            $query_run = mysqli_query($con, $query);
+        // comando para salvar funcionário
+if (isset($_POST['save_funcionario'])){
+         
+    $nome = mysqli_real_escape_string($con, $_POST['nomeFuncionario']);
+    $usuario = mysqli_real_escape_string($con, $_POST['usuario']);
+    $senha = mysqli_real_escape_string($con, $_POST['senha']);
 
-            if ($query_run){
-
-                $_SESSION['message'] = "Funcionario cadastrado com sucesso!";
-                header("location: V_cadastraUsuario.php");
-                exit(0);
-            }
-            else {
-                $_SESSION['message'] = "Funcionário não cadastrado";
-                header("location: V_cadastraUsuario.php");
-                exit(0);
-            }
-        }
-       
-
+    if ($nome == ""){ 
+        $_SESSION['message'] = "Nome do funcionário não inserido!";
+        header("location: V_cadastraUsuario.php");
+        exit(0);
+    }
+    elseif ($usuario == ""){
+        $_SESSION['message'] = "Usuário do funcionário não inserido!";
+        header("location: V_cadastraUsuario.php");
+        exit(0);
+    }
+    elseif ($senha == ""){
+        $_SESSION['message'] = "Senha do funcionário não inserido!";
+        header("location: V_cadastraUsuario.php");
+        exit(0);
+    }
+    else{
+        $query = "INSERT INTO usuario (Nome, Usuario, Senha) 
+                VALUES ('$nome', '$usuario', md5('$senha'))";
     
+        $query_run = mysqli_query($con, $query);
 
+        if ($query_run){
+
+            $_SESSION['message'] = "Funcionario cadastrado com sucesso!";
+            header("location: V_cadastraUsuario.php");
+            exit(0);
+        }
+        else {
+            $_SESSION['message'] = "Funcionário não cadastrado";
+            header("location: V_cadastraUsuario.php");
+            exit(0);
+        }
+
+    }
+    
+}
    
     
-//}
+
 
 ?>
