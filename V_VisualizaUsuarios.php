@@ -56,7 +56,7 @@
                                     <td>
                                         <form action="Code_Usuario.php" method="POST" class="d-inline">
 
-                                            <a href="V_EditaUsuario.php?idUsuario=<?php=$funcionario['idUsuario'];?>" 
+                                            <a href="V_EditaUsuario.php?idUsuario=<?= $funcionario['idUsuario'];?>" 
                                             class="btn btn-info btn-sm">Visualizar</a>
                                             
                                             <button type="submit" name="delete_funcionario" 
