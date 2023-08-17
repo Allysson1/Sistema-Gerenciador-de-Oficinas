@@ -60,7 +60,7 @@
                                             class="btn btn-info btn-sm">Visualizar</a>
                                             
                                             <button type="submit" name="delete_funcionario" 
-                                            value="<?php=$funcionario['idUsuario'];?>" 
+                                            value="<?= $funcionario['idUsuario'];?>" 
                                             class="btn btn-danger btn-sm">Deletar</button>
                                         </form>
                                     </td>

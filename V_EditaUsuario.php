@@ -44,7 +44,10 @@
                         ?>
 
                         <form action="Code_Usuario.php" method="POST" class="ml-3 ml-md-3 ml-lg-3 col-12 col-lg-12">
-                                    
+                             
+                        <!-- aqui esta o ID do usuário, ele não é visivel ao usuario, e 
+                             serve para indicar o ID do usuario na tela de V_EditaUsuario.php -->
+                            <input type="hidden" name="funcionario_id" value="<?= $funcionario['idUsuario']; ?>">
 
                             <div class=" col-12 col-md-6 float-md-left">
                                 <label class="col-12 col-md-12 mt-5 mt-md-5" 
