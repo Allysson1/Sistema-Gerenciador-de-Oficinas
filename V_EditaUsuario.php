@@ -32,7 +32,7 @@
             <?php
                 if (isset($_GET['idUsuario']))
                 {
-                    echo $_GET['idUsuario'];
+                    
                     $funcionario_id = mysqli_real_escape_string($con, $_GET['idUsuario']);
                     $query = "SELECT * FROM usuario WHERE idUsuario ='$funcionario_id' ";
                     $query_run = mysqli_query($con, $query);
