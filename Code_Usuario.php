@@ -2,57 +2,6 @@
 session_start();
 require 'conexao.php';
 
-//class Usuario{
-
-    // implementar depois
-    // private $json;
-    // private $resutado;
-
-    // private $nome;
-    // private $usuario;
-    // private $senha;
-    // private $nome = $_POST['nomeFuncionario'];
-    // private $usuario = $_POST['usuario'];
-    // private $senha = $_POST['senha'];
-
-    // public function inserirAluno(){
-
-        // $json = file_get_contents('php//input');
-        // $resutado = json_decode($json);
-        // $usuario = $resultado->usuario;
-        // $senha = $resultado->senha;
-        // $nome = $resultado->nomeFuncionario;
-
-        // private $nome = $_POST['nomeFuncionario'];
-        // private $usuario = $_POST['usuario'];
-        // private $senha = $_POST['senha'];
-
-
-        // login do usuário
-        // if (isset($_POST['login'])){
-
-        //     $usuario = $_POST['usuario'];
-        //     $senha = $_POST['senha'];
-
-        //     $query = $dbh->exec("select * from usuario
-        //     where usuario = '$usuario'
-        //     and senha = md5('$senha')");
-
-        //     // $query_run = mysqli_query($query);
-
-        //     if ($query > 1){
-        //         header("location: V_cadastraUsuario.php");
-        //     }
-        //     else {
-                
-        //         exit(0);
-        //     }
-
-
-        // }
-
-
-        
 
         // comando para salvar funcionário
 if (isset($_POST['save_funcionario'])){
