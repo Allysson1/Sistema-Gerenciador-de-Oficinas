@@ -40,7 +40,7 @@
 
                 <tbody>
                     <?php
-                        $query = "SELECT * FROM usuario";
+                        $query = "SELECT * FROM usuario WHERE status =''";
                         $query_run = mysqli_query($con, $query);
 
                         if (mysqli_num_rows($query_run) > 0){
