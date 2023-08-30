@@ -1,5 +1,5 @@
 <?php
-    session_start();
+include('protect.php');
 ?>
 
 <!DOCTYPE html>
@@ -23,6 +23,8 @@
 
         <!-- formulário de login -->
         <main class="mt-5 col-12 col-sm-12 col-md-12 col-lg-10"> 
+
+            <p> <a href="logout.php">Sair</a></p>
 
             <?php include ('message.php'); ?>
 
