@@ -20,7 +20,10 @@
     
     <!-- formulário de login -->
     <main class="mt-5 col-12 col-sm-12 col-md-12 col-lg-12 row justify-content-center"> 
-        <form action="Code_Usuario.php" method="post" class="ml-3 ml-md-3 ml-lg-3 col-12 col-lg-7 row formLogin border border-white rounded justify-content-center">
+
+        <?php include ('message.php'); ?>
+
+        <form action="Code_Login.php" method="POST" class="ml-3 ml-md-3 ml-lg-3 col-12 col-lg-7 row formLogin border border-white rounded justify-content-center">
             <h1 class="p-5">Login</h1>
 
             <label class="col-12" for="text">Usuário:</label>
