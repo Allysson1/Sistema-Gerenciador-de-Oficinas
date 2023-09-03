@@ -25,6 +25,9 @@
         <!-- formulário de login -->
         <main class="mt-5 col-12 col-sm-12 col-md-12 col-lg-10"> 
 
+        <p> <a href="V_EditaUsuario.php">Edita</a></p>
+        <p> <a href="V_cadastraUsuario.php">cadastrar</a></p>
+
             <?php include ('message.php'); ?>
 
             <h4 class="col-12 m-3 pb-4 border-bottom">Visualizar Funcionários</h4>
@@ -35,6 +38,7 @@
                     <th>ID</th>
                     <th>Funcionário</th>
                     <th>Usuário</th>
+                    <th>E-mail</th>
                     <th>Ações</th>
                 </thead>
 
@@ -53,6 +57,7 @@
                                     <td><?= $funcionario['idUsuario'];?></td>
                                     <td><?= $funcionario['nome'];?></td>
                                     <td><?= $funcionario['usuario'];?></td>
+                                    <td><?= $funcionario['email'];?></td>
                                     <td>
                                         <form action="Code_Usuario.php" method="POST" class="d-inline">
 

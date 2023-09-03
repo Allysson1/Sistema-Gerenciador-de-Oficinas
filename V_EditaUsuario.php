@@ -25,9 +25,14 @@
         <!-- formulário de login -->
         <main class="mt-5 col-12 col-sm-12 col-md-12 col-lg-10"> 
 
+        <p> <a href="V_VisualizaUsuarios.php">Visualizar</a></p>
+        <p> <a href="V_cadastraUsuario.php">cadastrar</a></p>
+
             <?php include ('message.php'); ?>
 
             <h4 class="col-12 m-3 pb-4 border-bottom">Edição de Funcionários</h4>
+
+            <h4 class="col-12 m-3 pb-4">Modifique os campos que deseja alterar:</h4>
 
             <?php
                 if (isset($_GET['idUsuario']))
@@ -51,24 +56,38 @@
 
                             <div class=" col-12 col-md-6 float-md-left">
                                 <label class="col-12 col-md-12 mt-5 mt-md-5" 
-                            for="email">Nome do Funcionário:</label>
+                            for="text">Nome do Funcionário:</label>
                             <input class="col-12 col-md-12  mt-md-1 p-3 textBox" 
                             type="text" name="nomeFuncionario" value="<?= $funcionario['nome'];?>" autofocus="true"/>
                             </div>
                             
                             <div class=" col-12 col-md-6 float-md-left">
                                 <label class="col-12 col-md-12  mt-5 mt-md-5" 
-                            for="password">Usuário:</label>
+                            for="text">Usuário:</label>
                             <input class="col-12 col-md-12 mt-md-1 p-3 textBox" 
                             type="text" name="usuario" value="<?= $funcionario['usuario'];?>"/>
                             </div>
 
 
-                            <div class=" col-12 col-md-12 float-md-left">
+                            <div class=" col-12 col-md-6 float-md-left">
                                 <label class="col-12 col-md-12 mt-5 mt-md-5" 
                             for="password">Digite a nova Senha:</label>
-                            <input class="col-12 col-md-6 mt-md-1 p-3 textBox" 
+                            <input class="col-12 col-md-12 mt-md-1 p-3 textBox" 
                             type="password" name="senha"/>
+                            </div>
+
+                            <div class=" col-12 col-md-6 float-md-left">
+                                <label class="col-12 col-md-12  mt-5 mt-md-5" 
+                            for="email">E-mail:</label>
+                            <input class="col-12 col-md-12 mt-md-1 p-3 textBox" 
+                            type="email" name="email" value="<?= $funcionario['email'];?>"/>
+                            </div>
+
+                            <div class=" col-12 col-md-12 float-md-left">
+                                <label class="col-12 col-md-12 mt-5 mt-md-5" 
+                            for="password">Repita a nova Senha:</label>
+                            <input class="col-12 col-md-6 mt-md-1 p-3 textBox" 
+                            type="password" name="confSenha"/>
                             </div>
 
 

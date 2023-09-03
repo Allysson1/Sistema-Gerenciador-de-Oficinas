@@ -25,6 +25,8 @@ include('protect.php');
         <main class="mt-5 col-12 col-sm-12 col-md-12 col-lg-10"> 
 
             <p> <a href="logout.php">Sair</a></p>
+            <p> <a href="V_VisualizaUsuarios.php">Visualizar</a></p>
+            <p> <a href="V_Editausuario.php">Edita</a></p>
 
             <?php include ('message.php'); ?>
 
@@ -35,24 +37,31 @@ include('protect.php');
 
                 <div class=" col-12 col-md-6 float-md-left">
                     <label class="col-12 col-md-12 mt-5 mt-md-5" 
-                for="email">Nome do Funcionário:</label>
+                for="text">Nome do Funcionário:</label>
                 <input class="col-12 col-md-12  mt-md-1 p-3 textBox" 
                 type="text" name="nomeFuncionario" placeholder="Digite seu nome completo:" autofocus="true"/>
                 </div>
                 
                 <div class=" col-12 col-md-6 float-md-left">
                     <label class="col-12 col-md-12  mt-5 mt-md-5" 
-                for="password">Usuário:</label>
+                for="text">Usuário:</label>
                 <input class="col-12 col-md-12 mt-md-1 p-3 textBox" 
                 type="text" name="usuario" placeholder="Digite seu nome de Usuário:"/>
                 </div>
 
 
-                <div class=" col-12 col-md-12 float-md-left">
+                <div class=" col-12 col-md-6 float-md-left">
                     <label class="col-12 col-md-12 mt-5 mt-md-5" 
                 for="password">Senha:</label>
-                <input class="col-12 col-md-6 mt-md-1 p-3 textBox" 
+                <input class="col-12 col-md-12 mt-md-1 p-3 textBox" 
                 type="password" name="senha" placeholder="Digite sua Senha:"/>
+                </div>
+
+                <div class=" col-12 col-md-6 float-md-left">
+                    <label class="col-12 col-md-12  mt-5 mt-md-5" 
+                for="email">E-mail:</label>
+                <input class="col-12 col-md-12 mt-md-1 p-3 textBox" 
+                type="email" name="email" placeholder="Digite seu E-mail:"/>
                 </div>
 
 
