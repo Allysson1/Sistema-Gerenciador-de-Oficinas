@@ -30,7 +30,7 @@
             <input class="col-12 p-3 textBox" name="usuario" type="text" placeholder="Digite seu usuário:" autofocus="true"/>
             <label class="col-12 mt-5" for="password">Senha:</label>
             <input class="col-12 p-3 textBox" name="senha" type="password" placeholder="Digite sua senha:"/>
-            <a class="col-12 p-3" href="">Esqueci minha senha</a>
+            <a class="col-12 p-3" href="../TGFatec/V_redefineSenha.php">Esqueci minha senha</a>
 
             <button class="col-6 m-5 p-3 btn btn-primary" type="submit" name="login">Entrar</button>
 
