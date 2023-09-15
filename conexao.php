@@ -11,10 +11,10 @@
 
 
 /* Connect to a MySQL database using driver invocation */
-$host = 'localhost';
-$user = 'root';
-$password = '';
-$database = 'bd_tg';
+$host = 'bs8n7oyr44o8g5hsme3e-mysql.services.clever-cloud.com';
+$user = 'um9rioezglxmkwrn';
+$password = 'ui15ohmceMjd1tbT8bqn';
+$database = 'bs8n7oyr44o8g5hsme3e';
 
 $con = mysqli_connect($host, $user, $password, $database);
 
