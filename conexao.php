@@ -1,15 +1,4 @@
 <?php
-
-// $con = new PDO('localhost', 'root', '', 'bd_tg');
-
-
-// if(!$con){
-//     die("Não foi possivel conectar ao MySQL " . mysqli_connect_error());
-// }
-
-
-
-
 /* Connect to a MySQL database using driver invocation */
 $host = 'bs8n7oyr44o8g5hsme3e-mysql.services.clever-cloud.com';
 $user = 'um9rioezglxmkwrn';

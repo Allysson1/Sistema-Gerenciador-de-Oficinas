@@ -10,29 +10,29 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="../TGFATEC/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../TGFATEC/css/bootstrap-grid.min.css" />
+        <link rel="stylesheet" href="../TGFATEC/css/bootstrap-reboot.min.css" >
         <link rel="stylesheet" href="../TGFATEC/css/style.css"> 
         <title>Edição de Funcionários - SGO</title>
         <link rel="shortcut icon" type="imagex/png" href="../TGFATEC/images/icon.volante.svg">
     </head>
 
-    <!-- <?php include 'header.php'; ?> -->
+<body>    
+    <?php include 'header.php'; ?>
 
 
-    <body class="container-fluid row justify-content-center">
+    <div class="float-lg-right col-lg-9 container-fluid row justify-content-center">
 
 
 
         <!-- formulário de login -->
         <main class="mt-5 col-12 col-sm-12 col-md-12 col-lg-10"> 
 
-        <p> <a href="V_VisualizaUsuarios.php">Visualizar</a></p>
-        <p> <a href="V_cadastraUsuario.php">cadastrar</a></p>
-
             <?php include ('message.php'); ?>
 
-            <h4 class="col-12 m-3 pb-4 border-bottom">Edição de Funcionários</h4>
+            <h4 class="col-12 m-3 pt-5 pb-4 pt-lg-3 border-bottom">Edição de Usuários</h4>
 
-            <h4 class="col-12 m-3 pb-4">Modifique os campos que deseja alterar:</h4>
+            <h4 class="col-12 m-3">Modifique os campos que deseja alterar:</h4>
 
             <?php
                 if (isset($_GET['idUsuario']))
@@ -91,7 +91,7 @@
                             </div>
 
 
-                            <div class="float-right col-5 col-md-3 mt-5 mt-md-5">
+                            <div class="float-right col-5 col-md-3 mt-5 mb-5 mt-md-5">
                             <button class="col-12 ml-1 p-3 btn btn-primary" type="submit" name="update_funcionario">Alterar</button>      
                             </div>
 
@@ -111,8 +111,17 @@
                 ?>
         </main>
 
-        <script src="../TGFATEC/js/bootstrap.bundle.min.js"></script>
-        <script src="../TGFATEC/js/bootstrap.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
         
-    </body>
+    </div>
+
+</body>
 </html>
