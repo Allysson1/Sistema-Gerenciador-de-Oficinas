@@ -7,13 +7,13 @@
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/style.css"> 
     <title>Login - SGO</title>
-    <link rel="shortcut icon" type="imagex/png" href="images/icon.volante.svg">
+    <link rel="shortcut icon" type="imagex/png" href="../images/icon.volante.svg">
 </head>
 
 <body class="TelaLogin container-fluid row justify-content-center">
 
     <div class="row mt-5 pt-md-5 pt-lg-0">
-        <img class="pt-4 pl-4" src="images/logo.svg" alt="imagem de um volande de carro simples"> 
+        <img class="pt-4 pl-4" src="../images/logo.svg" alt="imagem de um volande de carro simples"> 
     </div>
 
     

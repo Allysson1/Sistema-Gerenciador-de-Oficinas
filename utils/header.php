@@ -1,25 +1,27 @@
 <!-- identifica em qual página está o usuário para desativar o link da mesma no menu -->
 <?php $page = basename($_SERVER['PHP_SELF']) ?>
 
-<header class=" d-block d-sm-block d-md-block d-lg-none" id="topo">
+<header class=" d-block d-sm-block d-md-block d-lg-none" id="topo" style="margin-top: 60px;">
 
-  <div class=" fixed-top">
+  <div class="fixed-top">
 
-  <!-- botão do menu -->
-  <nav class="navbar navbar-dark bgNav">
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-<!-- imagem da logo do site -->
-      <div class="row">
-        <img class="mr-3" src="../TGFatec/images/icon.volante.svg" alt="imagem de um volande de carro simples"> 
-        <p class="pt-3 mr-2 TICarHeader">TI Car</p>
-      </div>
+    <nav class="navbar navbar-dark bgNav">
+        <div class="container">
+            <div class="row">
+                <div class="col-9" style="margin: 0; padding: 0;">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+                <div class="col-3 text-center">
+                    <img class="logoNav" src="images/Logo.svg" alt="imagem de um volante de carro simples">
+                </div>
+            </div>
+        </div>
     </nav>
 
     <!-- Menu mobile e tablet -->
-    <div class="collapse" id="navbarToggleExternalContent">
+    <div class="collapse navbar-collapse" id="navbarToggleExternalContent">
       <div class="bgNav p-4">
         <ul class="navbar-nav">
 
@@ -34,10 +36,10 @@
 
         <h5 class="text-white mt-5 h4">Usuários</h5>
           <li class="nav-item ml-5">
-            <a class="nav-link <?php if($page == 'V_cadastraUsuario.php'):echo "disabled"; endif; ?>" href="V_cadastraUsuario.php">Cadastro de Usuário</a>
+            <a class="nav-link <?php if($page == 'V_cadastraUsuario.php'):echo "disabled"; endif; ?>" href="../views/V_cadastraUsuario.php">Cadastro de Usuário</a>
           </li>
           <li class="nav-item ml-5">
-            <a class="nav-link <?php if($page == 'V_VisualizaUsuarios.php'):echo "disabled"; endif; ?>" href="V_VisualizaUsuarios.php">Consulta de Usuários</a>
+            <a class="nav-link <?php if($page == 'V_VisualizaUsuarios.php'):echo "disabled"; endif; ?>" href="../views/V_VisualizaUsuarios.php">Consulta de Usuários</a>
           </li>
 
           <h5 class="text-white mt-5 h4">Peças</h5>
@@ -61,8 +63,7 @@
           </li>
         </ul>
       </div>
-    </div>
-    
+    </div>    
   </div>
 </header>
 
@@ -73,8 +74,7 @@
   <nav>
 
       <div class="row pt-md-5 pt-lg-0 border-bottom">
-      <img class="col-3 mt-lg-3 mt-xl-3 mb-lg-4" src="../TGFatec/images/icon.volante.svg" alt="imagem de um volande de carro simples"> 
-      <p class="mt-lg-4 mt-xl-4 pt-xl-3 col-9 TICarHeader">TI Car</p>
+        <img class="col-6 mt-lg-3 mt-xl-3 mb-lg-4 logoNav" src="images/Logo.svg" alt="imagem de um volande de carro simples"> 
       </div>
 
       <ul class="navbar-nav">
@@ -113,7 +113,7 @@
         </li>
         
         <li class="nav-item mt-4 mb-5 pb-5">
-          <a class="nav-link h4" href="logout.php">Sair</a>
+          <a class="nav-link h4" href="utils/logout.php">Sair</a>
         </li>
     </ul>
   </nav>

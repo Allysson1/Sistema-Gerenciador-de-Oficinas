@@ -182,34 +182,7 @@ a:hover {
   font-size: 30px;
 }
 
-.SelectServico {
-  width: 100%;
-  padding: 10px;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  background-color: #fff;
-  color: #333;
-}
-
-/* Estilize as opções do select */
-.SelectServico option {
-  background-color: #fff;
-  color: #333;
-}
-
-/* Estilize o select quando estiver em foco */
-.SelectServico:focus {
-  outline: none;
-  border-color: #007bff;
-  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-}
-
-textarea {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  background-color: #fff;
-  color: #333;
+.campoDigitar {
+  color: #fff;
+  background-color: #000;
 }
