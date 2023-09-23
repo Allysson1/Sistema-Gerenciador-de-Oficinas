@@ -1,17 +1,3 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/style.css"> 
-    <title>Login - SGO</title>
-    <link rel="shortcut icon" type="imagex/png" href="images/icon.volante.svg">
-</head>
-
-
-
 <!-- identifica em qual página está o usuário para desativar o link da mesma no menu -->
 <?php $page = basename($_SERVER['PHP_SELF']) ?>
 
@@ -27,7 +13,8 @@
 
 <!-- imagem da logo do site -->
       <div class="row">
-        <img class="mr-3" src="images/icon.volante.svg" alt="imagem de um volande de carro simples">
+        <img class="mr-3" src="../TGFatec/images/icon.volante.svg" alt="imagem de um volande de carro simples"> 
+        <p class="pt-3 mr-2 TICarHeader">TI Car</p>
       </div>
     </nav>
 
@@ -86,7 +73,8 @@
   <nav>
 
       <div class="row pt-md-5 pt-lg-0 border-bottom">
-        <img class="col-6 mt-lg-3 mt-xl-3 mb-lg-4 logoNav" src="images/Logo.svg" alt="imagem de um volande de carro simples"> 
+      <img class="col-3 mt-lg-3 mt-xl-3 mb-lg-4" src="../TGFatec/images/icon.volante.svg" alt="imagem de um volande de carro simples"> 
+      <p class="mt-lg-4 mt-xl-4 pt-xl-3 col-9 TICarHeader">TI Car</p>
       </div>
 
       <ul class="navbar-nav">

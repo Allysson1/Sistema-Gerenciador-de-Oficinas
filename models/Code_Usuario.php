@@ -1,6 +1,6 @@
 <?php
 session_start();
-require 'conexao.php';
+require '../utils/conexao.php';
 
 
         // comando para salvar funcionário
@@ -13,22 +13,22 @@ if (isset($_POST['save_funcionario'])){
 
     if ($nome == ""){ 
         $_SESSION['message'] = "Nome do funcionário não inserido!";
-        header("location: V_cadastraUsuario.php");
+        header("location: ../views/V_cadastraUsuario.php");
         exit(0);
     }
     elseif ($usuario == ""){
         $_SESSION['message'] = "Usuário do funcionário não inserido!";
-        header("location: V_cadastraUsuario.php");
+        header("location: ../views/V_cadastraUsuario.php");
         exit(0);
     }
     elseif ($senha == ""){
         $_SESSION['message'] = "Senha do funcionário não inserido!";
-        header("location: V_cadastraUsuario.php");
+        header("location: ../views/V_cadastraUsuario.php");
         exit(0);
     }
     elseif ($email == ""){
         $_SESSION['message'] = "email do funcionário não inserido!";
-        header("location: V_cadastraUsuario.php");
+        header("location: ../views/V_cadastraUsuario.php");
         exit(0);
     }
     else{
@@ -40,12 +40,12 @@ if (isset($_POST['save_funcionario'])){
         if ($query_run){
 
             $_SESSION['message'] = "Funcionario cadastrado com sucesso!";
-            header("location: V_cadastraUsuario.php");
+            header("location: ../views/V_cadastraUsuario.php");
             exit(0);
         }
         else {
             $_SESSION['message'] = "Funcionário não cadastrado";
-            header("location: V_cadastraUsuario.php");
+            header("location: ../views/V_cadastraUsuario.php");
             exit(0);
         }
 
@@ -63,12 +63,12 @@ if (isset($_POST['delete_funcionario'])){
 
     if ($query_run){
         $_SESSION['message'] = "funcionário excluído com sucesso.";
-        header("location: V_VisualizaUsuarios.php");
+        header("location: ../views/V_VisualizaUsuarios.php");
         exit(0);
     }
     else{
         $_SESSION['message'] = "Não foi possivel excluir o funcionário";
-        header("location: V_VisualizaUsuarios.php");
+        header("location: ../views/V_VisualizaUsuarios.php");
         exit(0);
     }
 }
@@ -86,7 +86,7 @@ if (isset($_POST['update_funcionario'])){
 
     if ($Confsenha !== $senha){
         $_SESSION['message'] = 'A senha nova senha e a senha redigitada são diferentes';
-        header("location: V_EditaUsuario.php?idUsuario=$funcionario_id");
+        header("location: ../views/V_EditaUsuario.php?idUsuario=$funcionario_id");
         exit(0); 
     }
     else{
@@ -97,12 +97,12 @@ if (isset($_POST['update_funcionario'])){
 
         if($query_run){
             $_SESSION['message'] = 'Funcionário atualizado com sucesso';
-            header("location: V_VisualizaUsuarios.php");
+            header("location: ../views/V_VisualizaUsuarios.php");
             exit(0);
         }
         else{
             $_SESSION['message'] = "Não foi possivel atualizar o funcionário";
-            header("location: V_EditaUsuario.php");
+            header("location: ../views/V_EditaUsuario.php");
             exit(0);
         }
 

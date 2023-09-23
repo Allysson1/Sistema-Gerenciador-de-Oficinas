@@ -1,6 +1,6 @@
 <?php
     session_start();
-    require 'conexao.php';
+    require '../utils/conexao.php';
 ?>
 
 <!DOCTYPE html>
@@ -9,22 +9,22 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="../TGFATEC/css/bootstrap.min.css">
-        <link rel="stylesheet" href="../TGFATEC/css/bootstrap-grid.min.css" />
-        <link rel="stylesheet" href="../TGFATEC/css/bootstrap-reboot.min.css" >
-        <link rel="stylesheet" href="../TGFATEC/css/style.css"> 
+        <link rel="stylesheet" href="../css/bootstrap.min.css">
+        <link rel="stylesheet" href="../css/bootstrap-grid.min.css" />
+        <link rel="stylesheet" href="../css/bootstrap-reboot.min.css" >
+        <link rel="stylesheet" href="../css/style.css"> 
         <title>Visualizar Funcionários - SGO</title>
-        <link rel="shortcut icon" type="imagex/png" href="../TGFATEC/images/icon.volante.svg">
+        <link rel="shortcut icon" type="imagex/png" href="../images/icon.volante.svg">
     </head>
 
     
 
 <body>
 
-    <?php include 'header.php'; ?>
+    <?php include '../utils/header.php'; ?>
 
 
-    <?php include ('message.php'); ?>
+    <?php include ('../utils/message.php'); ?>
 
 
 
@@ -75,7 +75,7 @@
                                         <td class="">
                                             <form action="Code_Usuario.php" method="POST" class="d-inline">
 
-                                                <a href="V_EditaUsuario.php?idUsuario=<?= $funcionario['idUsuario'];?>" 
+                                                <a href="../views/V_EditaUsuario.php?idUsuario=<?= $funcionario['idUsuario'];?>" 
                                                 class="m-1 btn btn-info btn-sm">Visualizar</a>
                                                 
                                                 <button type="submit" name="delete_funcionario" 

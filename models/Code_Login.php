@@ -1,5 +1,5 @@
 <?php
-require 'conexao.php';
+require '../utils/conexao.php';
 
 
     if (isset($_POST['usuario']) || isset($_POST['senha'])){
@@ -17,6 +17,7 @@ require 'conexao.php';
             // real_escape_string limpa os dados
             $usuario = $con->real_escape_string($_POST['usuario']);
             $senha = $con->real_escape_string($_POST['senha']);
+            
 
             $query = "SELECT * FROM usuario 
                       WHERE usuario = '$usuario' 
@@ -27,6 +28,7 @@ require 'conexao.php';
             
             // retorna a quantidade de linhas afetadas
             $qunatidade = $query_run->num_rows;
+            
 
             if ($qunatidade == 1){
 
@@ -40,13 +42,15 @@ require 'conexao.php';
                 //$_POST que só fica válido ao enviar um formulãrio.
                 $_SESSION['idUsuario'] = $usuario['idUsuario'];
                 $_SESSION['nome'] = $usuario['nome'];
+                
 
-                header("location: V_cadastraUsuario.php");
+                header("location: ../views/V_cadastraUsuario.php");
             }
             else {
                 $_SESSION['message'] = "Funcionário não cadastrado";
                 
                 echo "usuário/senha incorreto ou inexistente";
+            
                 
             }
             

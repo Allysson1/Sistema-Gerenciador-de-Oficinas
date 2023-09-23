@@ -1,5 +1,5 @@
 <?php
-require 'conexao.php';
+require '../utils/conexao.php';
 
 
     if (isset($_POST['usuario']) || isset($_POST['senha'])){
@@ -22,7 +22,7 @@ require 'conexao.php';
 
         elseif ($Confsenha !== $senha){
             $_SESSION['message'] = 'A senha nova senha e a senha na confirmação são diferentes';
-            header("location: V_redefineSenha.php");
+            header("location: ../views/V_redefineSenha.php");
             exit(0); 
         }
 
@@ -33,12 +33,14 @@ require 'conexao.php';
 
             $query_run = $con->query($query) or die("falha na conexão do código SQL: " . $con->error); 
 
-                header("location: index.php");
+                header("location: ../views/index.php");
             
         }  
 
 
     }
+
+    else echo "erro"; 
 
 ?>
      

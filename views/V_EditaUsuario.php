@@ -1,6 +1,6 @@
 <?php
     session_start();
-    require 'conexao.php';
+    require '../utils/conexao.php';
 ?>
 
 <!DOCTYPE html>
@@ -9,16 +9,16 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="../TGFATEC/css/bootstrap.min.css">
-        <link rel="stylesheet" href="../TGFATEC/css/bootstrap-grid.min.css" />
-        <link rel="stylesheet" href="../TGFATEC/css/bootstrap-reboot.min.css" >
-        <link rel="stylesheet" href="../TGFATEC/css/style.css"> 
+        <link rel="stylesheet" href="../css/bootstrap.min.css">
+        <link rel="stylesheet" href="../css/bootstrap-grid.min.css" />
+        <link rel="stylesheet" href="../css/bootstrap-reboot.min.css" >
+        <link rel="stylesheet" href="../css/style.css"> 
         <title>Edição de Funcionários - SGO</title>
-        <link rel="shortcut icon" type="imagex/png" href="../TGFATEC/images/icon.volante.svg">
+        <link rel="shortcut icon" type="imagex/png" href="../images/icon.volante.svg">
     </head>
 
 <body>    
-    <?php include 'header.php'; ?>
+    <?php include '../utils/header.php'; ?>
 
 
     <div class="float-lg-right col-lg-9 container-fluid row justify-content-center">
@@ -28,7 +28,7 @@
         <!-- formulário de login -->
         <main class="mt-5 col-12 col-sm-12 col-md-12 col-lg-10"> 
 
-            <?php include ('message.php'); ?>
+            <?php include ('../utils/message.php'); ?>
 
             <h4 class="col-12 m-3 pt-5 pb-4 pt-lg-3 border-bottom">Edição de Usuários</h4>
 
@@ -48,7 +48,7 @@
 
                         ?>
 
-                        <form action="Code_Usuario.php" method="POST" class="ml-3 ml-md-3 ml-lg-3 col-12 col-lg-12">
+                        <form action="../models/Code_Usuario.php" method="POST" class="ml-3 ml-md-3 ml-lg-3 col-12 col-lg-12">
                              
                         <!-- aqui esta o ID do usuário, ele não é visivel ao usuario, e 
                              serve para indicar o ID do usuario na tela de V_EditaUsuario.php -->
