@@ -4,17 +4,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../TGFATEC/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../TGFATEC/css/style.css"> 
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css"> 
     <title>Login - SGO</title>
-    <link rel="shortcut icon" type="imagex/png" href="../TGFATEC/images/icon.volante.svg">
+    <link rel="shortcut icon" type="imagex/png" href="images/icon.volante.svg">
 </head>
 
 <body class="TelaLogin container-fluid row justify-content-center">
 
     <div class="row mt-5 pt-md-5 pt-lg-0">
-    <img class="pt-4 pl-4" src="../TGFatec/images/icon.volante.svg" alt="imagem de um volande de carro simples"> 
-    <p class="TICar pt-5 pl-4">TI Car</p>
+        <img class="pt-4 pl-4" src="images/logo.svg" alt="imagem de um volande de carro simples"> 
     </div>
 
     
@@ -23,16 +22,16 @@
 
         <?php include ('message.php'); ?>
 
-        <form action="Code_Login.php" method="POST" class="ml-3 ml-md-3 ml-lg-3 col-12 col-lg-7 row formLogin border border-white rounded justify-content-center">
-            <h1 class="p-5">Login</h1>
+        <form action="Code_Login.php" method="POST" class="ml-3 ml-md-3 ml-lg-3 col-12 col-lg-7 row formLogin rounded justify-content-center">
+            <h1 class="textLogin">Login</h1>
 
-            <label class="col-12" for="text">Usuário:</label>
-            <input class="col-12 p-3 textBoxLogin" name="usuario" type="text" placeholder="Digite seu usuário:" autofocus="true"/>
-            <label class="col-12 mt-5" for="password">Senha:</label>
+            <label class="col-12 legenBoxLogin" for="text">E-mail:</label>
+            <input class="col-12 p-3 textBoxLogin" name="usuario" type="text" placeholder="Digite seu E-mail:" autofocus="true"/>
+            <label class="col-12 legenBoxSenha" for="password">Senha:</label>
             <input class="col-12 p-3 textBoxLogin" name="senha" type="password" placeholder="Digite sua senha:"/>
-            <a class="col-12 p-3" href="../TGFatec/V_redefineSenha.php">Esqueci minha senha</a>
+            <a class="col-12 esqueciBoxLogin" href="V_redefineSenha.php"><u>Esqueci minha senha</u></a>
 
-            <button class="col-6 m-5 p-3 btn btn-primary" type="submit" name="login">Entrar</button>
+            <button class="col-5 botaoLogin" type="submit" name="login">Entrar</button>
 
         </form>
 
