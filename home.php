@@ -14,17 +14,265 @@
 
     <?php include ('utils/header.php'); ?>
 
-    <main>       
+    <main class="main-content"> 
+        <div class="row">            
+            <div class="col-12 divHeaderTopoSite">
+                <p class="nameHeaderTopoSite">Serviço</p>
+            </div>  
+        </div> 
 
-        <section>
+        <section class="section-content">
 
-            <div class="row">
-                <div class="col-12 divOrdemServico">
-                    <p class="nameOrdemServico">Serviço</p>
+            <div class="row" style="margin: 0px">
+                <div class="containerPesquisaHome ml-auto">
+                    <div class="col-12">
+                        <input type="text" class="inputPesquisaHome" placeholder="Digite a placa...">
+                        <button class="botaoPesquisaHome">Pesquisar</button>
+                    </div>
+                </div>                
+            </div>            
+
+            <div class="row" style="margin: 0px">
+                <div class="col-sm-4">
+                    <div class="cardHome">
+                        <p class="tituloHome">Placa do Carro:</p>
+                        <div class="placaHome">
+                            <span>SDD12E3</span>
+                        </div>
+                        <div class="todosItensCard">                        
+                            <div class="itemCard">
+                                <span>Nome do Cliente:</span>
+                                <span id="">Marcelo</span>
+                            </div>
+                            <div class="itemCard">
+                                <span>Modelo:</span>
+                                <span id="">Civic</span>
+                            </div>
+                            <div class="itemCard">
+                                <span>Prazo de Entrega:</span>
+                                <span id="">25/05/23</span>
+                            </div>
+                            <div class="itemCard">
+                                <span>Status:</span>
+                                <span id="">Em andamento</span>
+                            </div>
+                            <button class="botaoVerMaisCard">Ver Mais...</button>
+                        </div>                        
+                    </div>                    
+                </div>
+
+                <div class="col-sm-4">
+                    <div class="cardHome">
+                        <p class="tituloHome">Placa do Carro:</p>
+                        <div class="placaHome">
+                            <span>SDD12E3</span>
+                        </div>
+                        <div class="todosItensCard">                        
+                            <div class="itemCard">
+                                <span>Nome do Cliente:</span>
+                                <span id="">Marcelo</span>
+                            </div>
+                            <div class="itemCard">
+                                <span>Modelo:</span>
+                                <span id="">Civic</span>
+                            </div>
+                            <div class="itemCard">
+                                <span>Prazo de Entrega:</span>
+                                <span id="">25/05/23</span>
+                            </div>
+                            <div class="itemCard">
+                                <span>Status:</span>
+                                <span id="">Em andamento</span>
+                            </div>
+                            <button class="botaoVerMaisCard">Ver Mais...</button>
+                        </div>                        
+                    </div>                    
+                </div>
+
+                <div class="col-sm-4">
+                    <div class="cardHome">
+                        <p class="tituloHome">Placa do Carro:</p>
+                        <div class="placaHome">
+                            <span>SDD12E3</span>
+                        </div>
+                        <div class="todosItensCard">                        
+                            <div class="itemCard">
+                                <span>Nome do Cliente:</span>
+                                <span id="">Marcelo</span>
+                            </div>
+                            <div class="itemCard">
+                                <span>Modelo:</span>
+                                <span id="">Civic</span>
+                            </div>
+                            <div class="itemCard">
+                                <span>Prazo de Entrega:</span>
+                                <span id="">25/05/23</span>
+                            </div>
+                            <div class="itemCard">
+                                <span>Status:</span>
+                                <span id="">Em andamento</span>
+                            </div>
+                            <button class="botaoVerMaisCard">Ver Mais...</button>
+                        </div>                        
+                    </div>                    
                 </div>
             </div>
-        
 
+            <div class="row" style="margin: 0px">
+                <div class="col-sm-4">
+                    <div class="cardHome">
+                        <p class="tituloHome">Placa do Carro:</p>
+                        <div class="placaHome">
+                            <span>SDD12E3</span>
+                        </div>
+                        <div class="todosItensCard">                        
+                            <div class="itemCard">
+                                <span>Nome do Cliente:</span>
+                                <span id="">Marcelo</span>
+                            </div>
+                            <div class="itemCard">
+                                <span>Modelo:</span>
+                                <span id="">Civic</span>
+                            </div>
+                            <div class="itemCard">
+                                <span>Prazo de Entrega:</span>
+                                <span id="">25/05/23</span>
+                            </div>
+                            <div class="itemCard">
+                                <span>Status:</span>
+                                <span id="">Em andamento</span>
+                            </div>
+                            <button class="botaoVerMaisCard">Ver Mais...</button>
+                        </div>                        
+                    </div>                    
+                </div>
+
+                <div class="col-sm-4">
+                    <div class="cardHome">
+                        <p class="tituloHome">Placa do Carro:</p>
+                        <div class="placaHome">
+                            <span>SDD12E3</span>
+                        </div>
+                        <div class="todosItensCard">                        
+                            <div class="itemCard">
+                                <span>Nome do Cliente:</span>
+                                <span id="">Marcelo</span>
+                            </div>
+                            <div class="itemCard">
+                                <span>Modelo:</span>
+                                <span id="">Civic</span>
+                            </div>
+                            <div class="itemCard">
+                                <span>Prazo de Entrega:</span>
+                                <span id="">25/05/23</span>
+                            </div>
+                            <div class="itemCard">
+                                <span>Status:</span>
+                                <span id="">Em andamento</span>
+                            </div>
+                            <button class="botaoVerMaisCard">Ver Mais...</button>
+                        </div>                        
+                    </div>                    
+                </div>                
+            </div>
+
+            <div class="row">
+                <div class="col-12 text-center" >
+                    <button class="botaoVerMaisServicos">Ver mais serviços...</button>
+                </div>
+            </div>
+                
+            <div class="row" style="margin: 0px">
+                <div class="col-sm-4">
+                    <div class="cardHome">
+                        <p class="tituloHome">Placa do Carro:</p>
+                        <div class="placaHome">
+                            <span>SDD12E3</span>
+                        </div>
+                        <div class="todosItensCard">                        
+                            <div class="itemCard">
+                                <span>Nome do Cliente:</span>
+                                <span id="">Marcelo</span>
+                            </div>
+                            <div class="itemCard">
+                                <span>Modelo:</span>
+                                <span id="">Civic</span>
+                            </div>
+                            <div class="itemCard">
+                                <span>Prazo de Entrega:</span>
+                                <span id="">25/05/23</span>
+                            </div>
+                            <div class="itemCard">
+                                <span>Status:</span>
+                                <span id="">Em andamento</span>
+                            </div>
+                            <button class="botaoVerMaisCard">Ver Mais...</button>
+                        </div>                        
+                    </div>                    
+                </div>
+
+                <div class="col-sm-4">
+                    <div class="cardHome">
+                        <p class="tituloHome">Placa do Carro:</p>
+                        <div class="placaHome">
+                            <span>SDD12E3</span>
+                        </div>
+                        <div class="todosItensCard">                        
+                            <div class="itemCard">
+                                <span>Nome do Cliente:</span>
+                                <span id="">Marcelo</span>
+                            </div>
+                            <div class="itemCard">
+                                <span>Modelo:</span>
+                                <span id="">Civic</span>
+                            </div>
+                            <div class="itemCard">
+                                <span>Prazo de Entrega:</span>
+                                <span id="">25/05/23</span>
+                            </div>
+                            <div class="itemCard">
+                                <span>Status:</span>
+                                <span id="">Em andamento</span>
+                            </div>
+                            <button class="botaoVerMaisCard">Ver Mais...</button>
+                        </div>                        
+                    </div>                    
+                </div>
+
+                <div class="col-sm-4">
+                    <div class="cardHome">
+                        <p class="tituloHome">Placa do Carro:</p>
+                        <div class="placaHome">
+                            <span>SDD12E3</span>
+                        </div>
+                        <div class="todosItensCard">                        
+                            <div class="itemCard">
+                                <span>Nome do Cliente:</span>
+                                <span id="">Marcelo</span>
+                            </div>
+                            <div class="itemCard">
+                                <span>Modelo:</span>
+                                <span id="">Civic</span>
+                            </div>
+                            <div class="itemCard">
+                                <span>Prazo de Entrega:</span>
+                                <span id="">25/05/23</span>
+                            </div>
+                            <div class="itemCard">
+                                <span>Status:</span>
+                                <span id="">Em andamento</span>
+                            </div>
+                            <button class="botaoVerMaisCard">Ver Mais...</button>
+                        </div>                        
+                    </div>                    
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12 text-center" >
+                    <button class="botaoVerMaisServicosConcluidos">Ver mais serviços concluidos...</button>
+                </div>
+            </div>
            
         </section>
 

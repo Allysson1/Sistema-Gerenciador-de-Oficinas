@@ -34,11 +34,24 @@ a:hover {
 .asideNav {
   background-color: #000;
   height: 100%;
+  /*position: fixed;*/
 }
 
 .logoNav {
   width: 120px;
 }
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  display: block;
+  margin-bottom: 10px;
+}
+
+/* Conteúdo principal ajustado para a direita para evitar sobreposição 
+.main-content {
+  margin-left: 395px;
+}*/
 
 /* tela de login - Allysson e alteração: Ana*/
 
@@ -166,13 +179,13 @@ a:hover {
 }
 
 /*Tela Ordem de Serviço - Ana*/
-.divOrdemServico {
+.divHeaderTopoSite {
   padding: 30px 0 12px 0;
   width: 100%;
   border-bottom: 2px solid #000000;
 }
 
-.nameOrdemServico {
+.nameHeaderTopoSite {
   padding-left: 30px;
   font-size: 30px;
 }
@@ -292,4 +305,103 @@ a:hover {
   outline: none;
   border-color: #007bff;
   box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/*Tela Home - Ana*/
+
+.cardHome {
+  background-color: black;
+  color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin: 20px 5px;
+  padding-bottom: 50px;
+}
+
+.tituloHome {
+  text-align: center;
+  font-size: 22px;
+  padding-top: 20px;
+}
+
+.placaHome {
+  background-color: #007fff;
+  padding: 13px;
+  text-align: center;
+}
+
+.todosItensCard {
+  margin-top: 10px;
+  padding: 20px;
+}
+
+.itemCard {
+  margin-bottom: 20px;
+}
+
+.botaoVerMaisCard {
+  background-color: #007fff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  float: right;
+}
+
+.botaoVerMaisCard:hover {
+  background-color: #0070e0;
+}
+
+.botaoVerMaisServicos {
+  background-color: #007fff;
+  color: white;
+  border: none;
+  border-radius: 7px;
+  padding: 13px 100px;
+  margin: 50px 0;
+  cursor: pointer;
+}
+
+.botaoVerMaisServicos:hover {
+  background-color: #0070e0;
+}
+
+.botaoVerMaisServicosConcluidos {
+  background-color: #007fff;
+  color: white;
+  border: none;
+  border-radius: 7px;
+  padding: 13px 100px;
+  margin: 50px 0;
+  cursor: pointer;
+}
+
+.botaoVerMaisServicosConcluidos:hover {
+  background-color: #0070e0;
+}
+
+.containerPesquisaHome {
+  margin-bottom: 15px;
+  margin-top: 30px;
+}
+
+.inputPesquisaHome {
+  padding: 10px;
+  margin-right: 5px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+
+.botaoPesquisaHome {
+  padding: 10px 12px;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.botaoPesquisaHome:hover {
+  background-color: #000;
 }

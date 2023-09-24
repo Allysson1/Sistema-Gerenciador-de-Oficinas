@@ -15,17 +15,14 @@
 
     <?php include ('utils/header.php'); ?>
 
-    <main>       
-
-        <section>
-
+    <main class="main-content">  
         <div class="row">
-            <div class="col-12 divOrdemServico">
-                <p class="nameOrdemServico">Ordem de Serviço</p>
+            <div class="col-12 divHeaderTopoSite">
+                <p class="nameHeaderTopoSite">Ordem de Serviço</p>
             </div>
-        </div>
-        
+        </div>     
 
+        <section class="section-content">  
             <form>
                 <div class="row">
                     <div class="col-12" style="display: flex; margin-bottom: 30px; margin-top: 45px">
