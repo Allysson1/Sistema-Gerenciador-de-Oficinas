@@ -47,7 +47,7 @@
             <a class="nav-link <?php if($page == '#'):echo "disabled"; endif; ?>" href="#">Cadastro de Peças</a>
           </li>
           <li class="nav-item ml-5">
-            <a class="nav-link <?php if($page == '#'):echo "disabled"; endif; ?>" href="#">Consulta de Peças</a>
+            <a class="nav-link <?php if($page == 'ConsultaPeca.php'):echo "disabled"; endif; ?>" href="ConsultaPeca.php">Consulta de Peças</a>
           </li>
 
           <h5 class="text-white mt-5 h4">Fornecedores</h5>
@@ -101,7 +101,7 @@
           <a class="nav-link <?php if($page == '#'):echo "disabled"; endif; ?>" href="#">Cadastro de Peças</a>
         </li>
         <li class="nav-item ml-4">
-          <a class="nav-link <?php if($page == '#'):echo "disabled"; endif; ?>" href="#">Consulta de Peças</a>
+          <a class="nav-link <?php if($page == 'ConsultaPeca.php'):echo "disabled"; endif; ?>" href="ConsultaPeca.php">Consulta de Peças</a>
         </li>
 
         <h5 class="text-white mt-5 h4">Fornecedores</h5>
