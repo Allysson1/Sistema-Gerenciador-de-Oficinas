@@ -27,24 +27,25 @@
     <?php include ('../utils/message.php'); ?>
 
 
-
-    <div class="float-lg-right col-lg-9 container-fluid row justify-content-center">
-
-    <div class="col-12 col-lg-10 ml-sm-3 mt-5 pt-5 mt-lg-0 mt-xl-0 pt-lg-0 border-bottom row">
-
-        <h4 class="float-sm-left ml-3 col-12 col-sm-5 m-3 pt-5 pb-4 ml-lg-0 col-md-6">Visualizar Usuários</h4>
-
-        <form class="float-sm-right ml-3 col-12 col-sm-5 pt-sm-5 mt-sm-3 mt-lg-3 my-2 my-lg-0">
-
-            <input class="float-sm-left col-12 col-sm-7 form-control" type="search" placeholder="Pesquisar:" aria-label="Search">
-            <button class="float-right col-3 col-sm-4 btn btn-primary my-2 my-sm-0 ml-sm-1" type="submit">Pesquisar</button>
-        
-        </form>
-    </div>
-
-
+    <div class="row">            
+            <div class="col-12 divHeaderTopoSite">
+                <p class="nameHeaderTopoSite">Visualizar Usuários</p>
+            </div>  
+    </div> 
+      
+    
+    <div>
         <!-- formulário de login -->
-        <main class="mt-5 mt-lg-4 col-12 col-sm-12 col-md-12 col-lg-10"> 
+        <main class="mt-5 mt-lg-4 col-12 col-sm-12 col-md-12 col-lg-12"> 
+
+        <div class="row" style="margin: 0px">
+                <div class="containerPesquisaHome ml-auto">
+                    <div class="col-12">
+                        <input type="text" class="inputPesquisaHome" placeholder="Digite a placa...">
+                        <button class="botaoPesquisaHome">Pesquisar</button>
+                    </div>
+                </div>                
+            </div>  
             <div class="TabelaUsuario">
                 <table class="table table-bordered ml-3 ml-md-3 ml-lg-3 mt-lg-5 col-12 col-lg-12">
 

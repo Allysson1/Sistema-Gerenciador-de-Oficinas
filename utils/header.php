@@ -59,7 +59,7 @@
           </li>
           
           <li class="nav-item mt-5 mb-5 pb-5 mb-sm-0 pb-sm-0">
-            <a class="nav-link h4" href="logout.php">Sair</a>
+            <a class="nav-link h4" href="../utils/logout.php">Sair</a>
           </li>
         </ul>
       </div>
@@ -113,7 +113,7 @@
         </li>
         
         <li class="nav-item mt-4 mb-5 pb-5">
-          <a class="nav-link h4" href="utils/logout.php">Sair</a>
+          <a class="nav-link h4" href="../utils/logout.php">Sair</a>
         </li>
     </ul>
   </nav>

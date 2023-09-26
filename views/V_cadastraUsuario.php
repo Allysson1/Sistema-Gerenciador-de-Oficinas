@@ -29,7 +29,7 @@ include('../utils/protect.php');
 
     <!-- nesta div temos o col para fazer a divisão da tela entre o conteúdo principal e o aside no header.php -->
         <div class="float-lg-right col-lg-9 container-fluid row justify-content-center">    <!-- formulário de login -->
-            <main class="mt-5 mt-lg-4 col-12 col-sm-12 col-md-12 col-lg-10"> 
+            <main class="mt-5 mt-lg-4 col-12 col-sm-12 col-md-12 col-lg-12"> 
 
                 <?php include ('../utils/message.php'); ?>
 
