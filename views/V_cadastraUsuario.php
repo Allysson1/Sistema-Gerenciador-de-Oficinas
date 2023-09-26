@@ -21,13 +21,18 @@ include('../utils/protect.php');
    
     <?php include '../utils/header.php'; ?> 
 
+    <div class="row">
+            <div class="col-12 divHeaderTopoSite">
+                <p class="nameHeaderTopoSite">Cadastro de Usuários</p>
+            </div>
+        </div> 
+
     <!-- nesta div temos o col para fazer a divisão da tela entre o conteúdo principal e o aside no header.php -->
         <div class="float-lg-right col-lg-9 container-fluid row justify-content-center">    <!-- formulário de login -->
             <main class="mt-5 mt-lg-4 col-12 col-sm-12 col-md-12 col-lg-10"> 
 
                 <?php include ('../utils/message.php'); ?>
 
-                <h4 class="col-12 m-3 pt-5 pb-4 border-bottom">Cadastro de Usuários</h4>
 
                 <form action="../models/Code_Usuario.php" method="POST" class="ml-3 ml-md-3 ml-lg-3 col-12 col-lg-12">
                 

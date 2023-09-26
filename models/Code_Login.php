@@ -27,10 +27,11 @@ require '../utils/conexao.php';
             $query_run = $con->query($query) or die("falha na conexão do código SQL: " . $con->error); 
             
             // retorna a quantidade de linhas afetadas
-            $qunatidade = $query_run->num_rows;
+            $quantidade = $query_run->num_rows;
             
+            echo $quantidade;
 
-            if ($qunatidade == 1){
+            if ($quantidade >= 1){
 
                 $usuario = $query_run->fetch_assoc();
                 
