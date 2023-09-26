@@ -14,7 +14,7 @@
                     </button>
                 </div>
                 <div class="col-3 text-center">
-                    <img class="logoNav" src="images/Logo.svg" alt="imagem de um volante de carro simples">
+                    <img class="logoNav" src="../images/Logo.svg" alt="imagem de um volante de carro simples">
                 </div>
             </div>
         </div>
@@ -74,7 +74,7 @@
   <nav>
 
       <div class="row pt-md-5 pt-lg-0 border-bottom">
-        <img class="col-6 mt-lg-3 mt-xl-3 mb-lg-4 logoNav" src="images/Logo.svg" alt="imagem de um volande de carro simples"> 
+        <img class="col-6 mt-lg-3 mt-xl-3 mb-lg-4 logoNav" src="../images/Logo.svg" alt="imagem de um volande de carro simples"> 
       </div>
 
       <ul class="navbar-nav">
