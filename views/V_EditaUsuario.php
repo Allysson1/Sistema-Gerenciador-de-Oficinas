@@ -20,17 +20,18 @@
 <body>    
     <?php include '../utils/header.php'; ?>
 
+    <div class="row">            
+            <div class="col-12 divHeaderTopoSite">
+                <p class="nameHeaderTopoSite">Edição de Usuários</p>
+            </div>  
+        </div> 
+
 
     <div class="float-lg-right col-lg-9 container-fluid row justify-content-center">
-
-
-
         <!-- formulário de login -->
-        <main class="mt-5 col-12 col-sm-12 col-md-12 col-lg-10"> 
+        <main class="mt-5 col-12 col-sm-12 col-md-12 col-lg-12"> 
 
             <?php include ('../utils/message.php'); ?>
-
-            <h4 class="col-12 m-3 pt-5 pb-4 pt-lg-3 border-bottom">Edição de Usuários</h4>
 
             <h4 class="col-12 m-3">Modifique os campos que deseja alterar:</h4>
 
