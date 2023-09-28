@@ -26,7 +26,7 @@
             <div class="row" style="margin: 0px">
                 <div class="containerPesquisaHome ml-auto">
                     <div class="col-12">
-                        <input type="text" class="inputPesquisaHome" placeholder="Digite a placa...">
+                        <input type="text" class="inputPesquisaHome" placeholder="Digite o código ou nome da placa...">
                         <button class="botaoPesquisaHome">Pesquisar</button>
                     </div>
                 </div>                
@@ -35,150 +35,224 @@
             <div class="row" style="margin: 0px">
                 <div class="col-sm-4">
                     <div class="cardHome">
-                        <p class="tituloHome">Placa do Carro:</p>
-                        <div class="placaHome">
-                            <span>SDD12E3</span>
-                        </div>
-                        <div class="todosItensCard">                        
-                            <div class="itemCard">
-                                <span>Nome do Cliente:</span>
-                                <span id="">Marcelo</span>
+
+                        <div class="todosItensCard">   
+                            <div class="text-center">
+                                 <img  src="../images/biela.png" class="img-fluid rounded mx-auto d-block" alt="...">
                             </div>
-                            <div class="itemCard">
-                                <span>Modelo:</span>
-                                <span id="">Civic</span>
+                            
+                            <div class="p-2 itemCard">
+                                <span>Nome:</span>
+                                <span id="">Biela</span>
                             </div>
-                            <div class="itemCard">
-                                <span>Prazo de Entrega:</span>
-                                <span id="">25/05/23</span>
+                            <div class="p-2 itemCard">
+                                <span>Quantidade:</span>
+                                <span id="">42 - Em estoque</span>
                             </div>
-                            <div class="itemCard">
-                                <span>Status:</span>
-                                <span id="">Em andamento</span>
+                            <div class="p-2 itemCard">
+                                <span>Marca:</span>
+                                <span id="">GM - Genuino</span>
                             </div>
-                            <button class="botaoVerMaisCard">Ver Mais...</button>
+                            <div class="p-2 itemCard">
+                                <span>Código:</span>
+                                <span id="">1452</span>
+                            </div>
+                            
+                            <div class="d-flex justify-content-sm-around justify-content-md-around justify-content-lg-around">
+                                <button type="button" class="btn btn-light btn-lg " >Ver mais</button>
+                        
+                                <button type="button" class="btn btn-primary btn-lg ">Alterar </button>
+                            </div>
+
+                            
                         </div>                        
-                    </div>                    
+                    </div>                      
                 </div>
 
                 <div class="col-sm-4">
                     <div class="cardHome">
-                        <p class="tituloHome">Placa do Carro:</p>
-                        <div class="placaHome">
-                            <span>SDD12E3</span>
-                        </div>
-                        <div class="todosItensCard">                        
-                            <div class="itemCard">
-                                <span>Nome do Cliente:</span>
-                                <span id="">Marcelo</span>
+
+                        <div class="todosItensCard">   
+                            <div class="text-center">
+                                 <img  src="../images/biela.png" class="img-fluid rounded mx-auto d-block" alt="...">
                             </div>
-                            <div class="itemCard">
-                                <span>Modelo:</span>
-                                <span id="">Civic</span>
+                            
+                            <div class="p-2 itemCard">
+                                <span>Nome:</span>
+                                <span id="">Biela</span>
                             </div>
-                            <div class="itemCard">
-                                <span>Prazo de Entrega:</span>
-                                <span id="">25/05/23</span>
+                            <div class="p-2 itemCard">
+                                <span>Quantidade:</span>
+                                <span id="">42 - Em estoque</span>
                             </div>
-                            <div class="itemCard">
-                                <span>Status:</span>
-                                <span id="">Em andamento</span>
+                            <div class="p-2 itemCard">
+                                <span>Marca:</span>
+                                <span id="">GM - Genuino</span>
                             </div>
-                            <button class="botaoVerMaisCard">Ver Mais...</button>
+                            <div class="p-2 itemCard">
+                                <span>Código:</span>
+                                <span id="">1452</span>
+                            </div>
+                            
+                            <div class="d-flex justify-content-sm-around justify-content-md-around justify-content-lg-around">
+                                <button type="button" class="btn btn-light btn-lg " >Ver mais</button>
+                        
+                                <button type="button" class="btn btn-primary btn-lg ">Alterar </button>
+                            </div>
+
+                            
                         </div>                        
-                    </div>                    
+                    </div>                      
                 </div>
 
-                <div class="col-sm-4">
+                                <div class="col-sm-4">
                     <div class="cardHome">
-                        <p class="tituloHome">Placa do Carro:</p>
-                        <div class="placaHome">
-                            <span>SDD12E3</span>
-                        </div>
-                        <div class="todosItensCard">                        
-                            <div class="itemCard">
-                                <span>Nome do Cliente:</span>
-                                <span id="">Marcelo</span>
+
+                        <div class="todosItensCard">   
+                            <div class="text-center">
+                                 <img  src="../images/biela.png" class="img-fluid rounded mx-auto d-block" alt="...">
                             </div>
-                            <div class="itemCard">
-                                <span>Modelo:</span>
-                                <span id="">Civic</span>
+                            
+                            <div class="p-2 itemCard">
+                                <span>Nome:</span>
+                                <span id="">Biela</span>
                             </div>
-                            <div class="itemCard">
-                                <span>Prazo de Entrega:</span>
-                                <span id="">25/05/23</span>
+                            <div class="p-2 itemCard">
+                                <span>Quantidade:</span>
+                                <span id="">42 - Em estoque</span>
                             </div>
-                            <div class="itemCard">
-                                <span>Status:</span>
-                                <span id="">Em andamento</span>
+                            <div class="p-2 itemCard">
+                                <span>Marca:</span>
+                                <span id="">GM - Genuino</span>
                             </div>
-                            <button class="botaoVerMaisCard">Ver Mais...</button>
+                            <div class="p-2 itemCard">
+                                <span>Código:</span>
+                                <span id="">1452</span>
+                            </div>
+                            
+                            <div class="d-flex justify-content-sm-around justify-content-md-around justify-content-lg-around">
+                                <button type="button" class="btn btn-light btn-lg " >Ver mais</button>
+                        
+                                <button type="button" class="btn btn-primary btn-lg ">Alterar </button>
+                            </div>
+
+                            
                         </div>                        
-                    </div>                    
+                    </div>                      
                 </div>
             </div>
-
             <div class="row" style="margin: 0px">
-                <div class="col-sm-4">
+                 <div class="col-sm-4">
                     <div class="cardHome">
-                        <p class="tituloHome">Placa do Carro:</p>
-                        <div class="placaHome">
-                            <span>SDD12E3</span>
-                        </div>
-                        <div class="todosItensCard">                        
-                            <div class="itemCard">
-                                <span>Nome do Cliente:</span>
-                                <span id="">Marcelo</span>
+
+                        <div class="todosItensCard">   
+                            <div class="text-center">
+                                 <img  src="../images/biela.png" class="img-fluid rounded mx-auto d-block" alt="...">
                             </div>
-                            <div class="itemCard">
-                                <span>Modelo:</span>
-                                <span id="">Civic</span>
+                            
+                            <div class="p-2 itemCard">
+                                <span>Nome:</span>
+                                <span id="">Biela</span>
                             </div>
-                            <div class="itemCard">
-                                <span>Prazo de Entrega:</span>
-                                <span id="">25/05/23</span>
+                            <div class="p-2 itemCard">
+                                <span>Quantidade:</span>
+                                <span id="">42 - Em estoque</span>
                             </div>
-                            <div class="itemCard">
-                                <span>Status:</span>
-                                <span id="">Em andamento</span>
+                            <div class="p-2 itemCard">
+                                <span>Marca:</span>
+                                <span id="">GM - Genuino</span>
                             </div>
-                            <button class="botaoVerMaisCard">Ver Mais...</button>
+                            <div class="p-2 itemCard">
+                                <span>Código:</span>
+                                <span id="">1452</span>
+                            </div>
+                            
+                            <div class="d-flex justify-content-sm-around justify-content-md-around justify-content-lg-around">
+                                <button type="button" class="btn btn-light btn-lg " >Ver mais</button>
+                        
+                                <button type="button" class="btn btn-primary btn-lg ">Alterar </button>
+                            </div>
+
+                            
                         </div>                        
-                    </div>                    
+                    </div>                      
                 </div>
 
                 <div class="col-sm-4">
                     <div class="cardHome">
-                        <p class="tituloHome">Placa do Carro:</p>
-                        <div class="placaHome">
-                            <span>SDD12E3</span>
-                        </div>
-                        <div class="todosItensCard">                        
-                            <div class="itemCard">
-                                <span>Nome do Cliente:</span>
-                                <span id="">Marcelo</span>
-                            </div>
-                            <div class="itemCard">
-                                <span>Modelo:</span>
-                                <span id="">Civic</span>
-                            </div>
-                            <div class="itemCard">
-                                <span>Prazo de Entrega:</span>
-                                <span id="">25/05/23</span>
-                            </div>
-                            <div class="itemCard">
-                                <span>Status:</span>
-                                <span id="">Em andamento</span>
-                            </div>
-                            <button class="botaoVerMaisCard">Ver Mais...</button>
-                        </div>                        
-                    </div>                    
-                </div>                
-            </div>
 
+                        <div class="todosItensCard">   
+                            <div class="text-center">
+                                 <img  src="../images/biela.png" class="img-fluid rounded mx-auto d-block" alt="...">
+                            </div>
+                            
+                            <div class="p-2 itemCard">
+                                <span>Nome:</span>
+                                <span id="">Biela</span>
+                            </div>
+                            <div class="p-2 itemCard">
+                                <span>Quantidade:</span>
+                                <span id="">42 - Em estoque</span>
+                            </div>
+                            <div class="p-2 itemCard">
+                                <span>Marca:</span>
+                                <span id="">GM - Genuino</span>
+                            </div>
+                            <div class="p-2 itemCard">
+                                <span>Código:</span>
+                                <span id="">1452</span>
+                            </div>
+                            
+                            <div class="d-flex justify-content-sm-around justify-content-md-around justify-content-lg-around">
+                                <button type="button" class="btn btn-light btn-lg " >Ver mais</button>
+                        
+                                <button type="button" class="btn btn-primary btn-lg ">Alterar </button>
+                            </div>
+
+                            
+                        </div>                        
+                    </div>                      
+                </div>
+
+                                <div class="col-sm-4">
+                    <div class="cardHome">
+
+                        <div class="todosItensCard">   
+                            <div class="text-center">
+                                 <img  src="../images/biela.png" class="img-fluid rounded mx-auto d-block" alt="...">
+                            </div>
+                            
+                            <div class="p-2 itemCard">
+                                <span>Nome:</span>
+                                <span id="">Biela</span>
+                            </div>
+                            <div class="p-2 itemCard">
+                                <span>Quantidade:</span>
+                                <span id="">42 - Em estoque</span>
+                            </div>
+                            <div class="p-2 itemCard">
+                                <span>Marca:</span>
+                                <span id="">GM - Genuino</span>
+                            </div>
+                            <div class="p-2 itemCard">
+                                <span>Código:</span>
+                                <span id="">1452</span>
+                            </div>
+                            
+                            <div class="d-flex justify-content-sm-around justify-content-md-around justify-content-lg-around">
+                                <button type="button" class="btn btn-light btn-lg " >Ver mais</button>
+                        
+                                <button type="button" class="btn btn-primary btn-lg ">Alterar </button>
+                            </div>
+
+                            
+                        </div>                        
+                    </div>                      
+                </div>
+            </div>
             <div class="row">
                 <div class="col-12 text-center" >
-                    <button class="botaoVerMaisServicos">Ver mais serviços...</button>
+                    <button class="btn btn-primary btn-lg p-3   ">Ver mais peças...</button>
                 </div>
             </div>
                 
