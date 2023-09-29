@@ -22,7 +22,6 @@
     <!-- formulário de login -->
     <main class="mt-5 col-12 col-sm-12 col-md-12 col-lg-12 row justify-content-center"> 
 
-        <?php include ('../utils/message.php'); ?>
 
         <form action="../models/Code_redefine_Senha.php" method="POST" class="ml-3 ml-md-3 ml-lg-3 col-12 col-lg-7 row formLogin border border-white rounded justify-content-center">
             <h1 class="p-5">Redefinição de Senha</h1>
@@ -33,7 +32,7 @@
             <input class="col-12 p-3 textBox textBoxLogin" name="senha" type="password" placeholder="Digite sua senha:"/>
             <label class="col-12 mt-5" for="password">Confirme a Nova Senha:</label>
             <input class="col-12 p-3 textBox textBoxLogin" name="confSenha" type="password" placeholder="Digite novamente sua senha:"/>
-
+            <?php include ('../utils/message.php'); ?>
             <button class="col-6 m-5 p-3 btn btn-primary" type="submit" name="Redefinir_Senha">Confirmar</button>
 
         </form>

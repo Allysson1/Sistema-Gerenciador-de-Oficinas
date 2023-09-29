@@ -1,10 +1,18 @@
 <?php
+
+    if(!isset($_SESSION)){
+        session_start();
+    }
+
     if(isset($_SESSION['message'])) :
 ?>
-
-    <div class="alert alert-warning alert-dismissible fade show" role="alert">
-        <strong>Ei!</strong> <?= $_SESSION['message']; ?>
-        <button type="button" class="btn btn-primary" data-bs-dismiss="alert" label="Close"></button>
+    <link rel="stylesheet" href="../css/style.css">
+    <div class=" d-flex justify-content-center col-12 pt-5">
+        <div class="alert fade show col-6" role="alert">
+            <div class="d-flex justify-content-center">
+                <?= $_SESSION['message']; ?>
+            </div>
+        </div>
     </div>
 
 <?php 

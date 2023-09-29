@@ -1,15 +1,21 @@
 <?php
-require '../utils/conexao.php';
-
+    session_start();
+    require '../utils/conexao.php';
 
     if (isset($_POST['usuario']) || isset($_POST['senha'])){
        
 
         if (strlen($_POST['usuario']) == 0){
-            echo "Usuario não informado";
+
+            $_SESSION['message'] = "Usuário não informado";
+            header("location: ../views/index.php");
+            exit(0);
+    
         }
         elseif (strlen($_POST['senha']) == 0){
-            echo "senha não informada"; 
+                $_SESSION['message'] = "Senha não informada";
+                header("location: ../views/index.php");
+                exit(0); 
         }
         else{
 
@@ -28,8 +34,6 @@ require '../utils/conexao.php';
             
             // retorna a quantidade de linhas afetadas
             $quantidade = $query_run->num_rows;
-            
-            echo $quantidade;
 
             if ($quantidade >= 1){
 
@@ -48,18 +52,12 @@ require '../utils/conexao.php';
                 header("location: ../views/V_cadastraUsuario.php");
             }
             else {
-                $_SESSION['message'] = "Funcionário não cadastrado";
-                
-                echo "usuário/senha incorreto ou inexistente";
-            
-                
+                $_SESSION['message'] = "usuário/senha incorreto ou inexistente";
+                header("location: ../views/index.php");
+                exit(0);
             }
             
         }
-
-
-       
-
 
     }
 

@@ -1,5 +1,6 @@
 <?php
-require '../utils/conexao.php';
+    session_start();
+    require '../utils/conexao.php';
 
 
     if (isset($_POST['usuario']) || isset($_POST['senha'])){
@@ -10,18 +11,25 @@ require '../utils/conexao.php';
        
 
         if (strlen($_POST['usuario']) == 0){
-            echo "Usuario não informado";
+            $_SESSION['message'] = "Usuário não informado";
+            header("location: ../views/V_redefineSenha.php");
+            exit(0);
         }
         elseif (strlen($_POST['senha']) == 0){
-            echo "senha não informada"; 
+            $_SESSION['message'] = "senha não informada";
+            header("location: ../views/V_redefineSenha.php");
+            exit(0); 
         }
 
         elseif (strlen($_POST['confSenha']) == 0){
-            echo "confirmação senha não informada"; 
+            $_SESSION['message'] = "confirmação de senha não informada";
+            header("location: ../views/V_redefineSenha.php");
+            exit(0);  
+
         }
 
         elseif ($Confsenha !== $senha){
-            $_SESSION['message'] = 'A senha nova senha e a senha na confirmação são diferentes';
+            $_SESSION['message'] = 'A senha nova e a confirmação de senha são diferentes';
             header("location: ../views/V_redefineSenha.php");
             exit(0); 
         }
@@ -32,9 +40,19 @@ require '../utils/conexao.php';
                       WHERE usuario = '$usuario'";
 
             $query_run = $con->query($query) or die("falha na conexão do código SQL: " . $con->error); 
+           
+            $quantidade = $query_run->num_rows;
+
+            if ($quantidade >= 2){
 
                 header("location: ../views/index.php");
+            }
             
+            else {
+                $_SESSION['message'] = 'usuário não cadastrado';
+                header("location: ../views/V_redefineSenha.php");
+                exit(0); 
+            }
         }  
 
 

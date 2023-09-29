@@ -8,6 +8,11 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
+button{
+  background-color: #007fff;
+}
+
+
 input {
   background-color: #000;
   color: #fff;
@@ -104,9 +109,10 @@ a:hover {
   margin: 35px;
 }
 
-.botaoLogin:hover {
+.botaoLogin:hover{
   background-color: #0070e0;
 }
+
 
 /* tela de cadastro de Usuarios/funcionarios - Allysson */
 
@@ -133,11 +139,6 @@ a:hover {
   .TelaLogin {
     background-image: url("../images/background-tablet.png");
   }
-
-  .TICar {
-    font-family: monospace;
-    font-size: 4rem;
-  }
 }
 
 /* Large devices (desktops, 992px and up) - Allysson*/
@@ -147,12 +148,6 @@ a:hover {
   .TelaLogin {
     background-image: url("../images/background-desktop.png");
   }
-
-  .TICar {
-    font-family: monospace;
-    font-size: 4rem;
-  }
-
   /* tela de visualiza usuários - Allysson*/
   .TabelaUsuario {
     overflow-x: hidden;
@@ -166,12 +161,7 @@ a:hover {
     background-image: url("../images/background-desktop.png");
     background-size: repeat-y;
   }
-
-  .TICar {
-    font-family: monospace;
-    font-size: 5rem;
-  }
-
+  
   /* tela de visualiza usuários - Allysson*/
   .TabelaUsuario {
     overflow-x: hidden;

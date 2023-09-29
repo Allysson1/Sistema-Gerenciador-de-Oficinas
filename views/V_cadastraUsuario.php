@@ -1,7 +1,6 @@
 <?php
-include('../utils/protect.php');
+    include('../utils/protect.php');
 ?>
-
 <!DOCTYPE html>
 <html lang="pt-BR">
     <head>
@@ -33,42 +32,40 @@ include('../utils/protect.php');
 
                 <?php include ('../utils/message.php'); ?>
 
-
                 <form action="../models/Code_Usuario.php" method="POST" class="ml-3 ml-md-3 ml-lg-3 col-12 col-lg-12">
-                
 
                     <div class=" col-12 col-md-6 float-md-left">
                         <label class="col-12 col-md-12 mt-5 mt-md-5" 
-                    for="text">Nome do Funcionário:</label>
-                    <input class="col-12 col-md-12  mt-md-1 p-3 textBox" 
-                    type="text" name="nomeFuncionario" placeholder="Digite seu nome completo:" autofocus="true"/>
+                        for="text">Nome do Funcionário:</label>
+                        <input class="col-12 col-md-12  mt-md-1 p-3 textBox" 
+                        type="text" name="nomeFuncionario" placeholder="Digite seu nome completo:" autofocus="true"/>
                     </div>
                     
                     <div class=" col-12 col-md-6 float-md-left">
                         <label class="col-12 col-md-12  mt-5 mt-md-5" 
-                    for="text">Usuário:</label>
-                    <input class="col-12 col-md-12 mt-md-1 p-3 textBox" 
-                    type="text" name="usuario" placeholder="Digite seu nome de Usuário:"/>
+                        for="text">Usuário:</label>
+                        <input class="col-12 col-md-12 mt-md-1 p-3 textBox" 
+                        type="text" name="usuario" placeholder="Digite seu nome de Usuário:"/>
                     </div>
 
 
                     <div class=" col-12 col-md-6 float-md-left">
                         <label class="col-12 col-md-12 mt-5 mt-md-5" 
-                    for="password">Senha:</label>
-                    <input class="col-12 col-md-12 mt-md-1 p-3 textBox" 
-                    type="password" name="senha" placeholder="Digite sua Senha:"/>
+                        for="password">Senha:</label>
+                        <input class="col-12 col-md-12 mt-md-1 p-3 textBox" 
+                        type="password" name="senha" placeholder="Digite sua Senha:"/>
                     </div>
 
                     <div class=" col-12 col-md-6 float-md-left">
                         <label class="col-12 col-md-12  mt-5 mt-md-5" 
-                    for="email">E-mail:</label>
-                    <input class="col-12 col-md-12 mt-md-1 p-3 textBox" 
-                    type="email" name="email" placeholder="Digite seu E-mail:"/>
+                        for="email">E-mail:</label>
+                        <input class="col-12 col-md-12 mt-md-1 p-3 textBox" 
+                        type="email" name="email" placeholder="Digite seu E-mail:"/>
                     </div>
 
 
                     <div class="float-right col-5 col-md-3 mt-5 mt-md-5">
-                    <button class="col-12 ml-1 p-3 btn btn-primary" type="submit" name="save_funcionario">Cadastrar</button>      
+                        <button class="col-12 ml-1 p-3 btn btn-primary" type="submit" name="save_funcionario">Cadastrar</button>      
                     </div>
 
                 </form>
