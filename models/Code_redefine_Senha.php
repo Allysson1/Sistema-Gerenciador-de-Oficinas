@@ -39,20 +39,11 @@
             $query = "UPDATE usuario set senha = md5('$senha') 
                       WHERE usuario = '$usuario'";
 
-            $query_run = $con->query($query) or die("falha na conexão do código SQL: " . $con->error); 
-           
-            $quantidade = $query_run->num_rows;
-
-            if ($quantidade >= 2){
-
-                header("location: ../views/index.php");
-            }
+            $query_run = $con->query($query) or die("falha na conexão do código SQL: " . $con->error);  
             
-            else {
-                $_SESSION['message'] = 'usuário não cadastrado';
-                header("location: ../views/V_redefineSenha.php");
+                $_SESSION['message'] = 'Senha alterada com sucesso';
+                header("location: ../views/index.php");
                 exit(0); 
-            }
         }  
 
 
