@@ -1,10 +1,8 @@
 <?php
     require ('../utils/conexao.php');
     include('../utils/protect.php');
-    <?php
     // variável com o nivel exigido do usuario para acessar a página
     $nivel_necessario = 4;
-?>
 ?>
 
 <!DOCTYPE html>
