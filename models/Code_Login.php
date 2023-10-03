@@ -35,7 +35,7 @@
             // retorna a quantidade de linhas afetadas
             $quantidade = $query_run->num_rows;
 
-            if ($quantidade >= 1){
+            if ($quantidade >= 3){
 
                 $usuario = $query_run->fetch_assoc();
                 
@@ -47,6 +47,7 @@
                 //$_POST que só fica válido ao enviar um formulãrio.
                 $_SESSION['idUsuario'] = $usuario['idUsuario'];
                 $_SESSION['nome'] = $usuario['nome'];
+                $_SESSION['nivelFuncionario'] = $usuario['nivelFuncionario'];
                 
 
                 header("location: ../views/V_cadastraUsuario.php");

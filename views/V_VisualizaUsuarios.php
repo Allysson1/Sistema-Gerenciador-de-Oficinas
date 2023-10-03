@@ -1,5 +1,10 @@
 <?php
-    require '../utils/conexao.php';
+    require ('../utils/conexao.php');
+    include('../utils/protect.php');
+    <?php
+    // variável com o nivel exigido do usuario para acessar a página
+    $nivel_necessario = 4;
+?>
 ?>
 
 <!DOCTYPE html>
@@ -15,15 +20,10 @@
         <title>Visualizar Funcionários - SGO</title>
         <link rel="shortcut icon" type="imagex/png" href="../images/icon.volante.svg">
     </head>
-
     
-
     <body>
 
-        <?php include '../utils/header.php'; ?>
-
-
-        <?php include ('../utils/message.php'); ?>
+        <?php include '../utils/header.php'; ?>  
 
 
         <div class="row">            
@@ -95,6 +95,8 @@
                         </tbody>
                     </table>
                 </div>
+
+                <?php include ('../utils/message.php'); ?>
             </main>
         </div>
 
