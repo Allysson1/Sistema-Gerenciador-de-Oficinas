@@ -28,7 +28,7 @@
         <h5 class="text-white mt-2 h4">Serviços</h5>
 
           <li class="nav-item ml-5">
-            <a class="nav-link <?php if($page == 'cadastroUsuarios.php'):echo "disabled"; endif; ?>" href="../views/cadastroServico.php">Cadastro de Serviços</a>
+            <a class="nav-link <?php if($page == 'cadastroServico.php'):echo "disabled"; endif; ?>" href="../views/cadastroServico.php">Cadastro de Serviços</a>
           </li>
           <li class="nav-item ml-5">
             <a class="nav-link <?php if($page == 'home.php'):echo "disabled"; endif; ?>" href="../views/home.php">Consulta de Serviços - Home</a>
