@@ -404,3 +404,15 @@ a:hover {
 
 /* Tela consulta de peças - Julio */
 
+
+/* Tela Alterar peças - Julio */
+.divHeaderAlterar {
+  padding: 30px 0 12px 0;
+  width: 100%;
+  border-bottom: 2px solid #000000;
+}
+
+.nameHeaderAlterar {
+  padding-left: 30px;
+  font-size: 30px;
+}
