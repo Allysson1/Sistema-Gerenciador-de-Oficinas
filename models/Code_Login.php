@@ -35,7 +35,7 @@
             // retorna a quantidade de linhas afetadas
             $quantidade = $query_run->num_rows;
 
-            if ($quantidade >= 3){
+            if ($quantidade >= 1){
 
                 $usuario = $query_run->fetch_assoc();
                 
@@ -50,10 +50,16 @@
                 $_SESSION['nivelFuncionario'] = $usuario['nivelFuncionario'];
                 
 
+                // var_dump($quantidade);
+                // var_dump($_SESSION['idUsuario']);
+                // var_dump($_SESSION['nome']);
+                // var_dump($_SESSION['nivelFuncionario']);
+
+
                 header("location: ../views/V_cadastraUsuario.php");
             }
             else {
-                $_SESSION['message'] = "usuário/senha incorreto ou inexistente";
+                $_SESSION['message'] = "usuário/senha incorretos ou inexistentes";
                 header("location: ../views/index.php");
                 exit(0);
             }

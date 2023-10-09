@@ -3,6 +3,12 @@
     include('../utils/protect.php');
     // variável com o nivel exigido do usuario para acessar a página
     $nivel_necessario = 4;
+
+    if ($_SESSION['nivelFuncionario'] < $nivel_necessario){
+        header("location: ../views/home.php");
+        $_SESSION['message'] = "Você não tem acesso a está página";
+        exit;
+    }
 ?>
 
 <!DOCTYPE html>
@@ -38,7 +44,7 @@
             <div class="row" style="margin: 0px">
                     <div class="containerPesquisaHome ml-auto">
                         <div class="col-12">
-                            <input type="text" class="inputPesquisaHome" placeholder="Digite a placa...">
+                            <input type="text" class="inputPesquisaHome" placeholder="...">
                             <button class="botaoPesquisaHome">Pesquisar</button>
                         </div>
                     </div>                
@@ -51,6 +57,7 @@
                             <th class="">Nome do Usuário</th>
                             <th class="">Usuário</th>
                             <th class="">E-mail</th>
+                            <th>Nível de Acesso</th>
                             <th class="">Ações</th>
                         </thead>
 
@@ -70,11 +77,12 @@
                                             <td class=""><?= $funcionario['nome'];?></td>
                                             <td class=""><?= $funcionario['usuario'];?></td>
                                             <td class=""><?= $funcionario['email'];?></td>
+                                            <td><?= $funcionario['nivelFuncionario'];?></td>
                                             <td class="">
                                                 <form action="../models/Code_Usuario.php" method="POST" class="d-inline">
 
                                                     <a href="../views/V_EditaUsuario.php?idUsuario=<?= $funcionario['idUsuario'];?>" 
-                                                    class="m-1 btn btn-info btn-sm">Visualizar</a>
+                                                    class="m-1 btn btn-sm btn_visualizar">Visualizar</a>
                                                     
                                                     <button type="submit" name="delete_funcionario" 
                                                     value="<?= $funcionario['idUsuario'];?>" 

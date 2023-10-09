@@ -8,6 +8,7 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
+/* adicionado por Allysson */
 button{
   background-color: #007fff;
 }
@@ -39,7 +40,6 @@ a:hover {
 .asideNav {
   background-color: #000;
   height: 100%;
-  /*position: fixed;*/
 }
 
 .logoNav {
@@ -126,6 +126,12 @@ a:hover {
   overflow-x: scroll;
   text-align: center;
 }
+
+.btn_visualizar{
+  background-color: #007fff;
+  color: #fff;
+}
+
 
 /* Small devices (landscape phones, 576px and up) - Allysson */
 /* @media (min-width: 576px) and (max-width: 767.98px) {

@@ -10,6 +10,8 @@ if (isset($_POST['save_funcionario'])){
     $usuario = mysqli_real_escape_string($con, $_POST['usuario']);
     $senha = mysqli_real_escape_string($con, $_POST['senha']);
     $email = mysqli_real_escape_string($con, $_POST['email']);
+    $nivelFuncionario = mysqli_real_escape_string($con, $_POST['nivelFuncionario']);
+
 
     if ($nome == ""){ 
         $_SESSION['message'] = "Nome do funcionário não inserido!";
@@ -22,7 +24,7 @@ if (isset($_POST['save_funcionario'])){
         exit(0);
     }
     elseif ($senha == ""){
-        $_SESSION['message'] = "Senha do funcionário não inserido!";
+        $_SESSION['message'] = "Senha do funcionário não inserida!";
         header("location: ../views/V_cadastraUsuario.php");
         exit(0);
     }
@@ -31,9 +33,15 @@ if (isset($_POST['save_funcionario'])){
         header("location: ../views/V_cadastraUsuario.php");
         exit(0);
     }
+    elseif ($nivelFuncionario == ""){
+        $_SESSION['message'] = "Nivel de acesso do funcionário não inserido!";
+        header("location: ../views/V_cadastraUsuario.php");
+        exit(0);
+    }
+
     else{
-        $query = "INSERT INTO usuario (Nome, Usuario, Senha, Email) 
-                VALUES ('$nome', '$usuario', md5('$senha'), '$email')";
+        $query = "INSERT INTO usuario (Nome, Usuario, Senha, Email, nivelFuncionario) 
+                VALUES ('$nome', '$usuario', md5('$senha'), '$email', '$nivelFuncionario')";
     
         $query_run = $con->query($query) or die ("Falha na conexao");
 
@@ -83,15 +91,32 @@ if (isset($_POST['update_funcionario'])){
     $usuario = mysqli_real_escape_string($con, $_POST['usuario']);
     $senha = mysqli_real_escape_string($con, $_POST['senha']);
     $Confsenha = mysqli_real_escape_string($con, $_POST['confSenha']);
+    $email = mysqli_real_escape_string($con, $_POST['email']);
+    $nivelFuncionario = mysqli_real_escape_string($con, $_POST['nivelFuncionario']);
+
+    var_dump( $nivelFuncionario);
+
+    if ($senha == ""){
+        $_SESSION['message'] = "Senha do funcionário não inserida!";
+        header("location: ../views/V_EditaUsuario.php?idUsuario=$funcionario_id");
+        exit(0);
+    }
+
+    elseif ($Confsenha == ""){
+        $_SESSION['message'] = "Confirmação de Senha do funcionário não inserida!";
+        header("location: ../views/V_EditaUsuario.php?idUsuario=$funcionario_id");
+        exit(0);
+    }
 
     if ($Confsenha !== $senha){
         $_SESSION['message'] = 'A senha nova senha e a senha redigitada são diferentes';
         header("location: ../views/V_EditaUsuario.php?idUsuario=$funcionario_id");
         exit(0); 
     }
+
     else{
 
-        $query = "UPDATE usuario SET Nome='$nome', Usuario = '$usuario', Senha = md5('$senha')
+        $query = "UPDATE usuario SET Nome='$nome', Usuario = '$usuario', Senha = md5('$senha'), email = ('$email'), nivelFuncionario = ('$nivelFuncionario')
         WHERE idUsuario = '$funcionario_id' ";
         $query_run = mysqli_query($con, $query);
 

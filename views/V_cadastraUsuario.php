@@ -73,9 +73,18 @@
                         type="email" name="email" placeholder="Digite seu E-mail:"/>
                     </div>
 
+                    <div class="pt-5 col-12 col-md-6 float-md-left">
+                        <select class="custom-select" name="nivelFuncionario" id="inputGroupSelect01">
+                            <option selected>Escolha o nível do usuário</option>
+                            <option value="1">1 - Consulta de Serviços</option>
+                            <option value="2">2 - Manipulção de Serviços</option>
+                            <option value="3">3 - Manipulção de Peças</option>
+                            <option value="4">4 - Acesso total ao Sistema</option>
+                        </select>
+                    </div>
 
-                    <div class="float-right col-5 col-md-3 mt-5 mt-md-5">
-                        <button class="col-12 ml-1 p-3 btn btn-primary" type="submit" name="save_funcionario">Cadastrar</button>      
+                    <div class="float-right col-5 col-md-12 mt-5 mt-md-5">
+                        <button class="float-md-right col-12 col-md-3 ml-1 p-3 btn btn-primary" type="submit" name="save_funcionario">Cadastrar</button>      
                     </div>
 
                 </form>

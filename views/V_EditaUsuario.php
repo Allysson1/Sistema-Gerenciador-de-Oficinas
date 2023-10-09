@@ -1,8 +1,14 @@
 <?php
-    session_start();
-    require '../utils/conexao.php';
+    require ('../utils/conexao.php');
+    include('../utils/protect.php');
     // variável com o nivel exigido do usuario para acessar a página
     $nivel_necessario = 4;
+
+    if ($_SESSION['nivelFuncionario'] < $nivel_necessario){
+        header("location: ../views/home.php");
+        $_SESSION['message'] = "Você não tem acesso a está página";
+        exit;
+    }
 ?>
 
 <!DOCTYPE html>
@@ -92,6 +98,16 @@
                             <input class="col-12 col-md-6 mt-md-1 p-3 textBox" 
                             type="password" name="confSenha"/>
                             </div>
+
+                            <div class="pt-5 col-12 col-md-6 float-md-left">
+                        <select class="custom-select" name="nivelFuncionario" id="inputGroupSelect01">
+                            <option selected><?= $funcionario['nivelFuncionario'];?></option>
+                            <option value="1">1 - Consulta de Serviços</option>
+                            <option value="2">2 - Manipulção de Serviços</option>
+                            <option value="3">3 - Manipulção de Peças</option>
+                            <option value="4">4 - Acesso total ao Sistema</option>
+                        </select>
+                    </div>
 
 
                             <div class="float-right col-5 col-md-3 mt-5 mb-5 mt-md-5">
