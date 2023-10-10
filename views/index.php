@@ -20,8 +20,8 @@
 
             <form action="../models/Code_Login.php" method="POST" class="ml-3 ml-md-3 ml-lg-3 col-12 col-lg-7 row formLogin border border-white rounded justify-content-center">
                 <h1 class="p-5">Login</h1>
-                <label class="col-12" for="text">Usuário:</label>
-                <input class="col-12 p-3 textBoxLogin" name="usuario" type="text" placeholder="Digite seu usuário:" autofocus="true"/>
+                <label class="col-12" for="text">E-mail:</label>
+                <input class="col-12 p-3 textBoxLogin" name="email" type="text" placeholder="Digite seu E-email:" autofocus="true"/>
                 <label class="col-12 mt-5" for="password">Senha:</label>
                 <input class="col-12 p-3 textBoxLogin" name="senha" type="password" placeholder="Digite sua senha:"/>
                 <a class="col-12 p-2" href="../views/V_redefineSenha.php">Esqueci minha senha</a>
