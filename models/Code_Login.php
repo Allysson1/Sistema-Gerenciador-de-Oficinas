@@ -2,12 +2,12 @@
     session_start();
     require '../utils/conexao.php';
 
-    if (isset($_POST['usuario']) || isset($_POST['senha'])){
+    if (isset($_POST['email']) || isset($_POST['senha'])){
        
 
-        if (strlen($_POST['usuario']) == 0){
+        if (strlen($_POST['email']) == 0){
 
-            $_SESSION['message'] = "Usuário não informado";
+            $_SESSION['message'] = "E-mail não informado";
             header("location: ../views/index.php");
             exit(0);
     
@@ -21,12 +21,12 @@
 
             // o comando abaixo limpa os dados inseridos pelo usuário como forma de segurança
             // real_escape_string limpa os dados
-            $usuario = $con->real_escape_string($_POST['usuario']);
+            $email = $con->real_escape_string($_POST['email']);
             $senha = $con->real_escape_string($_POST['senha']);
             
 
             $query = "SELECT * FROM usuario 
-                      WHERE usuario = '$usuario' 
+                      WHERE email = '$email' 
                       AND senha = md5('$senha')  
                       AND status = ''" ;
 
