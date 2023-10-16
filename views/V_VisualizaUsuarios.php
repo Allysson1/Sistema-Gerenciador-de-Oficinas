@@ -4,11 +4,11 @@
     // variável com o nivel exigido do usuario para acessar a página
     $nivel_necessario = 4;
 
-    if ($_SESSION['nivelFuncionario'] < $nivel_necessario){
-        header("location: ../views/home.php");
-        $_SESSION['message'] = "Você não tem acesso a está página";
-        exit;
-    }
+    // if ($_SESSION['nivelFuncionario'] < $nivel_necessario){
+    //     header("location: ../views/home.php");
+    //     $_SESSION['message'] = "Você não tem acesso a está página";
+    //     exit;
+    // }
 ?>
 
 <!DOCTYPE html>
