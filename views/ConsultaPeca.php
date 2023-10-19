@@ -293,7 +293,7 @@
                     <div class="modal-dialog">
                         <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="ModalAlterarLabel">Modal title</h5>
+                            <h3 class="modal-title" id="ModalAlterarLabel">Alterar dados da peça</h3>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                             </button>
@@ -307,11 +307,11 @@
                                     <div class="col-12" style="display: flex; margin-bottom: 30px; margin-top: 45px">
                                         <div class="col-6">
                                             <label for="username">Código da Peça:</label>
-                                            <input type="text" name="username" class="form-control campoDigitar">
+                                            <input type="text" name="username" class="form-control p-2 p-2 campoDigitar">
                                         </div>
                                         <div class="col-6">
                                             <label for="username">Nome da Peça:</label>
-                                            <input type="text" name="username" class="form-control campoDigitar">
+                                            <input type="text" name="username" class="form-control p-2 campoDigitar">
                                         </div>
                                          
                                     </div>
@@ -319,70 +319,66 @@
                                     <div class="col-12" style="display: flex; margin-bottom: 30px;">
                                         <div class="col-6">
                                             <label for="username">Marca:</label>
-                                            <input type="text" name="username" class="form-control campoDigitar">
+                                            <input type="text" name="username" class="form-control p-2 campoDigitar">
                                         </div>
                                         <div class="col-6">
                                             <label for="username">Quantidade:</label>
-                                            <input type="text" name="username" class="form-control campoDigitar">
+                                            <input type="text" name="username" class="form-control p-2 campoDigitar">
                                         </div>                   
                                     </div>
                     
                                     <div class="col-12" style="display: flex; margin-bottom: 30px;">
                                         <div class="col-6">
                                             <label for="username">CNPJ do Fornecedor:</label>
-                                            <input type="text" name="username" class="form-control campoDigitar">
+                                            <input type="text" name="username" class="form-control p-2 campoDigitar">
                                         </div>
 
                                         <div class="col-6">
                                             <label for="username">Nome do Fornecedor:</label>
-                                            <input type="text" name="username" class="form-control campoDigitar">
+                                            <input type="text" name="username" class="form-control p-2 campoDigitar">
                                         </div>
                                     </div>
 
                                     <div class="col-12" style="display: flex; margin-bottom: 30px;">
                                         <div class="col-6">
                                             <label for="username">Contato do Fornecedor:</label>
-                                            <input type="text" name="username" class="form-control campoDigitar">
+                                            <input type="text" name="username" class="form-control p-2 campoDigitar">
                                         </div>
 
                                         <div class="col-6">
                                             <label for="username">Data do Pedido:</label>
-                                            <input type="text" name="username" class="form-control campoDigitar">
+                                            <input type="text" name="username" class="form-control p-2 campoDigitar">
                                         </div>
                                     </div>
                     
                                     <div class="col-12" style="display: flex; margin-bottom: 30px;">
                                         <div class="col-6">
                                             <label for="username">Data do Recebicemento:</label>
-                                            <input type="text" name="username" class="form-control campoDigitar">
+                                            <input type="text" name="username" class="form-control p-2 campoDigitar">
                                         </div>
                                         <div class="col-6">
                                             <label for="username">Adicione imagens da peça:</label>
-                                            <input type="text" name="username" class="form-control campoDigitar">
+                                            <input type="text" name="username" class="form-control p-2 campoDigitar">
                                         </div>                   
                                     </div>
 
                                     <div class="col-12" style="display: flex; margin-bottom: 20px;">
                                             <div class="col-12">
                                                 <label for="username">Descrição:</label>
-                                                <textarea class="campoObservacoes" name="observacoes" rows="6" cols="50"></textarea>
+                                                <textarea class="p-2 campoObservacoes" name="observacoes" rows="6" cols="50"></textarea>
                                             </div>                  
                                     </div>  
 
-                                        <div class="col-12 text-right">
+                                    <div class="col-12 text-right">
                                             <button type="button" class="botaoOrdem">
                                              Salvar Alterações
                                             </button>
-                                        </div>                    
+                                    </div>                    
                                 </div>
                 
                                 </form>
                             </section>
 
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Save changes</button>
                         </div>
                         </div>
                     </div>
