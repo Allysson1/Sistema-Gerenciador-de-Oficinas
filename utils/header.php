@@ -94,11 +94,11 @@
         </li>
         <li class="nav-item ml-4">
           <a class="nav-link <?php if($page == 'V_VisualizaUsuarios.php'):echo "disabled"; endif; ?>" href="V_VisualizaUsuarios.php">Consulta de Usuários</a>
-        </li>
+        </li> 
 
         <h5 class="text-white mt-5 h4">Peças</h5>
         <li class="nav-item ml-4">
-          <a class="nav-link <?php if($page == '#'):echo "disabled"; endif; ?>" href="#">Cadastro de Peças</a>
+          <a class="nav-link <?php if($page == 'cadastroPeca.php'):echo "disabled"; endif; ?>" href="cadastroPeca.php">Cadastro de Peças</a>
         </li>
         <li class="nav-item ml-4">
           <a class="nav-link <?php if($page == 'ConsultaPeca.php'):echo "disabled"; endif; ?>" href="ConsultaPeca.php">Consulta de Peças</a>
