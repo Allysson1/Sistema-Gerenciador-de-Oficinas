@@ -342,23 +342,28 @@
                                     <div class="col-12" style="display: flex; margin-bottom: 30px;">
                                         <div class="col-6">
                                             <label for="username">Contato do Fornecedor:</label>
-                                            <input type="text" name="username" class="form-control p-2 campoDigitar">
+                                            <input type="text" name="username" class="form-control p-2 campoDigitar" required placeholder="(xx) xxxxx-xxxx">
                                         </div>
 
                                         <div class="col-6">
                                             <label for="username">Data do Pedido:</label>
-                                            <input type="text" name="username" class="form-control p-2 campoDigitar">
+                                            <input type="date" name="username" class="form-control p-2 campoDigitar">
                                         </div>
                                     </div>
                     
                                     <div class="col-12" style="display: flex; margin-bottom: 30px;">
                                         <div class="col-6">
                                             <label for="username">Data do Recebicemento:</label>
-                                            <input type="text" name="username" class="form-control p-2 campoDigitar">
+                                            <input type="date" name="username" class="form-control p-2 campoDigitar">
                                         </div>
                                         <div class="col-6">
                                             <label for="username">Adicione imagens da peça:</label>
-                                            <input type="text" name="username" class="form-control p-2 campoDigitar">
+                                            <div class="input-group">
+
+                                                <input type="file" class="form-control" style = "border: none;" accept="image/*">
+                                                <button class="btn btn-outline-secondary excluirFoto, border-0" type ="reset">X</button>
+                                            
+                                            </div>
                                         </div>                   
                                     </div>
 

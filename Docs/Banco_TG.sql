@@ -10,4 +10,15 @@ nivelFuncionario int not null
 
 select * from usuario;
 
-
+create table pecas (
+	idPeca int not null auto_increment Primary key,
+	NomePeca varchar(100) not null,
+	MarcaPeca varchar(6)not null,
+    QtdPeca int not null ,
+    CnpjFornecedor bigint not null,
+    NomeForcecedor varchar(100) not null,
+    TelFonecedor varchar(30) not null,
+    DataPedido date not null,
+    DataRecebimento date not null,
+	DescricaoPeca varchar(200) not null
+);
