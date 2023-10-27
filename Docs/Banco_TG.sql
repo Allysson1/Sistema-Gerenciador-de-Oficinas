@@ -8,17 +8,27 @@ email varchar(140) not null,
 nivelFuncionario int not null
 );
 
-select * from usuario;
-
 create table pecas (
 	idPeca int not null auto_increment Primary key,
 	NomePeca varchar(100) not null,
 	MarcaPeca varchar(6)not null,
     QtdPeca int not null ,
-    CnpjFornecedor bigint not null,
-    NomeForcecedor varchar(100) not null,
-    TelFonecedor varchar(30) not null,
     DataPedido date not null,
     DataRecebimento date not null,
-	DescricaoPeca varchar(200) not null
+	DescricaoPeca varchar(200) not null,
+	CnpjFornecedor bigint not null,
+    Nome varchar (100) null,
+	Path varchar(100) null,
+	data_upload datetime default current_timestamp
 );
+
+create table fornecedores (
+	CnpjFornecedor bigint not null Primary key,
+    NomeFornecedor varchar(200) not null,
+	TelFornecedor bigint not null
+);
+
+
+ALTER TABLE pecas ADD FOREIGN KEY (CnpjFornecedor)
+REFERENCES fornecedores (CnpjFornecedor);
+
