@@ -32,16 +32,16 @@
                     <div class="col-12" style="display: flex; margin-bottom: 30px; margin-top: 45px">
                         <!-- <div class="col-6">
                             <label for="codpeca">Código Peça:</label>
-                            <input type="text" name="username" class="form-control p-2 campoDigitarCadasServico">
+                            <input type="text" name="username" class="form-control p-2 campoDigitar">
                         </div>                            -->
                         <div class="col-6">
                             <label for="nomepeça">Nome da Peça:</label>
-                            <input type="text" name="NomePeca" class="form-control p-2 campoDigitarCadasServico">
+                            <input type="text" name="NomePeca" class="form-control p-2 campoDigitar">
                         </div>         
 
                         <div class="col-6">
                             <label for="marca">Marca:</label>
-                            <input type="text" name="MarcaPeca" class="form-control p-2 campoDigitarCadasServico">
+                            <input type="text" name="MarcaPeca" class="form-control p-2 campoDigitar   ">
                         </div>
                     </div>
 
@@ -49,11 +49,11 @@
    
                         <div class="col-6">
                             <label for="quantidade">Quantidade:</label>
-                            <input type="text" name="QtdPeca" class="form-control p-2 campoDigitarCadasServico">
+                            <input type="text" name="QtdPeca" class="form-control p-2 campoDigitar ">
                         </div>       
                         <div class="col-6">
                             <label for="cnpjfornecedor">CNPJ do Fornecedor:</label>
-                            <input type="text" name="CnpjFornecedor" class="form-control p-2 campoDigitarCadasServico">
+                            <input type="text" name="CnpjFornecedor" class="form-control p-2 campoDigitar  ">
                         </div>           
                     </div>
 
@@ -61,12 +61,12 @@
 
                         <div class="col-6">
                             <label for="nomefornecedor">Nome do Fornecedor:</label>
-                            <input type="text" name="NomeFornecedor" class="form-control p-2 campoDigitarCadasServico">
+                            <input type="text" name="NomeFornecedor" class="form-control p-2 campoDigitar  ">
                         </div>   
                         
                         <div class="col-6">
                             <label for="telefone">Contato do Fornecedor:</label>
-                            <input type="tel" name="TelFornecedor" class="form-control p-2 campoDigitarCadasServico" required placeholder="(xx) xxxxx-xxxx">
+                            <input type="tel" name="TelFornecedor" class="form-control p-2 campoDigitar" required placeholder="(xx) xxxxx-xxxx">
                         </div>
                     </div>
 
@@ -74,12 +74,12 @@
 
                         <div class="col-6">
                             <label for="datapedido">Data de Pedido:</label>
-                            <input type="date" name="DataPedido" class="form-control p-2 campoDigitarCadasServico">
+                            <input type="date" name="DataPedido" class="form-control p-2 campoDigitar  ">
                         </div>  
                         
                         <div class="col-6">
                             <label for="datarecebimento">Data Recebimento:</label>
-                            <input type="date" name="DataRecebimento" class="form-control p-2 campoDigitarCadasServico">
+                            <input type="date" name="DataRecebimento" class="form-control p-2 campoDigitar ">
                         </div>
                     </div>
 
