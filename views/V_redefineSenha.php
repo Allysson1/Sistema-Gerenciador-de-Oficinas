@@ -26,8 +26,8 @@
         <form action="../models/Code_redefine_Senha.php" method="POST" class="ml-3 ml-md-3 ml-lg-3 col-12 col-lg-7 row formLogin border border-white rounded justify-content-center">
             <h1 class="p-5">Redefinição de Senha</h1>
 
-            <label class="col-12" for="text">Usuário:</label>
-            <input class="col-12 p-3 textBox textBoxLogin" name="usuario" type="text" placeholder="Digite seu usuário:" autofocus="true"/>
+            <label class="col-12" for="text">E-Mail:</label>
+            <input class="col-12 p-3 textBox textBoxLogin" name="email" type="text" placeholder="Digite seu e-mail:" autofocus="true"/>
             <label class="col-12 mt-5" for="password">Nova Senha Senha:</label>
             <input class="col-12 p-3 textBox textBoxLogin" name="senha" type="password" placeholder="Digite sua senha:"/>
             <label class="col-12 mt-5" for="password">Confirme a Nova Senha:</label>
