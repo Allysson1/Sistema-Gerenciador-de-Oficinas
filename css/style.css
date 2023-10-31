@@ -130,6 +130,13 @@ a:hover {
   color: #fff;
 }
 
+
+/* modal de redefinição de senha - Allysson */
+.colorModal{
+  color: black;
+}
+
+
 /* Small devices (landscape phones, 576px and up) - Allysson */
 /* @media (min-width: 576px) and (max-width: 767.98px) {
     
