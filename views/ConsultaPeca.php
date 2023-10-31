@@ -47,23 +47,23 @@
                                 <div class="text-center">
                                     <img
                                         src="../images/biela.png"
-                                        class="img-fluid rounded mx-auto d-block"
+                                        class="img-fluid rounded mx-auto d-block pb-3"
                                         alt="...">
                                 </div>
 
-                                <div class="p-2 itemCard">
+                                <div class="pl-2 itemCard">
                                     <span>Nome:</span>
                                     <span id="">Biela</span>
                                 </div>
-                                <div class="p-2 itemCard">
+                                <div class="pl-2 itemCard">
                                     <span>Quantidade:</span>
                                     <span id="">42 - Em estoque</span>
                                 </div>
-                                <div class="p-2 itemCard">
+                                <div class="pl-2 itemCard">
                                     <span>Marca:</span>
                                     <span id="">GM - Genuino</span>
                                 </div>
-                                <div class="p-2 itemCard">
+                                <div class="pl-2 itemCard">
                                     <span>Código:</span>
                                     <span id="">1452</span>
                                 </div>
@@ -92,19 +92,19 @@
                                         alt="...">
                                 </div>
 
-                                <div class="p-2 itemCard">
+                                <div class="p-1 itemCard">
                                     <span>Nome:</span>
                                     <span id="">Biela</span>
                                 </div>
-                                <div class="p-2 itemCard">
+                                <div class="p-1 itemCard">
                                     <span>Quantidade:</span>
                                     <span id="">42 - Em estoque</span>
                                 </div>
-                                <div class="p-2 itemCard">
+                                <div class="p-1 itemCard">
                                     <span>Marca:</span>
                                     <span id="">GM - Genuino</span>
                                 </div>
-                                <div class="p-2 itemCard">
+                                <div class="p-1 itemCard">
                                     <span>Código:</span>
                                     <span id="">1452</span>
                                 </div>
