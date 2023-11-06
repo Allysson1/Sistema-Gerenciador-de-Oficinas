@@ -1,4 +1,7 @@
 <?php
+
+    require ('../utils/conexao.php');
+   
     // variável com o nivel exigido do usuario para acessar a página
     $nivel_necessario = 3;
 ?>
@@ -39,36 +42,47 @@
                     </div>
                 </div>
 
-                <div class="row" style="margin: 0px">
-                    <div class="col-sm-4">
-                        <div class="cardHome">
+            <div class="row" style="margin: 0px">
 
-                            <div class="todosItensCard">
-                                <div class="text-center">
-                                    <img
-                                        src="../images/biela.png"
-                                        class="img-fluid rounded mx-auto d-block pb-3"
-                                        alt="...">
-                                </div>
+                    <?php
 
-                                <div class="pl-2 itemCard">
-                                    <span>Nome:</span>
-                                    <span id="">Biela</span>
-                                </div>
-                                <div class="pl-2 itemCard">
-                                    <span>Quantidade:</span>
-                                    <span id="">42 - Em estoque</span>
-                                </div>
-                                <div class="pl-2 itemCard">
-                                    <span>Marca:</span>
-                                    <span id="">GM - Genuino</span>
-                                </div>
-                                <div class="pl-2 itemCard">
-                                    <span>Código:</span>
-                                    <span id="">1452</span>
-                                </div>
+                        $query = "SELECT * FROM pecas";
+                        $query_run = mysqli_query($con,$query);
 
-                                <div
+                        if (mysqli_num_rows($query_run) > 0) {
+                            
+                            foreach ($query_run as $pecas) {
+                                
+                    ?>
+                                <div class="col-sm-4 col-4">
+                                <div class="cardPeca">
+        
+                                    <div class="todosItensCard">
+                                        <div class="text-center">
+                                            <img
+                                                src="<?=$pecas['Path'] ?>"
+                                                class="img-fluid rounded pb-3"
+                                                alt="...">
+                                        </div>
+        
+                                        <div class="pl-2 itemCard">
+                                            <span>Nome:</span>
+                                            <span id=""><?=$pecas['NomePeca'] ?></span>
+                                        </div>
+                                        <div class="pl-2 itemCard">
+                                            <span>Quantidade:</span>
+                                            <span id=""><?=$pecas['QtdPeca'] ?> - Em estoque</span>
+                                        </div>
+                                        <div class="pl-2 itemCard">
+                                            <span>Marca:</span>
+                                            <span id=""><?=$pecas['MarcaPeca'] ?></span>
+                                        </div>
+                                        <div class="pl-2 itemCard">
+                                            <span>Código:</span>
+                                            <span id=""><?=$pecas['idPeca'] ?></span>
+                                        </div>
+
+                                        <div
                                     class="d-flex justify-content-sm-around justify-content-md-around justify-content-lg-around">
                                     <button type="button" class="btn btn-light btn-lg ">Ver mais</button>
 
@@ -80,208 +94,20 @@
                             </div>
                         </div>
                     </div>
+                <?php
+                            }
+                        }
+                        else{
+                            echo "<h5> Nenhuma peça cadastrada ! </h5>";
+                        }
 
-                    <div class="col-sm-4">
-                        <div class="cardHome">
 
-                            <div class="todosItensCard">
-                                <div class="text-center">
-                                    <img
-                                        src="../images/biela.png"
-                                        class="img-fluid rounded mx-auto d-block"
-                                        alt="...">
-                                </div>
+                ?>
 
-                                <div class="p-1 itemCard">
-                                    <span>Nome:</span>
-                                    <span id="">Biela</span>
-                                </div>
-                                <div class="p-1 itemCard">
-                                    <span>Quantidade:</span>
-                                    <span id="">42 - Em estoque</span>
-                                </div>
-                                <div class="p-1 itemCard">
-                                    <span>Marca:</span>
-                                    <span id="">GM - Genuino</span>
-                                </div>
-                                <div class="p-1 itemCard">
-                                    <span>Código:</span>
-                                    <span id="">1452</span>
-                                </div>
 
-                                <div
-                                    class="d-flex justify-content-sm-around justify-content-md-around justify-content-lg-around">
-                                    <button type="button" class="btn btn-light btn-lg ">Ver mais</button>
 
-                                    <button type="button" class="btn btn-primary btn-lg ">Alterar
-                                    </button>
-                                </div>
 
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-4">
-                        <div class="cardHome">
-
-                            <div class="todosItensCard">
-                                <div class="text-center">
-                                    <img
-                                        src="../images/biela.png"
-                                        class="img-fluid rounded mx-auto d-block"
-                                        alt="...">
-                                </div>
-
-                                <div class="p-2 itemCard">
-                                    <span>Nome:</span>
-                                    <span id="">Biela</span>
-                                </div>
-                                <div class="p-2 itemCard">
-                                    <span>Quantidade:</span>
-                                    <span id="">42 - Em estoque</span>
-                                </div>
-                                <div class="p-2 itemCard">
-                                    <span>Marca:</span>
-                                    <span id="">GM - Genuino</span>
-                                </div>
-                                <div class="p-2 itemCard">
-                                    <span>Código:</span>
-                                    <span id="">1452</span>
-                                </div>
-
-                                <div
-                                    class="d-flex justify-content-sm-around justify-content-md-around justify-content-lg-around">
-                                    <button type="button" class="btn btn-light btn-lg ">Ver mais</button>
-
-                                    <button type="button" class="btn btn-primary btn-lg ">Alterar
-                                    </button>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row" style="margin: 0px">
-                    <div class="col-sm-4">
-                        <div class="cardHome">
-
-                            <div class="todosItensCard">
-                                <div class="text-center">
-                                    <img
-                                        src="../images/biela.png"
-                                        class="img-fluid rounded mx-auto d-block"
-                                        alt="...">
-                                </div>
-
-                                <div class="p-2 itemCard">
-                                    <span>Nome:</span>
-                                    <span id="">Biela</span>
-                                </div>
-                                <div class="p-2 itemCard">
-                                    <span>Quantidade:</span>
-                                    <span id="">42 - Em estoque</span>
-                                </div>
-                                <div class="p-2 itemCard">
-                                    <span>Marca:</span>
-                                    <span id="">GM - Genuino</span>
-                                </div>
-                                <div class="p-2 itemCard">
-                                    <span>Código:</span>
-                                    <span id="">1452</span>
-                                </div>
-
-                                <div
-                                    class="d-flex justify-content-sm-around justify-content-md-around justify-content-lg-around">
-                                    <button type="button" class="btn btn-light btn-lg ">Ver mais</button>
-
-                                    <button type="button" class="btn btn-primary btn-lg ">Alterar
-                                    </button>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-4">
-                        <div class="cardHome">
-
-                            <div class="todosItensCard">
-                                <div class="text-center">
-                                    <img
-                                        src="../images/biela.png"
-                                        class="img-fluid rounded mx-auto d-block"
-                                        alt="...">
-                                </div>
-
-                                <div class="p-2 itemCard">
-                                    <span>Nome:</span>
-                                    <span id="">Biela</span>
-                                </div>
-                                <div class="p-2 itemCard">
-                                    <span>Quantidade:</span>
-                                    <span id="">42 - Em estoque</span>
-                                </div>
-                                <div class="p-2 itemCard">
-                                    <span>Marca:</span>
-                                    <span id="">GM - Genuino</span>
-                                </div>
-                                <div class="p-2 itemCard">
-                                    <span>Código:</span>
-                                    <span id="">1452</span>
-                                </div>
-
-                                <div
-                                    class="d-flex justify-content-sm-around justify-content-md-around justify-content-lg-around">
-                                    <button type="button" class="btn btn-light btn-lg ">Ver mais</button>
-
-                                    <button type="button" class="btn btn-primary btn-lg ">Alterar
-                                    </button>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-4">
-                        <div class="cardHome">
-
-                            <div class="todosItensCard">
-                                <div class="text-center">
-                                    <img
-                                        src="../images/biela.png"
-                                        class="img-fluid rounded mx-auto d-block"
-                                        alt="...">
-                                </div>
-
-                                <div class="p-2 itemCard">
-                                    <span>Nome:</span>
-                                    <span id="">Biela</span>
-                                </div>
-                                <div class="p-2 itemCard">
-                                    <span>Quantidade:</span>
-                                    <span id="">42 - Em estoque</span>
-                                </div>
-                                <div class="p-2 itemCard">
-                                    <span>Marca:</span>
-                                    <span id="">GM - Genuino</span>
-                                </div>
-                                <div class="p-2 itemCard">
-                                    <span>Código:</span>
-                                    <span id="">1452</span>
-                                </div>
-
-                                <div
-                                    class="d-flex justify-content-sm-around justify-content-md-around justify-content-lg-around">
-                                    <button type="button" class="btn btn-light btn-lg">Ver mais</button>
-
-                                    <button type="button" class="btn btn-primary btn-lg">Alterar
-                                    </button>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            </div>
                 <div class="row">
                     <div class="col-12 text-center">
                         <button class="btn btn-primary btn-lg p-3   ">Ver mais peças...</button>

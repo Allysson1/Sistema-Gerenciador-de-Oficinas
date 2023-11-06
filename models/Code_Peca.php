@@ -13,7 +13,6 @@ if (isset($_POST['SavePeca'])) {
     $DataPedido =  mysqli_real_escape_string($con, $_POST['DataPedido']);
     $DataRecebimento = mysqli_real_escape_string($con, $_POST['DataRecebimento']);
     $DescricaoPeca = mysqli_real_escape_string($con, $_POST['DescricaoPeca']);
-    $imagemPeca = mysqli_real_escape_string($con, $_FILES['ImagemPeca']);
 
     if ($NomePeca == "") {
         $_SESSION['message'] = "Nome da peça não informado !";
@@ -57,11 +56,6 @@ if (isset($_POST['SavePeca'])) {
     }
     elseif ($DescricaoPeca == "") {
         $_SESSION['message'] = "Descricão da peça não informada !";
-        header("location: ../views/cadastroPeca.php");
-        exit(0);
-    }
-    elseif ($imagemPeca == "") {
-        $_SESSION['message'] = "Adicione uma imagem da peça !";
         header("location: ../views/cadastroPeca.php");
         exit(0);
     }
