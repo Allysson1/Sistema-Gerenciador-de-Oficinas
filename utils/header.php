@@ -1,120 +1,106 @@
 <!-- identifica em qual página está o usuário para desativar o link da mesma no menu -->
 <?php $page = basename($_SERVER['PHP_SELF']) ?>
 
-<header class=" d-block d-sm-block d-md-block d-lg-none" id="topo" style="margin-top: 60px;">
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+</head>
+<body>    
+    
+    <aside class="navbar-nav" id="sidebar">
+        <div class="divFecharMenu" id="divFecharMenu">
+          <button class="fecharMenu"><i class="fas fa-solid fa-xmark"></i></button>
+        </div>
+        <nav>
+            <div class="divLogoNav">
+              <img class="logoNav" src="../images/Logo.svg" alt="imagem de um volande de carro simples">              
+            </div>
+            <ul>
+                <div class="tituloNav"><span><i class="fas fa-solid fa-car" style="margin-right: 10px; color: #007fff"></i>Serviço</span></div>
+                <li><a class="opcaoNav <?php if($page == 'cadastroServico.php'):echo "disabled"; endif; ?>" href="../views/cadastroServico.php"><i class="fas fa-solid fa-minus" style="margin-right: 10px; font-size: 13px;"></i>Cadastro de Serviços</a></li>
+                <li><a class="opcaoNav <?php if($page == 'home.php'):echo "disabled"; endif; ?>" href="../views/home.php"><i class="fas fa-solid fa-minus" style="margin-right: 10px; font-size: 13px;"></i>Consulta de Serviços </a></li>
+                
+                <div class="tituloNav"><span> <i class="fa-solid fa-user" style="margin-right: 10px; color: #007fff"></i>Usuário</span></div>
+                <li><a class="opcaoNav <?php if($page == 'V_cadastraUsuario.php'):echo "disabled"; endif; ?>" href="../views/V_cadastraUsuario.php"><i class="fas fa-solid fa-minus" style="margin-right: 10px; font-size: 13px;"></i>Cadastro de Usuário</a></li>
+                <li><a class="opcaoNav <?php if($page == 'V_VisualizaUsuarios.php'):echo "disabled"; endif; ?>" href="../views/V_VisualizaUsuarios.php"><i class="fas fa-solid fa-minus" style="margin-right: 10px; font-size: 13px;"></i>Consulta de Usuários</a></li>
 
-  <div class="fixed-top">
+                <div class="tituloNav"><span><i class="fa-solid fa-screwdriver-wrench" style="margin-right: 10px; color: #007fff"></i>Peças</span></div>
+                <li><a class="opcaoNav <?php if($page == 'cadastroPeca.php'):echo "disabled"; endif; ?>" href="../views/cadastroPeca.php"><i class="fas fa-solid fa-minus" style="margin-right: 10px; font-size: 13px;"></i>Cadastro de Peças</a></li>
+                <li><a class="opcaoNav <?php if($page == 'ConsultaPeca.php'):echo "disabled"; endif; ?>" href="../views/ConsultaPeca.php"><i class="fas fa-solid fa-minus" style="margin-right: 10px; font-size: 13px;"></i>Consulta de Peças</a></li>
+                
+                <div class="sairNav "><span><a href="../utils/logout.php">Sair</a></span></div>
+            </ul>
+        </nav>
 
-    <nav class="navbar navbar-dark bgNav">
-        <div class="container">
+        
+    </aside>
+
+    <header class="menuPequeno">       
+        <nav class="navPequeno">
             <div class="row">
-                <div class="col-9" style="margin: 0; padding: 0;">
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent">
-                        <span class="navbar-toggler-icon"></span>
+                <div class="col-5" style="margin: 0; padding: 0;">
+                    <button class="botaoBars" type="button" id="btnAbreMenu">
+                        <i class="fas fa-bars" style="font-size: 18px;"></i>
                     </button>
                 </div>
-                <div class="col-3 text-center">
-                    <img class="logoNav" src="../images/Logo.svg" alt="imagem de um volante de carro simples">
+                <div class="col-7">
+                    <img class="logoNavPequeno" src="../images/Logo.svg" alt="imagem de um volante de carro simples">
                 </div>
             </div>
-        </div>
-    </nav>
+        </nav>  
+    </header>
+    
+</body>
 
-    <!-- Menu mobile e tablet -->
-    <div class="collapse navbar-collapse" id="navbarToggleExternalContent">
-      <div class="bgNav p-4">
-        <ul class="navbar-nav">
+<script>
+  document.getElementById('btnAbreMenu').addEventListener('click', function () {
+    const sidebar = document.getElementById('sidebar');
+    sidebar.classList.toggle('active');
+    
+    const menuPequeno = document.querySelector('.menuPequeno');
+    
+    if (menuPequeno.style.display === 'none') {
+        menuPequeno.style.display = 'block';
+    } else {
+        menuPequeno.style.display = 'none';
+    }
+  });
 
-        <h5 class="text-white mt-2 h4">Serviços</h5>
+  document.getElementById('divFecharMenu').addEventListener('click', function () {
+    const sidebar = document.getElementById('sidebar');
+    sidebar.classList.remove('active');
 
-          <li class="nav-item ml-5">
-            <a class="nav-link <?php if($page == 'cadastroServico.php'):echo "disabled"; endif; ?>" href="../views/cadastroServico.php">Cadastro de Serviços</a>
-          </li>
-          <li class="nav-item ml-5">
-            <a class="nav-link <?php if($page == 'home.php'):echo "disabled"; endif; ?>" href="../views/home.php">Consulta de Serviços - Home</a>
-          </li>
-
-        <h5 class="text-white mt-5 h4">Usuários</h5>
-          <li class="nav-item ml-5">
-            <a class="nav-link <?php if($page == 'V_cadastraUsuario.php'):echo "disabled"; endif; ?>" href="../views/V_cadastraUsuario.php">Cadastro de Usuário</a>
-          </li>
-          <li class="nav-item ml-5">
-            <a class="nav-link <?php if($page == 'V_VisualizaUsuarios.php'):echo "disabled"; endif; ?>" href="../views/V_VisualizaUsuarios.php">Consulta de Usuários</a>
-          </li>
-
-          <h5 class="text-white mt-5 h4">Peças</h5>
-          <li class="nav-item ml-5">
-            <a class="nav-link <?php if($page == 'cadastroPeca.php'):echo "disabled"; endif; ?>" href="cadastroPeca.php">Cadastro de Peças</a>
-          </li>
-          <li class="nav-item ml-5">
-            <a class="nav-link <?php if($page == 'ConsultaPeca.php'):echo "disabled"; endif; ?>" href="ConsultaPeca.php">Consulta de Peças</a>
-          </li>
-
-          <h5 class="text-white mt-5 h4">Fornecedores</h5>
-          <li class="nav-item ml-5">
-            <a class="nav-link <?php if($page == '#'):echo "disabled"; endif; ?>" href="#">Cadastro de Fornecedores</a>
-          </li>
-          <li class="nav-item ml-5">
-            <a class="nav-link <?php if($page == '#'):echo "disabled"; endif; ?>" href="#">Consulta de Fornecedores</a>
-          </li>
-          
-          <li class="nav-item mt-5 mb-5 pb-5 mb-sm-0 pb-sm-0">
-            <a class="nav-link h4" href="../utils/logout.php">Sair</a>
-          </li>
-        </ul>
-      </div>
-    </div>    
-  </div>
-</header>
+    const menuPequeno = document.querySelector('.menuPequeno');
+    
+    if (menuPequeno.style.display === 'none') {
+        menuPequeno.style.display = 'block';
+    } else {
+        menuPequeno.style.display = 'none';
+    }
+  });
+  
+  window.addEventListener('resize', function () {
+    const menuPequeno = document.querySelector('.menuPequeno');
+    
+    if (window.innerWidth > 768) {
+        menuPequeno.style.display = 'none';
+    }
+    else{
+      menuPequeno.style.display = 'block';
+    }
+  });
+</script>
+</html>
 
 
-<!-- nav telas grandes -->
-<aside class="float-lg-left col-lg-3 col-xl-3 d-none d-sm-none d-md-none d-lg-block asideNav">
- 
-  <nav>
 
-      <div class="row pt-md-5 pt-lg-0 border-bottom">
-        <img class="col-6 mt-lg-3 mt-xl-3 mb-lg-4 logoNav" src="../images/Logo.svg" alt="imagem de um volande de carro simples"> 
-      </div>
 
-      <ul class="navbar-nav">
 
-        <h5 class="text-white mt-5 h4">Serviços</h5>
-        
-        <li class="nav-item ml-4">
-          <a class="nav-link <?php if($page == 'cadastroServico.php'):echo "disabled"; endif; ?>" href="../views/cadastroServico.php">Cadastro de Serviços</a>
-        </li>
-        <li class="nav-item ml-4">
-         <a class="nav-link <?php if($page == 'home.php'):echo "disabled"; endif; ?>" href="../views/home.php">Consulta de Serviços - Home</a>
-        </li>
-
-        <h5 class="text-white mt-5 h4">Usuários</h5>
-        <li class="nav-item ml-4">
-          <a class="nav-link <?php if($page == 'V_cadastraUsuario.php'):echo "disabled"; endif; ?>" href="V_cadastraUsuario.php">Cadastro de Usuário</a>
-        </li>
-        <li class="nav-item ml-4">
-          <a class="nav-link <?php if($page == 'V_VisualizaUsuarios.php'):echo "disabled"; endif; ?>" href="V_VisualizaUsuarios.php">Consulta de Usuários</a>
-        </li> 
-
-        <h5 class="text-white mt-5 h4">Peças</h5>
-        <li class="nav-item ml-4">
-          <a class="nav-link <?php if($page == 'cadastroPeca.php'):echo "disabled"; endif; ?>" href="cadastroPeca.php">Cadastro de Peças</a>
-        </li>
-        <li class="nav-item ml-4">
-          <a class="nav-link <?php if($page == 'ConsultaPeca.php'):echo "disabled"; endif; ?>" href="ConsultaPeca.php">Consulta de Peças</a>
-        </li>
-
-        <h5 class="text-white mt-5 h4">Fornecedores</h5>
-        <li class="nav-item ml-4">
-          <a class="nav-link <?php if($page == '#'):echo "disabled"; endif; ?>" href="#">Cadastro de Fornecedores</a>
-        </li>
-        <li class="nav-item ml-4 mb-2">
-          <a class="nav-link <?php if($page == '#'):echo "disabled"; endif; ?>" href="#">Consulta de Fornecedores</a>
-        </li>
-        
-        <li class="nav-item mt-4 mb-5 pb-5">
-          <a class="nav-link h4" href="../utils/logout.php">Sair</a>
-        </li>
-    </ul>
-  </nav>
-</aside>
