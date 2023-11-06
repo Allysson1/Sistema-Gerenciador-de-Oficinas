@@ -85,8 +85,6 @@ if (isset($_POST['delete_funcionario'])){
 if (isset($_POST['update_funcionario'])){
 
     $funcionario_id = mysqli_real_escape_string($con, $_POST['funcionario_id']);
-
-
     $nome = mysqli_real_escape_string($con, $_POST['nomeFuncionario']);
     $usuario = mysqli_real_escape_string($con, $_POST['usuario']);
     $senha = mysqli_real_escape_string($con, $_POST['senha']);
@@ -94,23 +92,30 @@ if (isset($_POST['update_funcionario'])){
     $email = mysqli_real_escape_string($con, $_POST['email']);
     $nivelFuncionario = mysqli_real_escape_string($con, $_POST['nivelFuncionario']);
 
-    var_dump( $nivelFuncionario);
+    //debug
+    // var_dump( $nivelFuncionario);
+    // var_dump($nome);
+    // var_dump($usuario);
+    // var_dump($senha);
+    // var_dump($Confsenha);
+    // var_dump($email);
+    // var_dump($funcionario_id);
 
     if ($senha == ""){
         $_SESSION['message'] = "Senha do funcionário não inserida!";
-        header("location: ../views/V_EditaUsuario.php?idUsuario=$funcionario_id");
+        header("location: ../views/V_VisualizaUsuarios.php?idUsuario=$funcionario_id");
         exit(0);
     }
 
     elseif ($Confsenha == ""){
         $_SESSION['message'] = "Confirmação de Senha do funcionário não inserida!";
-        header("location: ../views/V_EditaUsuario.php?idUsuario=$funcionario_id");
+        header("location: ../views/V_VisualizaUsuarios.php?idUsuario=$funcionario_id");
         exit(0);
     }
 
     if ($Confsenha !== $senha){
         $_SESSION['message'] = 'A senha nova senha e a senha redigitada são diferentes';
-        header("location: ../views/V_EditaUsuario.php?idUsuario=$funcionario_id");
+        header("location: ../views/V_VisualizaUsuarios.php?idUsuario=$funcionario_id");
         exit(0); 
     }
 
@@ -127,7 +132,7 @@ if (isset($_POST['update_funcionario'])){
         }
         else{
             $_SESSION['message'] = "Não foi possivel atualizar o funcionário";
-            header("location: ../views/V_EditaUsuario.php");
+            header("location: ../views/V_VisualizaUsuarios.php");
             exit(0);
         }
 
