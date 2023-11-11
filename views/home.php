@@ -1,4 +1,5 @@
 <?php
+    include('../utils/protect.php');
     // variável com o nivel exigido do usuario para acessar a página
     $nivel_necessario = 1;
 ?>
@@ -34,7 +35,9 @@
                         <button class="botaoPesquisaHome">Pesquisar</button>
                     </div>
                 </div>                
-            </div>            
+            </div>      
+            
+            <?php include '../utils/message.php'; ?> 
 
             <div class="row" style="margin: 0px">
                 <div class="col-sm-4">
