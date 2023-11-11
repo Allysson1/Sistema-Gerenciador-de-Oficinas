@@ -32,18 +32,22 @@
         <?php include '../utils/header.php';?>  
 
 
-        <div class="row">            
-                <div class="col-12 divHeaderTopoSite">
-                    <p class="nameHeaderTopoSite">Visualizar Usuários</p>
-                </div>  
-        </div> 
         
         
-        <div>
-            <!-- formulário de login -->
-            <main class="mt-5 mt-lg-4 col-12 col-sm-12 col-md-12 col-lg-12"> 
+        
+        <div class="main-content">
+        
+            <div class="row">            
+                    <div class="col-12 divHeaderTopoSite">
+                        <p class="nameHeaderTopoSite">Visualizar Usuários</p>
+                    </div>  
+                </div> 
 
-            <div class="row" style="margin: 0px">
+            <main class="p-md-1 p-lg-5"> 
+
+                
+
+                <div class="row" style="margin: 0px">
                     <div class="containerPesquisaHome ml-auto">
                         <div class="col-12">
                             <input type="text" class="inputPesquisaHome" placeholder="...">
