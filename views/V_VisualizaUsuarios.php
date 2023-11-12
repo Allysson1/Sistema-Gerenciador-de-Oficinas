@@ -1,5 +1,5 @@
 <?php
-    require ('../utils/conexao.php');
+    require('../utils/conexao.php');
     include('../utils/protect.php');
     // variável com o nivel exigido do usuario para acessar a página
     $nivel_necessario = 4;
@@ -31,10 +31,6 @@
 
         <?php include '../utils/header.php';?>  
 
-
-        
-        
-        
         <div class="main-content">
         
             <div class="row">            
@@ -45,12 +41,10 @@
 
             <main class="p-md-1 p-lg-5"> 
 
-                
-
                 <div class="row" style="margin: 0px">
                     <div class="containerPesquisaHome ml-auto">
                         <div class="col-12">
-                            <input type="text" class="inputPesquisaHome" placeholder="...">
+                            <input type="text" class="inputPesquisaHome" id="filtrar-tabela" placeholder="...">
                             <button class="botaoPesquisaHome">Pesquisar</button>
                         </div>
                     </div>                
@@ -80,10 +74,10 @@
                                     foreach($query_run as $funcionario){
 
                                         ?>
-                                        
-                                        <tr>
+                                        <!-- classe "consulta" destinada a manipulação de filtro -->
+                                        <tr class="consulta">
                                             <td><?php echo $funcionario['idUsuario'];?></td>
-                                            <td><?= $funcionario['nome'];?></td>
+                                            <td class="info-nome"><?= $funcionario['nome'];?></td>
                                             <td><?= $funcionario['usuario'];?></td>
                                             <td><?= $funcionario['email'];?></td>
                                             <td><?= $funcionario['nivelFuncionario'];?></td>
@@ -201,5 +195,6 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
         integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
         crossorigin="anonymous"></script>
+        <script src="../js/filtar.js"></script>
     </body>    
 </html>
