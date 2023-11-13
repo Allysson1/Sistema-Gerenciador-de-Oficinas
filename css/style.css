@@ -277,7 +277,7 @@ a:hover {
 /*Tela Cadastro de Serviço - Ana*/
 .campoDigitarCadasServico {
   color: #000;
-  background-color: #c7c7c7;
+  background-color: #000;
   padding: 20px 0;
 }
 
@@ -400,6 +400,7 @@ a:hover {
   margin-right: 5px;
   border: 1px solid #ccc;
   border-radius: 10px;
+  
 }
 
 .botaoPesquisaHome {
@@ -415,7 +416,38 @@ a:hover {
   background-color: #000;
 }
 
+/* Tela cadastro de peças - Julio */
+.campodescricaopeca {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #000;
+  border-radius: 5px;
+  background-color: #000;
+  color: #fff;
+}
+
+.campoPeca{
+  color: #fff;
+  background-color: #000;
+  padding: 20px 10px;
+}
+.campoPeca:focus{
+  color: #fff;
+  background-color: #000;
+  padding: 20px 10px;
+}
+
+
 /* Tela consulta de peças - Julio */
+.cardPeca {
+  background-color: black;
+  color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin: 20px 5px;
+  padding-bottom: 50px;
+  height: 500px;
+}
 
 /* Tela Alterar peças - Julio */
 .divHeaderAlterar {
