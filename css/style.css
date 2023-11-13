@@ -32,11 +32,6 @@ a:hover {
 }
 
 /* codigo utilizado no filtro de pesquisa - Allysson */
-.fadeOut{
-  opacity: 0;
-  transition: 0.5s;
- }
-
  .invisivel{
   display: none;
  }
