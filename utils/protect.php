@@ -18,6 +18,8 @@
 
     if(!isset($_SESSION['idUsuario'])){
         header("location: ../views/index.php");
+        $_SESSION['message'] = "Sua Sessão expirou, faça login novamente.";
+        header("location: ../views/index.php");
         exit;
     }
 

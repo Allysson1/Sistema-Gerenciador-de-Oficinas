@@ -30,19 +30,22 @@
    
     <?php include '../utils/header.php'; ?> 
 
-    <div class="row">
-            <div class="col-12 divHeaderTopoSite">
-                <p class="nameHeaderTopoSite">Cadastro de Usuários</p>
-            </div>
-        </div> 
+     
 
     <!-- nesta div temos o col para fazer a divisão da tela entre o conteúdo principal e o aside no header.php -->
-        <div class="float-lg-right col-lg-9 container-fluid row justify-content-center">    <!-- formulário de login -->
-            <main class="mt-5 mt-lg-4 col-12 col-sm-12 col-md-12 col-lg-12"> 
+        <div class="main-content justify-content-center"> 
+
+            <div class="row">
+                <div class="col-12 divHeaderTopoSite">
+                    <p class="nameHeaderTopoSite">Cadastro de Usuários</p>
+                </div>
+            </div>
+
+            <main class=""> 
 
                 <?php include ('../utils/message.php'); ?>
 
-                <form action="../models/Code_Usuario.php" method="POST" class="ml-3 ml-md-3 ml-lg-3 col-12 col-lg-12">
+                <form action="../models/Code_Usuario.php" method="POST" class="col-12 col-lg-12">
 
                     <div class=" col-12 col-md-6 float-md-left">
                         <label class="col-12 col-md-12 mt-5 mt-md-5" 
@@ -84,7 +87,7 @@
                     </div>
 
                     <div class="float-right col-5 col-md-12 mt-5 mt-md-5">
-                        <button class="float-md-right col-12 col-md-3 ml-1 p-3 btn btn-primary" type="submit" name="save_funcionario">Cadastrar</button>      
+                        <button class="float-md-right col-12 col-md-3 ml-1 p-3 btn botaoOrdem" type="submit" name="save_funcionario">Cadastrar</button>      
                     </div>
 
                 </form>
