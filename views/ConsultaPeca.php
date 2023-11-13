@@ -34,7 +34,6 @@
                                 type="text"
                                 class="inputPesquisaHome"
                                 placeholder="Digite o código ou nome da placa...">
-                            <button class="botaoPesquisaHome">Pesquisar</button>
                         </div>
                     </div>
                 </div>

@@ -32,7 +32,6 @@
                 <div class="containerPesquisaHome ml-auto">
                     <div class="col-12">
                         <input type="text" class="inputPesquisaHome" placeholder="Digite a placa...">
-                        <button class="botaoPesquisaHome">Pesquisar</button>
                     </div>
                 </div>                
             </div>      
