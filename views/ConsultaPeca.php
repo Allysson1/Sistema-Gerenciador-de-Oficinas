@@ -56,7 +56,7 @@
                             foreach ($query_run as $pecas) {
                                 
                     ?>
-                                <div class="col-sm-4 col-4">
+                            <div class="col-sm-12 col-md-6 col-lg-4">
                                 <div class="cardPeca">
         
                                     <div class="todosItensCard">
@@ -84,18 +84,17 @@
                                             <span id=""><?=$pecas['idPeca'] ?></span>
                                         </div>
 
-                                        <div
-                                    class="d-flex justify-content-sm-around justify-content-md-around justify-content-lg-around">
-                                    <button type="button" class="btn btn-light btn-lg ">Ver mais</button>
+                                         <div class="col-12 d-flex justify-content-around justify-content-sm-around justify-content-md-around justify-content-lg-around">
+                                            <button type="button" class="btn btn-light btn-lg  ">Ver mais</button>
+                                
+                                            <button type="button" class="btn btn-primary btn-lg " data-toggle="modal" data-target="#exampleModal<?= $pecas['idPeca'];?>">
+                                            Alterar
+                                            </button>
+                                        </div>
 
-                                    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#exampleModal<?= $pecas['idPeca'];?>">
-                                     Alterar
-                                    </button>
+                                    </div>
                                 </div>
-
                             </div>
-                        </div>
-                    </div>
 
                 <!-- Modal -->
                 <div class="modal fade" id="exampleModal<?= $pecas['idPeca'];?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -110,7 +109,7 @@
                         <div class="modal-body">
                                 
                         <section class="section-content">  
-                            <form enctype="multipart/form-data" action="../models/Code_Peca.php" method="POST" class="ml-3 ml-md-3 ml-lg-3 col-12 col-lg-12">
+                            <form enctype="multipart/form-data" action="../models/Code_Peca.php" method="POST">
 
                                 <div class="row">
                                     <div class="col-12" style="display: flex; margin-bottom: 30px; margin-top: 45px">
