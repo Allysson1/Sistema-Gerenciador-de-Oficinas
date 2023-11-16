@@ -1,4 +1,7 @@
 <?php
+
+    require ('../utils/conexao.php');
+   
     // variável com o nivel exigido do usuario para acessar a página
     $nivel_necessario = 3;
 ?>
@@ -15,6 +18,8 @@
     </head>
 
     <body>
+
+        <?php include ('../utils/message.php'); ?>
 
         <?php include ('../utils/header.php'); ?>
 
@@ -38,40 +43,51 @@
                     </div>
                 </div>
 
-                <div class="row" style="margin: 0px">
-                    <div class="col-sm-4">
-                        <div class="cardHome">
+            <div class="row" style="margin: 0px">
 
-                            <div class="todosItensCard">
-                                <div class="text-center">
-                                    <img
-                                        src="../images/biela.png"
-                                        class="img-fluid rounded mx-auto d-block"
-                                        alt="...">
-                                </div>
+                    <?php
 
-                                <div class="p-2 itemCard">
-                                    <span>Nome:</span>
-                                    <span id="">Biela</span>
-                                </div>
-                                <div class="p-2 itemCard">
-                                    <span>Quantidade:</span>
-                                    <span id="">42 - Em estoque</span>
-                                </div>
-                                <div class="p-2 itemCard">
-                                    <span>Marca:</span>
-                                    <span id="">GM - Genuino</span>
-                                </div>
-                                <div class="p-2 itemCard">
-                                    <span>Código:</span>
-                                    <span id="">1452</span>
-                                </div>
+                        $query = "SELECT * FROM pecas";
+                        $query_run = mysqli_query($con,$query);
 
-                                <div
+                        if (mysqli_num_rows($query_run) > 0) {
+                            
+                            foreach ($query_run as $pecas) {
+                                
+                    ?>
+                                <div class="col-sm-4 col-4">
+                                <div class="cardPeca">
+        
+                                    <div class="todosItensCard">
+                                        <div class="text-center">
+                                            <img
+                                                src="<?=$pecas['Path'] ?>"
+                                                class="img-fluid rounded pb-3"
+                                                alt="..." width="200px" height="200px">
+                                        </div>
+        
+                                        <div class="pl-2 itemCard">
+                                            <span>Nome:</span>
+                                            <span id=""><?=$pecas['NomePeca'] ?></span>
+                                        </div>
+                                        <div class="pl-2 itemCard">
+                                            <span>Quantidade:</span>
+                                            <span id=""><?=$pecas['QtdPeca'] ?> - Em estoque</span>
+                                        </div>
+                                        <div class="pl-2 itemCard">
+                                            <span>Marca:</span>
+                                            <span id=""><?=$pecas['MarcaPeca'] ?></span>
+                                        </div>
+                                        <div class="pl-2 itemCard">
+                                            <span>Código:</span>
+                                            <span id=""><?=$pecas['idPeca'] ?></span>
+                                        </div>
+
+                                        <div
                                     class="d-flex justify-content-sm-around justify-content-md-around justify-content-lg-around">
                                     <button type="button" class="btn btn-light btn-lg ">Ver mais</button>
 
-                                    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#exampleModal">
+                                    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#exampleModal<?= $pecas['idPeca'];?>">
                                      Alterar
                                     </button>
                                 </div>
@@ -80,215 +96,8 @@
                         </div>
                     </div>
 
-                    <div class="col-sm-4">
-                        <div class="cardHome">
-
-                            <div class="todosItensCard">
-                                <div class="text-center">
-                                    <img
-                                        src="../images/biela.png"
-                                        class="img-fluid rounded mx-auto d-block"
-                                        alt="...">
-                                </div>
-
-                                <div class="p-2 itemCard">
-                                    <span>Nome:</span>
-                                    <span id="">Biela</span>
-                                </div>
-                                <div class="p-2 itemCard">
-                                    <span>Quantidade:</span>
-                                    <span id="">42 - Em estoque</span>
-                                </div>
-                                <div class="p-2 itemCard">
-                                    <span>Marca:</span>
-                                    <span id="">GM - Genuino</span>
-                                </div>
-                                <div class="p-2 itemCard">
-                                    <span>Código:</span>
-                                    <span id="">1452</span>
-                                </div>
-
-                                <div
-                                    class="d-flex justify-content-sm-around justify-content-md-around justify-content-lg-around">
-                                    <button type="button" class="btn btn-light btn-lg ">Ver mais</button>
-
-                                    <button type="button" class="btn btn-primary btn-lg ">Alterar
-                                    </button>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-4">
-                        <div class="cardHome">
-
-                            <div class="todosItensCard">
-                                <div class="text-center">
-                                    <img
-                                        src="../images/biela.png"
-                                        class="img-fluid rounded mx-auto d-block"
-                                        alt="...">
-                                </div>
-
-                                <div class="p-2 itemCard">
-                                    <span>Nome:</span>
-                                    <span id="">Biela</span>
-                                </div>
-                                <div class="p-2 itemCard">
-                                    <span>Quantidade:</span>
-                                    <span id="">42 - Em estoque</span>
-                                </div>
-                                <div class="p-2 itemCard">
-                                    <span>Marca:</span>
-                                    <span id="">GM - Genuino</span>
-                                </div>
-                                <div class="p-2 itemCard">
-                                    <span>Código:</span>
-                                    <span id="">1452</span>
-                                </div>
-
-                                <div
-                                    class="d-flex justify-content-sm-around justify-content-md-around justify-content-lg-around">
-                                    <button type="button" class="btn btn-light btn-lg ">Ver mais</button>
-
-                                    <button type="button" class="btn btn-primary btn-lg ">Alterar
-                                    </button>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row" style="margin: 0px">
-                    <div class="col-sm-4">
-                        <div class="cardHome">
-
-                            <div class="todosItensCard">
-                                <div class="text-center">
-                                    <img
-                                        src="../images/biela.png"
-                                        class="img-fluid rounded mx-auto d-block"
-                                        alt="...">
-                                </div>
-
-                                <div class="p-2 itemCard">
-                                    <span>Nome:</span>
-                                    <span id="">Biela</span>
-                                </div>
-                                <div class="p-2 itemCard">
-                                    <span>Quantidade:</span>
-                                    <span id="">42 - Em estoque</span>
-                                </div>
-                                <div class="p-2 itemCard">
-                                    <span>Marca:</span>
-                                    <span id="">GM - Genuino</span>
-                                </div>
-                                <div class="p-2 itemCard">
-                                    <span>Código:</span>
-                                    <span id="">1452</span>
-                                </div>
-
-                                <div
-                                    class="d-flex justify-content-sm-around justify-content-md-around justify-content-lg-around">
-                                    <button type="button" class="btn btn-light btn-lg ">Ver mais</button>
-
-                                    <button type="button" class="btn btn-primary btn-lg ">Alterar
-                                    </button>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-4">
-                        <div class="cardHome">
-
-                            <div class="todosItensCard">
-                                <div class="text-center">
-                                    <img
-                                        src="../images/biela.png"
-                                        class="img-fluid rounded mx-auto d-block"
-                                        alt="...">
-                                </div>
-
-                                <div class="p-2 itemCard">
-                                    <span>Nome:</span>
-                                    <span id="">Biela</span>
-                                </div>
-                                <div class="p-2 itemCard">
-                                    <span>Quantidade:</span>
-                                    <span id="">42 - Em estoque</span>
-                                </div>
-                                <div class="p-2 itemCard">
-                                    <span>Marca:</span>
-                                    <span id="">GM - Genuino</span>
-                                </div>
-                                <div class="p-2 itemCard">
-                                    <span>Código:</span>
-                                    <span id="">1452</span>
-                                </div>
-
-                                <div
-                                    class="d-flex justify-content-sm-around justify-content-md-around justify-content-lg-around">
-                                    <button type="button" class="btn btn-light btn-lg ">Ver mais</button>
-
-                                    <button type="button" class="btn btn-primary btn-lg ">Alterar
-                                    </button>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-4">
-                        <div class="cardHome">
-
-                            <div class="todosItensCard">
-                                <div class="text-center">
-                                    <img
-                                        src="../images/biela.png"
-                                        class="img-fluid rounded mx-auto d-block"
-                                        alt="...">
-                                </div>
-
-                                <div class="p-2 itemCard">
-                                    <span>Nome:</span>
-                                    <span id="">Biela</span>
-                                </div>
-                                <div class="p-2 itemCard">
-                                    <span>Quantidade:</span>
-                                    <span id="">42 - Em estoque</span>
-                                </div>
-                                <div class="p-2 itemCard">
-                                    <span>Marca:</span>
-                                    <span id="">GM - Genuino</span>
-                                </div>
-                                <div class="p-2 itemCard">
-                                    <span>Código:</span>
-                                    <span id="">1452</span>
-                                </div>
-
-                                <div
-                                    class="d-flex justify-content-sm-around justify-content-md-around justify-content-lg-around">
-                                    <button type="button" class="btn btn-light btn-lg">Ver mais</button>
-
-                                    <button type="button" class="btn btn-primary btn-lg">Alterar
-                                    </button>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-12 text-center">
-                        <button class="btn btn-primary btn-lg p-3   ">Ver mais peças...</button>
-                    </div>
-                </div>
-
                 <!-- Modal -->
-                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal fade" id="exampleModal<?= $pecas['idPeca'];?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
                         <div class="modal-header">
@@ -300,17 +109,17 @@
                         <div class="modal-body">
                                 
                         <section class="section-content">  
-                                <form>
+                            <form enctype="multipart/form-data" action="../models/Code_Peca.php" method="POST" class="ml-3 ml-md-3 ml-lg-3 col-12 col-lg-12">
 
                                 <div class="row">
                                     <div class="col-12" style="display: flex; margin-bottom: 30px; margin-top: 45px">
                                         <div class="col-6">
                                             <label for="username">Código da Peça:</label>
-                                            <input type="text" name="username" class="form-control p-2 p-2 campoDigitar">
+                                            <input type="text" name="idPeca" value=" <?= $pecas['idPeca'];?> " class="form-control p-2 campoDigitar" readonly>
                                         </div>
                                         <div class="col-6">
                                             <label for="username">Nome da Peça:</label>
-                                            <input type="text" name="username" class="form-control p-2 campoDigitar">
+                                            <input type="text" name="NomePeca" value="<?=$pecas['NomePeca'];?>" class="form-control p-2 campoDigitar">
                                         </div>
                                          
                                     </div>
@@ -318,42 +127,42 @@
                                     <div class="col-12" style="display: flex; margin-bottom: 30px;">
                                         <div class="col-6">
                                             <label for="username">Marca:</label>
-                                            <input type="text" name="username" class="form-control p-2 campoDigitar">
+                                            <input type="text" name="MarcaPeca" value="<?=$pecas['MarcaPeca'];?>" class="form-control p-2 campoDigitar">
                                         </div>
                                         <div class="col-6">
                                             <label for="username">Quantidade:</label>
-                                            <input type="text" name="username" class="form-control p-2 campoDigitar">
+                                            <input type="text" name="QtdPeca" value="<?=$pecas['QtdPeca'];?>" class="form-control p-2 campoDigitar">
                                         </div>                   
                                     </div>
                     
                                     <div class="col-12" style="display: flex; margin-bottom: 30px;">
                                         <div class="col-6">
                                             <label for="username">CNPJ do Fornecedor:</label>
-                                            <input type="text" name="username" class="form-control p-2 campoDigitar">
+                                            <input type="text" name="CnpjFornecedor" value="<?=$pecas['CnpjFornecedor'];?>"  class="form-control p-2 campoDigitar">
                                         </div>
 
                                         <div class="col-6">
                                             <label for="username">Nome do Fornecedor:</label>
-                                            <input type="text" name="username" class="form-control p-2 campoDigitar">
+                                            <input type="text" name="NomeFornecedor"  class="form-control p-2 campoDigitar">
                                         </div>
                                     </div>
 
                                     <div class="col-12" style="display: flex; margin-bottom: 30px;">
                                         <div class="col-6">
                                             <label for="username">Contato do Fornecedor:</label>
-                                            <input type="text" name="username" class="form-control p-2 campoDigitar" required placeholder="(xx) xxxxx-xxxx">
+                                            <input type="text" name="TelFornecedor" class="form-control p-2 campoDigitar" required placeholder="(xx) xxxxx-xxxx">
                                         </div>
 
                                         <div class="col-6">
                                             <label for="username">Data do Pedido:</label>
-                                            <input type="date" name="username" class="form-control p-2 campoDigitar">
+                                            <input type="date" name="DataPedido" value="<?=$pecas['DataPedido'];?>" class="form-control p-2 campoDigitar">
                                         </div>
                                     </div>
                     
                                     <div class="col-12" style="display: flex; margin-bottom: 30px;">
                                         <div class="col-6">
-                                            <label for="username">Data do Recebicemento:</label>
-                                            <input type="date" name="username" class="form-control p-2 campoDigitar">
+                                            <label for="username">Data do Recebimento:</label>
+                                            <input type="date" name="DataRecebimento" value="<?=$pecas['DataRecebimento'];?>" class="form-control p-2 campoDigitar">
                                         </div>
                                         <div class="col-6">
                                             <label for="username">Adicione imagens da peça:</label>
@@ -368,26 +177,40 @@
 
                                     <div class="col-12" style="display: flex; margin-bottom: 20px;">
                                             <div class="col-12">
-                                                <label for="username">Descrição:</label>
-                                                <textarea class="p-2 campoObservacoes" name="observacoes" rows="6" cols="50"></textarea>
+                                                <label for="username">Especificações técnicas:</label>
+                                                <textarea class="p-2 campoObservacoes"  name="DescricaoPeca" rows="6" cols="50"><?=$pecas['DescricaoPeca'];?></textarea>
                                             </div>                  
                                     </div>  
 
                                     <div class="col-12 text-right">
-                                            <button type="button" class="botaoOrdem">
+                                            <button type="submit"  name="UpdatePeca" class="botaoOrdem">
                                              Salvar Alterações
                                             </button>
                                     </div>                    
                                 </div>
                 
-                                </form>
+                            </form>
                             </section>
 
                         </div>
                         </div>
                     </div>
-                    </div>
+                </div>
+                <?php
+                            }
+                        }
+                        else{
+                            echo "<h5> Nenhuma peça cadastrada ! </h5>";
+                        }
 
+
+                ?>   
+        </div>
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <button class="btn btn-primary btn-lg p-3   ">Ver mais peças...</button>
+                    </div>
+                </div>            
             </section>
 
         </main>
