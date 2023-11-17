@@ -44,7 +44,7 @@
                 <div class="row" style="margin: 0px">
                     <div class="containerPesquisaHome ml-auto">
                         <div class="col-12">
-                            <input type="text" class="inputPesquisaHome" id="filtrar-tabela" placeholder="...">
+                            <input type="text" class="inputPesquisaHome" id="filtrar-tabela" placeholder="Digite o usuario...">
                             <button class="botaoPesquisaHome">Pesquisar</button>
                         </div>
                     </div>                

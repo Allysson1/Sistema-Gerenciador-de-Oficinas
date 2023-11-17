@@ -38,7 +38,7 @@
             <div class="row" style="margin: 0px">
                 <div class="containerPesquisaHome ml-auto">
                     <div class="col-12">
-                        <input type="text" class="inputPesquisaHome" placeholder="Digite a placa...">
+                        <input type="text" class="inputPesquisaHome" id="filtrar-tabela" placeholder="Digite a placa...">
                         <button class="botaoPesquisaHome">Pesquisar</button>
                     </div>
                 </div>                
@@ -60,35 +60,33 @@
                         foreach ($query_run as $ordemServico) {
                 ?>
                             
-                            <div class="col-sm-4">
-                    <div class="cardHome">
-                        <p class="tituloHome">Placa do Carro:</p>
-                        <div class="placaHome">
-                            <span><?= $ordemServico['placa']?></span>
-                        </div>
-                        <div class="todosItensCard">                        
-                            <div class="itemCard">
-                                <span>Nome do Cliente:</span>
-                                <span id=""><?= $ordemServico['cliente']?></span>
+                            <div class="col-sm-4 consulta">
+                                <div class="cardHome">
+                                    <p class="tituloHome">Placa do Carro:</p>
+                                    <div class="placaHome">
+                                        <span class="info-nome"><?= $ordemServico['placa']?></span>
+                                    </div>
+                                    <div class="todosItensCard">                        
+                                        <div class="itemCard">
+                                            <span>Nome do Cliente:</span>
+                                            <span id=""><?= $ordemServico['cliente']?></span>
+                                        </div>
+                                        <div class="itemCard">
+                                            <span>Modelo do veículo:</span>
+                                            <span id=""><?= $ordemServico['nomeVeiculo']?></span>
+                                        </div>
+                                        <div class="itemCard">
+                                            <span>Prazo de Entrega:</span>
+                                            <span id=""><?= $ordemServico['prazoEntrega']?></span>
+                                        </div>
+                                        <div class="itemCard">
+                                            <span>Status do serviço:</span>
+                                            <span id=""><?= $ordemServico['statusServico']?></span>
+                                        </div>
+                                        <button class="botaoVerMaisCard">Ver Mais...</button>
+                                    </div>                        
+                                </div>                    
                             </div>
-                            <div class="itemCard">
-                                <span>Modelo do veículo:</span>
-                                <span id=""><?= $ordemServico['nomeVeiculo']?></span>
-                            </div>
-                            <div class="itemCard">
-                                <span>Prazo de Entrega:</span>
-                                <span id=""><?= $ordemServico['prazoEntrega']?></span>
-                            </div>
-                            <div class="itemCard">
-                                <span>Status do serviço:</span>
-                                <span id=""><?= $ordemServico['statusServico']?></span>
-                            </div>
-                            <button class="botaoVerMaisCard">Ver Mais...</button>
-                        </div>                        
-                    </div>                    
-                </div>
-                            
-                
                 <?php           
                         }
                     }
@@ -103,7 +101,7 @@
 
     </main>
     
-
+    <script src="../js/filtar.js"></script>
     
 </body>
 </html>

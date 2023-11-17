@@ -104,7 +104,7 @@
 
                         <div class="col-6">
                             <label for="prazoEntrega">Prazo de entrega:</label>
-                            <input type="date" name="prazoEntrega" class="form-control campoDigitarCadasServico">
+                            <input type="date" name="prazoEntrega" class="form-control bg-dark text-white campoDigitarCadasServico">
                         </div>                   
                     </div>
 
