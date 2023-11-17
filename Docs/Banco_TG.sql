@@ -29,6 +29,23 @@ create table fornecedores (
 );
 
 
+create table ordemServico(
+idOrdemServico int not null auto_increment Primary key, 
+placa char(7) not null, 
+statusServico varchar(40) not null,
+cliente bigint not null,
+nomeVeiculo varchar(40) not null,
+anoVeiculo varchar(20) not null,
+tipoServico varchar(140) not null,
+valor varchar(15) not null,
+prazoEntrega date not null,
+observacao varchar(600)
+);
+
+
 ALTER TABLE pecas ADD FOREIGN KEY (CnpjFornecedor)
 REFERENCES fornecedores (CnpjFornecedor);
 
+
+inserir um campo de status na tabela de ordens de serviço
+where status != 'finalizado';
