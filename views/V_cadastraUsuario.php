@@ -51,7 +51,7 @@
                         <label class="col-12 col-md-12 mt-5 mt-md-5" 
                         for="text">Nome do Funcionário:</label>
                         <input class="col-12 col-md-12  mt-md-1 p-3 textBox" 
-                        type="text" name="nomeFuncionario" placeholder="Digite seu nome completo:" autofocus="true"/>
+                        type="text" name="nomeFuncionario" placeholder="Digite seu nome completo:"/>
                     </div>
                     
                     <div class=" col-12 col-md-6 float-md-left">
@@ -107,4 +107,5 @@
             crossorigin="anonymous"></script>
         
     </body>
+     <!-- feito por Allysson -->
 </html>

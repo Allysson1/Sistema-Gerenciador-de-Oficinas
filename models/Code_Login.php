@@ -56,7 +56,7 @@
                 // var_dump($_SESSION['nivelFuncionario']);
 
 
-                header("location: ../views/V_cadastraUsuario.php");
+                header("location: ../views/home.php");
             }
             else {
                 $_SESSION['message'] = "usuário/senha incorretos ou inexistentes";
