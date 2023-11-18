@@ -41,31 +41,23 @@
                         <div class="col-6">
                             <label for="placa">Placa do Automóvel:</label>
                             <input type="text" name="placa" class="form-control campoDigitarCadasServico">
-                        </div>             
+                        </div>   
                         
                         <div class="col-6">
-                            <label for="nomeSelectServico">Estatus:</label>  
-                            <select name="statusServico" class="SelectServicoCadasServico">
-                                <option selected>Selecione o Status....</option>
-                                <option value="Iniciado">Iniciado</option>
-                                <option value="Em Andamento">Em andamento</option>
-                                <option value="Finalizado">Fianlizado</option>
-                            </select>
+                            <label for="prazoEntrega">Prazo de entrega:</label>
+                            <input type="date" name="prazoEntrega" class="form-control campoDigitarCadasServico">
                         </div>    
                                      
                     </div>
 
                     <div class="col-12" style="display: flex; margin-bottom: 30px;">
 
+                          
+                        
                         <div class="col-6">
-                        <label for="Cliente">Cliente</label>
-                            <select name="cliente" class="custom-select bg-dark text-white" id="inputGroupSelect01">
-                                <option selected>Selecione o Cliente...</option>
-                                <option value="1">Um</option>
-                                <option value="2">Dois</option>
-                                <option value="3">Três</option>
-                            </select>
-                        </div>   
+                            <label for="anoVeiculo">Ano do Automóvel:</label>
+                            <input type="text" name="anoVeiculo" class="form-control campoDigitarCadasServico">
+                        </div> 
 
                         <div class="col-6">
                             <label for="nomeVeiculo">Modelo do Automóvel:</label>
@@ -76,12 +68,28 @@
                     </div>
                     
                     <div class="col-12" style="display: flex; margin-bottom: 30px;">
-                    <div class="col-6">
-                            <label for="anoVeiculo">Ano do Automóvel:</label>
-                            <input type="text" name="anoVeiculo" class="form-control bg-dark text-white campoDigitarCadasServico">
-                        </div> 
+                    
+                        <div class="col-6">
+                            <label for="Cliente">Cliente</label>
+                            <select name="cliente" class="SelectServicoCadasServico" id="inputGroupSelect01">
+                                <option selected>Selecione o Cliente...</option>
+                                <option value="1">Um</option>
+                                <option value="2">Dois</option>
+                                <option value="3">Três</option>
+                            </select>
+                        </div>
 
                         <div class="col-6">
+                            <label for="valor">Valor:</label>
+                            <input type="text" name="valor" class="form-control campoDigitarCadasServico">
+                        </div>
+                                    
+                    </div>
+
+
+                    <div class="col-12" style="display: flex; margin-bottom: 30px;">
+                        
+                    <div class="col-6">
                             <label>Serviço:</label>  
                             <select name="tipoServico" class="SelectServicoCadasServico">
                                 <option selected>Selecione o serviço....</option>
@@ -90,22 +98,19 @@
                                 <option value="3">3</option>
                             </select>
                         </div>  
-                                        
-                    </div>
-
-                    <div class="col-12" style="display: flex; margin-bottom: 30px;">
+                        
+                        
                         <div class="col-6">
-                            <label for="valor">Valor:</label>
-                            <div class="input-group-prepend">
-                                <span class="input-group-text">R$</span>
-                                <input type="text" name="valor" class="form-control campoDigitarCadasServico">
-                            </div>
+                            <label for="nomeSelectServico">Estatus:</label>  
+                            <select name="statusServico" class="SelectServicoCadasServico">
+                                <option selected>Selecione o Status....</option>
+                                <option value="Iniciado">Iniciado</option>
+                                <option value="Em Andamento">Em andamento</option>
+                                <option value="Finalizado">Fianlizado</option>
+                            </select>
                         </div>
 
-                        <div class="col-6">
-                            <label for="prazoEntrega">Prazo de entrega:</label>
-                            <input type="date" name="prazoEntrega" class="form-control bg-dark text-white campoDigitarCadasServico">
-                        </div>                   
+                                           
                     </div>
 
                     <div class="col-12" style="display: flex; margin-bottom: 20px;">

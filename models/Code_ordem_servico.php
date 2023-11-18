@@ -62,7 +62,7 @@
             }
 
             $query = "INSERT INTO ordemServico (placa, statusServico, cliente, nomeVeiculo,
-                    anoVeiculo, tipoServico, valor, prazoEntresga, observacao)
+                    anoVeiculo, tipoServico, valor, prazoEntrega, observacao)
                     VALUES ('$placa', '$statusServico', '$cliente', '$nomeVeiculo', '$anoVeiculo',
                     '$tipoServico', '$valor', '$prazoEntrega', '$observacao')";
 
