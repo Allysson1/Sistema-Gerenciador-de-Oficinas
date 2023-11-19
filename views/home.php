@@ -49,14 +49,14 @@
 
 
                 <?php 
-                    $query = "SELECT * FROM ordemServico where statusServico != 'Finalizado'";
+                    $query = "SELECT * FROM ordemServico where statusServico != 'Finalizado' and statusServico != 'Desativada'";
                     $query_run = mysqli_query($con, $query);
 
                     if (mysqli_num_rows($query_run) > 0){
 
                         foreach ($query_run as $ordemServico) {
                 ?>
-                            
+                     
                             <div class="col-sm-4 consulta">
                                 <div class="cardHome">
                                     <p class="tituloHome">Placa do Carro:</p>
@@ -101,16 +101,18 @@
                                         <section class="section-content">  
                                             <form enctype="multipart/form-data" action="../models/Code_ordem_servico.php" method="POST" class="col-12 col-lg-12">
 
+                                                <input type="hidden" name="idOrdemServico" value="<?= $ordemServico['idOrdemServico']?>">
+
                                                 <div class="row">
                                                     <div class="col-12" style="display: flex; margin-bottom: 30px; margin-top: 45px">
                                                         <div class="col-6">
                                                             <label for="placa">Placa:</label>
-                                                            <input type="text" name="placa" value=" <?= $ordemServico['placa'];?> " class="form-control p-2 campoDigitarCadasServico">
+                                                            <input type="text" name="placa" value=" <?= $ordemServico['placa'];?> " class="form-control p-2 campoDigitar">
                                                         </div>
 
                                                         <div class="col-6">
                                                             <label for="prazoEntrega">Prazo de entrega:</label>
-                                                            <input type="date" name="prazoEntrega" value="<?= $ordemServico['prazoEntrega']?>" class="form-control campoDigitarCadasServico">
+                                                            <input type="date" name="prazoEntrega" value="<?= $ordemServico['prazoEntrega']?>" class="form-control campoDigitar">
                                                         </div>  
                                                         
                                                     </div>
@@ -119,12 +121,12 @@
 
                                                         <div class="col-6">
                                                             <label for="anoVeiculo">Ano do Automóvel:</label>
-                                                            <input type="text" name="anoVeiculo" value=" <?= $ordemServico['anoVeiculo'];?> " class="form-control campoDigitarCadasServico">
+                                                            <input type="text" name="anoVeiculo" value=" <?= $ordemServico['anoVeiculo'];?> " class="form-control campoDigitar">
                                                         </div>                                                    
 
                                                         <div class="col-6">
                                                             <label for="nomeVeiculo">Modelo do Automóvel:</label>
-                                                            <input type="text" name="nomeVeiculo" value=" <?= $ordemServico['nomeVeiculo'];?> " class="form-control campoDigitarCadasServico">
+                                                            <input type="text" name="nomeVeiculo" value=" <?= $ordemServico['nomeVeiculo'];?> " class="form-control campoDigitar">
                                                         </div> 
 
                                                     </div>
@@ -143,7 +145,7 @@
 
                                                         <div class="col-6">
                                                             <label for="valor">Valor:</label>
-                                                            <input type="text" name="valor" value=" <?= $ordemServico['valor'];?> " class="form-control bg-dark text-white campoDigitarCadasServico">
+                                                            <input type="text" name="valor" value=" <?= $ordemServico['valor'];?> " class="form-control campoDigitar">
                                                         </div>
                                                         
                                                         
@@ -164,7 +166,7 @@
                                                         <div class="col-6">
                                                             <label for="nomeSelectServico">Estatus:</label>  
                                                             <select name="statusServico" class="SelectServicoCadasServico">
-                                                                <option selected><?= $ordemServico['statusServico']?></option>
+                                                                <option ><?= $ordemServico['statusServico']?></option>
                                                                 <option value="Iniciado">Iniciado</option>
                                                                 <option value="Em Andamento">Em andamento</option>
                                                                 <option value="Finalizado">Fianlizado</option>
@@ -177,16 +179,16 @@
                                                     <div class="col-12" style="display: flex; margin-bottom: 20px;">
                                                             <div class="col-12">
                                                                 <label for="username">Observação</label>
-                                                                <textarea class="p-2 campoObservacoes" name="DescricaoPeca" rows="6" cols="50"><?= $ordemServico['observacao'];?></textarea>
+                                                                <textarea class="p-2 campoObservacoes" name="observacao" rows="6" cols="50"><?= $ordemServico['observacao'];?></textarea>
                                                             </div>                  
                                                     </div>  
 
                                                     <div class="row col-12">  
-                                                            <button class="m-1 ml-5 btn btn-primary btn-sm" type="submit" name="update_ordem_servico">Salvar Alterações</button>
+                                                            <button class="m-1 ml-5 ml-md-5 ml-lg-5 btn btn-primary btn-sm" type="submit" name="update_ordem_servico">Salvar Alterações</button>
                                                         
-                                                            <button class="m-1 ml-5 btn btn-success btn-sm" type="submit" name="finaliza_ordem_servico">Finalizar</button>      
+                                                            <button class="m-1 ml-md-5 ml-lg-5  btn btn-success btn-sm" type="submit" name="finaliza_ordem_servico" value="<?= $ordemServico['idOrdemServico'];?>">Finalizar</button>      
                                                         
-                                                            <button class="m-1 ml-5 btn btn-danger btn-sm" type="submit" name="delete_ordem_servico" value="<?= $ordemServico['idOrdemServico'];?>" >Deletar</button>
+                                                            <button class="m-1 ml-md-5 ml-lg-5 btn btn-danger btn-sm" type="submit" name="delete_ordem_servico" value="<?= $ordemServico['idOrdemServico'];?>" >Deletar</button>
                                                     </div>
                 
                                                 </div>
@@ -257,19 +259,21 @@
                                     </div>
                                     <div class="modal-body">
                                             
-                                        <section class="section-content">  
+                                    <section class="section-content">  
                                             <form enctype="multipart/form-data" action="../models/Code_ordem_servico.php" method="POST" class="col-12 col-lg-12">
+
+                                                <input type="hidden" name="idOrdemServico" value="<?= $ordemServico['idOrdemServico']?>">
 
                                                 <div class="row">
                                                     <div class="col-12" style="display: flex; margin-bottom: 30px; margin-top: 45px">
                                                         <div class="col-6">
                                                             <label for="placa">Placa:</label>
-                                                            <input type="text" name="placa" value=" <?= $ordemServico['placa'];?> " class="form-control p-2 campoDigitarCadasServico">
+                                                            <input type="text" name="placa" value=" <?= $ordemServico['placa'];?> " class="form-control p-2 campoDigitar">
                                                         </div>
 
                                                         <div class="col-6">
                                                             <label for="prazoEntrega">Prazo de entrega:</label>
-                                                            <input type="date" name="prazoEntrega" value="<?= $ordemServico['prazoEntrega']?>" class="form-control bg-dark text-white campoDigitarCadasServico">
+                                                            <input type="date" name="prazoEntrega" value="<?= $ordemServico['prazoEntrega']?>" class="form-control campoDigitar">
                                                         </div>  
                                                         
                                                     </div>
@@ -278,7 +282,7 @@
 
                                                         <div class="col-6">
                                                             <label for="anoVeiculo">Ano do Automóvel:</label>
-                                                            <input type="text" name="anoVeiculo" value=" <?= $ordemServico['anoVeiculo'];?> " class="form-control bg-dark text-white campoDigitarCadasServico">
+                                                            <input type="text" name="anoVeiculo" value=" <?= $ordemServico['anoVeiculo'];?> " class="form-control campoDigitar">
                                                         </div>                                                    
 
                                                         <div class="col-6">
@@ -292,7 +296,7 @@
 
                                                     <div class="col-6">
                                                             <label for="Cliente">Cliente</label>
-                                                            <select name="cliente" class="custom-select bg-dark text-white" id="inputGroupSelect01">
+                                                            <select name="cliente" class="SelectServicoCadasServico" id="inputGroupSelect01">
                                                                 <option selected><?= $ordemServico['cliente']?></option>
                                                                 <option value="1">Um</option>
                                                                 <option value="2">Dois</option>
@@ -302,7 +306,7 @@
 
                                                         <div class="col-6">
                                                             <label for="valor">Valor:</label>
-                                                            <input type="text" name="valor" value=" <?= $ordemServico['valor'];?> " class="form-control bg-dark text-white campoDigitarCadasServico">
+                                                            <input type="text" name="valor" value=" <?= $ordemServico['valor'];?> " class="form-control campoDigitar">
                                                         </div>
                                                         
                                                         
@@ -323,7 +327,7 @@
                                                         <div class="col-6">
                                                             <label for="nomeSelectServico">Estatus:</label>  
                                                             <select name="statusServico" class="SelectServicoCadasServico">
-                                                                <option selected><?= $ordemServico['statusServico']?></option>
+                                                                <option ><?= $ordemServico['statusServico']?></option>
                                                                 <option value="Iniciado">Iniciado</option>
                                                                 <option value="Em Andamento">Em andamento</option>
                                                                 <option value="Finalizado">Fianlizado</option>
@@ -336,20 +340,20 @@
                                                     <div class="col-12" style="display: flex; margin-bottom: 20px;">
                                                             <div class="col-12">
                                                                 <label for="username">Observação</label>
-                                                                <textarea class="p-2 campoObservacoes" name="DescricaoPeca" rows="6" cols="50"><?= $ordemServico['observacao'];?></textarea>
+                                                                <textarea class="p-2 campoObservacoes" name="observacao" rows="6" cols="50"><?= $ordemServico['observacao'];?></textarea>
                                                             </div>                  
                                                     </div>  
 
                                                     <div class="row col-12">  
-                                                            <button class="m-1 ml-5 col-6 btn btn-primary btn-sm" type="submit" name="update_ordem_servico">Salvar Alterações</button>     
+                                                            <button class="m-1 ml-5 ml-lg-5 col-6 btn btn-primary btn-sm" type="submit" name="update_ordem_servico">Salvar Alterações</button>     
                                                         
-                                                            <button class="m-1 ml-5 btn btn-danger btn-sm" type="submit" name="delete_ordem_servico" value="<?= $ordemServico['idOrdemServico'];?>" >Deletar</button>
+                                                            <button class="m-1 ml-3 ml-lg-5 btn btn-danger btn-sm" type="submit" name="delete_ordem_servico" value="<?= $ordemServico['idOrdemServico'];?>" >Deletar</button>
                                                     </div>
-
+                
                                                 </div>
                                 
                                             </form>
-                                        </section>
+                                        </section>  
 
                                     </div>
                                     </div>
