@@ -13,6 +13,11 @@
         $valor = mysqli_real_escape_string($con, $_POST['valor']);
         $prazoEntrega = mysqli_real_escape_string($con, $_POST['prazoEntrega']);
         $observacao = mysqli_real_escape_string($con, $_POST['observacao']);
+        $pecaUsada = mysqli_real_escape_string($con, $_POST['pecaUsada']);
+        $qtdPeca = mysqli_real_escape_string($con, $_POST['qtdPeca']);
+
+
+        // var_dump($_POST['pecaUsada']);
         
     
         if ($placa == ""){ 
@@ -55,12 +60,28 @@
             header("location: ../views/cadastroServico.php");
             exit(0);
         }
+        elseif ($pecaUsada == ""){ 
+            $_SESSION['message'] = "Peça a ser usada não inserida!";
+            header("location: ../views/cadastroServico.php");
+            exit(0);
+        }
+        elseif ($qtdPeca == ""){ 
+            $_SESSION['message'] = "Quantidade de peças não inserida!";
+            header("location: ../views/cadastroServico.php");
+            exit(0);
+        }
         else{
 
             if ($observacao == ""){ 
                 $observacao = 'não inserido';
             }
 
+            // o que falta
+
+            //inserir as colunas referente a peças dentro da ordem de servico
+            //terminar as validações no crud da ordem de serviço referente ao desconto de
+            //quantidade de peças dentro do sistema.
+            //começar o crud de clientes
             $query = "INSERT INTO ordemServico (placa, statusServico, cliente, nomeVeiculo,
                     anoVeiculo, tipoServico, valor, prazoEntrega, observacao)
                     VALUES ('$placa', '$statusServico', '$cliente', '$nomeVeiculo', '$anoVeiculo',
