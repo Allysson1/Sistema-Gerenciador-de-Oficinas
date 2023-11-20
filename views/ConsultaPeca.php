@@ -58,6 +58,7 @@
                         
                         foreach ($query_run as $pecas) {
                             
+
                 ?>
                 
                 <div class="col-sm-4 col-4">
@@ -104,7 +105,10 @@
                                     <i class="fas fa-solid fa-circle-xmark" style="color: #000000;"></i>
                                 </button>
                             </div>
-
+                            
+                                
+                        <section class="section-content">  
+                            <form enctype="multipart/form-data" action="../models/Code_Peca.php" method="POST">
                             <div class="modal-body" style="margin-top: -25px">                                    
                                 <section class="section-content">  
                                     <form enctype="multipart/form-data" action="../models/Code_Peca.php" method="POST" class="col-12 col-lg-12">
@@ -113,7 +117,7 @@
                                             <div class="col-12" style="display: flex; margin-bottom: 30px; margin-top: 45px">
                                                 <div class="col-6">
                                                     <label for="username">Código da Peça:</label>
-                                                    <input type="text" name="idPeca" value=" <?= $pecas['idPeca'];?> " class="form-control p-2 campoDigitar" readonly>
+                                                    <input type="text" name="idPeca" value=" <?= $pecas['idPeca'];?> " class="form-control p-2 campoDigitarCodPeca" readonly>
                                                 </div>
                                                 <div class="col-6">
                                                     <label for="username">Nome da Peça:</label>

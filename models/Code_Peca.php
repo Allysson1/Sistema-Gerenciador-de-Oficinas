@@ -102,7 +102,9 @@ if (isset($_POST['SavePeca'])) {
                       
                     }
                     else{
-                          echo "falha ao enviar foto da peça";
+                        $_SESSION['message'] = "falha ao enviar foto da peça !";
+                        header("location: ../views/cadastroPeca.php");
+                        exit(0);
                     }
         }
 
@@ -187,12 +189,6 @@ if (isset($_POST['UpdatePeca'])) {
     }
 
     else {
-        
-        $query = "UPDATE fornecedores SET CnpjFornecedor='$CnpjFornecedor', NomeFornecedor='$NomeFornecedor', TelFornecedor='$TelFornecedor' 
-                WHERE idPeca = '$idPeca'";
-
-
-        $query_run = $con->query($query) or die ("Falha na conexao");
 
                 //inserindo caminho da imagem no banco
         if(isset($_FILES['ImagemPeca'])){
@@ -224,13 +220,19 @@ if (isset($_POST['UpdatePeca'])) {
 
                         // $query3 = "insert into pecas (Nome, Path) values ('$NomeDaImagem','$path')";
                         // $query_run = $con->query($query3) or die ("Falha na conexao");
+
+                
                       
                     }
                     else{
-                          echo "falha ao enviar foto da peça";
+                        $_SESSION['message'] = "falha ao enviar foto da peça !";
+                        header("location: ../views/ConsultaPeca.php");
+                        exit(0);
+                        
                     }
         }
 
+        
         if ($query_run){
 
             $_SESSION['message'] = "Peça alterada com sucesso!";
@@ -242,6 +244,7 @@ if (isset($_POST['UpdatePeca'])) {
             header("location: ../views/ConsultaPeca.php");
             exit(0);
         }
+
 
         
     }
