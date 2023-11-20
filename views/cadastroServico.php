@@ -16,8 +16,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
     <title>Cadastro de Serviço</title>
     <link rel="shortcut icon" type="imagex/png" href="../images/icon.volante.svg">
 </head>
@@ -42,35 +47,29 @@
 
                         <div class="col-6">
                             <label for="placa">Placa do Automóvel:</label>
-                            <input type="text" name="placa" class="form-control campoDigitar">
+                            <input type="text" name="placa" class="form-control campoDigitarCadasServico">
                         </div>   
                         
                         <div class="col-6">
                             <label for="prazoEntrega">Prazo de entrega:</label>
-                            <input type="date" name="prazoEntrega" class="form-control campoDigitar">
+                            <input type="date" name="prazoEntrega" class="form-control campoDigitarCadasServico">
                         </div>    
                                      
                     </div>
 
                     <div class="col-12" style="display: flex; margin-bottom: 30px;">
-
-                          
-                        
                         <div class="col-6">
                             <label for="anoVeiculo">Ano do Automóvel:</label>
-                            <input type="text" name="anoVeiculo" class="form-control campoDigitar">
+                            <input type="text" name="anoVeiculo" class="form-control campoDigitarCadasServico">
                         </div> 
 
                         <div class="col-6">
                             <label for="nomeVeiculo">Modelo do Automóvel:</label>
-                            <input type="text" name="nomeVeiculo" class="form-control campoDigitar">
-                        </div>   
-
-                                        
+                            <input type="text" name="nomeVeiculo" class="form-control campoDigitarCadasServico">
+                        </div>                                           
                     </div>
                     
-                    <div class="col-12" style="display: flex; margin-bottom: 30px;">
-                    
+                    <div class="col-12" style="display: flex; margin-bottom: 30px;">                    
                         <div class="col-6">
                             <label for="Cliente">Cliente</label>
                             <select name="cliente" class="SelectServicoCadasServico" id="inputGroupSelect01">
@@ -83,13 +82,9 @@
 
                         <div class="col-6">
                             <label for="valor">Valor:</label>
-                            <input type="text" name="valor" class="form-control campoDigitar">
-                        </div>
-                                    
+                            <input type="text" name="valor" class="form-control campoDigitarCadasServico">
+                        </div>                                    
                     </div>
-
-
-                    
 
                     <div class="col-12" style="display: flex; margin-bottom: 30px;">
 
@@ -115,7 +110,7 @@
 
                         <div class="col-6">
                             <label for="qtdPeca">Quantidade de Peças:</label>  
-                            <input type="text" name="qtdPeca" class="form-control campoDigitar">
+                            <input type="text" name="qtdPeca" class="form-control campoDigitarCadasServico">
                             
                             
                         </div>
@@ -123,18 +118,18 @@
 
                     <div class="col-12" style="display: flex; margin-bottom: 30px;">
                         
-                        <div class="col-6">
+                            <div class="col-6">
                                 <label>Serviço:</label>  
                                 <select name="tipoServico" class="SelectServicoCadasServico">
                                     <option selected>Selecione o serviço....</option>
-                                    <option value="Troca de Pneu">Troca de Pneu</option>
-                                    <option value="Troca de conjunto de Suspensão">Troca de conjunto de Suspensão</option>
-                                    <option value="Troca de Fluidos">Troca de Fluidos</option>
-                                    <option value="Troca de cabos de Vela">Troca de cabos de Vela</option>
-                                    <option value="Revisão Elétrica">Revisão Elétrica</option>
-                                    <option value="Retifica de motor">Retifica de motor</option>
-                                    <option value="Troca de Cabeçote">Troca de Cabeçote</option>
-                                    <option value="Manutenção de Câmbio">Manutenção de Câmbio</option>
+                                    <option value="TrocaPneu">Troca de Pneu</option>
+                                    <option value="TrocaSuspensao">Troca de conjunto de Suspensão</option>
+                                    <option value="TrocaFluidos">Troca de Fluidos</option>
+                                    <option value="TrocaVela">Troca de cabos de Vela</option>
+                                    <option value="RevisaoEletrica">Revisão Elétrica</option>
+                                    <option value="Retificamotor">Retifica de motor</option>
+                                    <option value="TrocaCabecote">Troca de Cabeçote</option>
+                                    <option value="ManutencaoCambio">Manutenção de Câmbio</option>
                                     <option value="Alinhamento">Alinhamento</option>
                                 </select>
                             </div>  
@@ -162,7 +157,7 @@
                     </div>  
 
                     <div class="col-12 text-right">
-                        <button name="save_ordemServico" type="submit" class="botaoOrdem">Salvar</button>
+                        <button name="save_ordemServico" type="submit" class="botaoCadastroServico">Salvar</button>
                     </div>
                     
                 </div>               
