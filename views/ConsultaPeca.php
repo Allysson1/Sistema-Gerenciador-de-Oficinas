@@ -39,7 +39,10 @@
                 <div class="row" style="margin: 0px">
                     <div class="containerPesquisaHome ml-auto">
                         <div class="col-12">
-                            <input type="text" class="inputPesquisaHome" placeholder="Digite o código ou nome da placa...">
+                            <input
+                                type="text"
+                                class="inputPesquisaHome"
+                                placeholder="Digite o código ou nome da placa...">
                         </div>
                     </div>
                 </div>
@@ -51,50 +54,46 @@
                     $query = "SELECT * FROM pecas";
                     $query_run = mysqli_query($con,$query);
 
-                        if (mysqli_num_rows($query_run) > 0) {
+                    if (mysqli_num_rows($query_run) > 0) {
+                        
+                        foreach ($query_run as $pecas) {
                             
-                            foreach ($query_run as $pecas) {
-                                
-                    ?>
-                            <div class="col-sm-12 col-md-6 col-lg-4">
-                                <div class="cardPeca">
-        
-                                    <div class="todosItensCard">
-                                        <div class="text-center">
-                                            <img
-                                                src="<?=$pecas['Path'] ?>"
-                                                class="img-fluid rounded pb-3"
-                                                alt="..." width="200px" height="200px">
-                                        </div>
-        
-                                        <div class="pl-2 itemCard">
-                                            <span>Nome:</span>
-                                            <span id=""><?=$pecas['NomePeca'] ?></span>
-                                        </div>
-                                        <div class="pl-2 itemCard">
-                                            <span>Quantidade:</span>
-                                            <span id=""><?=$pecas['QtdPeca'] ?> - Em estoque</span>
-                                        </div>
-                                        <div class="pl-2 itemCard">
-                                            <span>Marca:</span>
-                                            <span id=""><?=$pecas['MarcaPeca'] ?></span>
-                                        </div>
-                                        <div class="pl-2 itemCard">
-                                            <span>Código:</span>
-                                            <span id=""><?=$pecas['idPeca'] ?></span>
-                                        </div>
 
-                                         <div class="col-12 d-flex justify-content-around justify-content-sm-around justify-content-md-around justify-content-lg-around">
-                                            <button type="button" class="btn btn-light btn-lg  ">Ver mais</button>
-                                
-                                            <button type="button" class="btn btn-primary btn-lg " data-toggle="modal" data-target="#exampleModal<?= $pecas['idPeca'];?>">
-                                            Alterar
-                                            </button>
-                                        </div>
+                ?>
+                
+                <div class="col-sm-4 col-4">
+                    <div class="cardPeca">
 
-                                    </div>
-                                </div>
+                        <div class="todosItensCard">
+                            <div class="text-center">
+                                <img
+                                    src="<?=$pecas['Path'] ?>"
+                                    class="img-fluid rounded pb-3"
+                                    alt="..." width="250px" height="200px">
                             </div>
+                            <div class="pl-2 itemCard">
+                                <span>Código:</span>
+                                <span id=""><b><?=$pecas['idPeca'] ?></b></span>
+                            </div>
+                            <div class="pl-2 itemCard">
+                                <span>Nome:</span>
+                                <span id=""><?=$pecas['NomePeca'] ?></span>
+                            </div>
+                            <div class="pl-2 itemCard">
+                                <span>Quantidade:</span>
+                                <span id=""><?=$pecas['QtdPeca'] ?> - Em estoque</span>
+                            </div>
+                            <div class="pl-2 itemCard">
+                                <span>Marca:</span>
+                                <span id=""><?=$pecas['MarcaPeca'] ?></span>
+                            </div> 
+
+                            <button type="button" class="verMaisPeca" data-toggle="modal" data-target="#exampleModal<?= $pecas['idPeca'];?>">
+                                Ver mais...
+                            </button>
+                        </div>
+                    </div>
+                </div>
 
                 <!-- Modal -->
                 <div class="modal fade" id="exampleModal<?= $pecas['idPeca'];?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -206,10 +205,10 @@
 
                 ?>   
         </div>
-                <div class="row">
+                <!-- <div class="row">
                     <div class="col-12 text-center">
-                        <button class="btn btn-primary btn-lg p-3">Ver mais peças...</button>
-                    </div>
+                        <button class="btn btn-primary btn-lg p-3   ">Ver mais peças...</button>
+                    </div> -->
                 </div>            
             </section>
 
@@ -224,7 +223,6 @@
             <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
             integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
             crossorigin="anonymous"></script>
-            
 
     </body>
 </html>

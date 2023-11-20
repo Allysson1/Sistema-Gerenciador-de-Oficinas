@@ -12,8 +12,8 @@
 
 <body>
 
+    
     <?php include ('../utils/message.php'); ?>
-
     <?php include ('../utils/header.php'); ?>
 
     <main class="main-content">   
@@ -22,6 +22,8 @@
                 <p class="nameHeaderTopoSite">Cadastro de Peça</p>
             </div>
         </div>    
+
+        
 
         <section class="section-content">
 
