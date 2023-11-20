@@ -1,6 +1,14 @@
 <?php
+    require('../utils/conexao.php');
+    include('../utils/protect.php');
     // variável com o nivel exigido do usuario para acessar a página
     $nivel_necessario = 2;
+
+    if ($_SESSION['nivelFuncionario'] < $nivel_necessario){
+        header("location: ../views/home.php");
+        $_SESSION['message'] = "Você não tem acesso a está página";
+        exit;
+    }
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -25,67 +33,136 @@
             </div>
         </div>    
 
+        <?php include ('../utils/message.php'); ?>
+
         <section class="section-content">
-            <form>
+            <form action="../models/Code_ordem_servico.php" method="POST">
                 <div class="row">
                     <div class="col-12" style="display: flex; margin-bottom: 30px; margin-top: 45px">
+
                         <div class="col-6">
-                            <label for="username">Placa do Automóvel:</label>
-                            <input type="text" name="username" class="form-control campoDigitarCadasServico">
-                        </div>                           
+                            <label for="placa">Placa do Automóvel:</label>
+                            <input type="text" name="placa" class="form-control campoDigitar">
+                        </div>   
+                        
                         <div class="col-6">
-                            <label for="username">Modelo do Automóvel:</label>
-                            <input type="text" name="username" class="form-control campoDigitarCadasServico">
-                        </div>                                        
+                            <label for="prazoEntrega">Prazo de entrega:</label>
+                            <input type="date" name="prazoEntrega" class="form-control campoDigitar">
+                        </div>    
+                                     
                     </div>
 
                     <div class="col-12" style="display: flex; margin-bottom: 30px;">
+
+                          
+                        
                         <div class="col-6">
-                            <label for="username">Ano do Automóvel:</label>
-                            <input type="text" name="username" class="form-control campoDigitarCadasServico">
-                        </div>
+                            <label for="anoVeiculo">Ano do Automóvel:</label>
+                            <input type="text" name="anoVeiculo" class="form-control campoDigitar">
+                        </div> 
+
                         <div class="col-6">
-                            <label for="username">Nome do Cliente:</label>
-                            <input type="text" name="username" class="form-control campoDigitarCadasServico">
-                        </div>                  
+                            <label for="nomeVeiculo">Modelo do Automóvel:</label>
+                            <input type="text" name="nomeVeiculo" class="form-control campoDigitar">
+                        </div>   
+
+                                        
                     </div>
                     
                     <div class="col-12" style="display: flex; margin-bottom: 30px;">
+                    
                         <div class="col-6">
-                            <label for="username">CPF do Cliente:</label>
-                            <input type="text" name="username" class="form-control campoDigitarCadasServico">
-                        </div> 
-                        <div class="col-6">
-                            <label for="nomeSelectServico">Serviço:</label>  
-                            <select name="select" class="SelectServicoCadasServico">
-                                <option value="#" selected disabled>Selecione....</option>
-                                <option value="valor2">Iniciando</option>
-                                <option value="valor2">Em andamento</option>
-                                <option value="valor3">Fianlizado</option>
+                            <label for="Cliente">Cliente</label>
+                            <select name="cliente" class="SelectServicoCadasServico" id="inputGroupSelect01">
+                                <option selected>Selecione o Cliente...</option>
+                                <option value="um">Um</option>
+                                <option value="2">Dois</option>
+                                <option value="3">Três</option>
                             </select>
-                        </div>                    
+                        </div>
+
+                        <div class="col-6">
+                            <label for="valor">Valor:</label>
+                            <input type="text" name="valor" class="form-control campoDigitar">
+                        </div>
+                                    
+                    </div>
+
+
+                    
+
+                    <div class="col-12" style="display: flex; margin-bottom: 30px;">
+
+                        <div class="col-6">
+                            <label for="pecaUsada">Peças Utilizadas:</label>  
+                            <select name="pecaUsada" class="SelectServicoCadasServico">
+                                <?php 
+                                    $query = "SELECT idPeca, nomePeca FROM pecas ORDER BY nomePeca ASC ";
+                                    $query_run = mysqli_query($con, $query);
+
+                                    if (mysqli_num_rows($query_run) > 0){
+
+                                        foreach($query_run as $pecas){
+
+                                            ?>
+                                            <option value="<?= $pecas['idPeca']?>";><?= $pecas['idPeca'] . " - " . $pecas['nomePeca']?></option>
+                                <?php
+                                        }
+                                    }
+                                ?>
+                            </select>
+                        </div>
+
+                        <div class="col-6">
+                            <label for="qtdPeca">Quantidade de Peças:</label>  
+                            <input type="text" name="qtdPeca" class="form-control campoDigitar">
+                            
+                            
+                        </div>
                     </div>
 
                     <div class="col-12" style="display: flex; margin-bottom: 30px;">
+                        
                         <div class="col-6">
-                            <label for="username">Valor:</label>
-                            <input type="text" name="username" class="form-control campoDigitarCadasServico">
-                        </div>
-                        <div class="col-6">
-                            <label for="username">Prazo de entrega:</label>
-                            <input type="text" name="username" class="form-control campoDigitarCadasServico">
-                        </div>                   
+                                <label>Serviço:</label>  
+                                <select name="tipoServico" class="SelectServicoCadasServico">
+                                    <option selected>Selecione o serviço....</option>
+                                    <option value="Troca de Pneu">Troca de Pneu</option>
+                                    <option value="Troca de conjunto de Suspensão">Troca de conjunto de Suspensão</option>
+                                    <option value="Troca de Fluidos">Troca de Fluidos</option>
+                                    <option value="Troca de cabos de Vela">Troca de cabos de Vela</option>
+                                    <option value="Revisão Elétrica">Revisão Elétrica</option>
+                                    <option value="Retifica de motor">Retifica de motor</option>
+                                    <option value="Troca de Cabeçote">Troca de Cabeçote</option>
+                                    <option value="Manutenção de Câmbio">Manutenção de Câmbio</option>
+                                    <option value="Alinhamento">Alinhamento</option>
+                                </select>
+                            </div>  
+                            
+                            
+                            <div class="col-6">
+                                <label for="nomeSelectServico">Estatus:</label>  
+                                <select name="statusServico" class="SelectServicoCadasServico">
+                                    <option selected>Selecione o Status....</option>
+                                    <option value="Iniciado">Iniciado</option>
+                                    <option value="Em Andamento">Em andamento</option>
+                                    <option value="Finalizado">Fianlizado</option>
+                                </select>
+                            </div>
+            
                     </div>
+
+
 
                     <div class="col-12" style="display: flex; margin-bottom: 20px;">
                         <div class="col-12">
-                            <label for="username">Observação:</label>
-                            <textarea class="campoObservacoesCadasServico" name="observacoes" rows="6" cols="50"></textarea>
+                            <label for="observacao">Observação:</label>
+                            <textarea class="campoObservacoesCadasServico" name="observacao" rows="6" cols="50"></textarea>
                         </div>                  
                     </div>  
 
                     <div class="col-12 text-right">
-                        <button type="submit" class="botaoOrdem">Salvar</button>
+                        <button name="save_ordemServico" type="submit" class="botaoOrdem">Salvar</button>
                     </div>
                     
                 </div>               

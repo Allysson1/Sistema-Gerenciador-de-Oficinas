@@ -47,34 +47,38 @@
 
                 <form action="../models/Code_Usuario.php" method="POST" class="col-12 col-lg-12">
 
-                    <div class=" col-12 col-md-6 float-md-left">
+                <div class="row">
+                    <div class=" col-6 col-md-6 float-md-left">
                         <label class="col-12 col-md-12 mt-5 mt-md-5" 
-                        for="text">Nome do Funcionário:</label>
+                        for="text">Nome:</label>
                         <input class="col-12 col-md-12  mt-md-1 p-3 textBox" 
-                        type="text" name="nomeFuncionario" placeholder="Digite seu nome completo:" autofocus="true"/>
+                        type="text" name="nomeFuncionario" placeholder="Digite seu nome completo:"/>
                     </div>
                     
-                    <div class=" col-12 col-md-6 float-md-left">
+                    <div class=" col-6 col-md-6 float-md-left">
                         <label class="col-12 col-md-12  mt-5 mt-md-5" 
                         for="text">Usuário:</label>
                         <input class="col-12 col-md-12 mt-md-1 p-3 textBox" 
                         type="text" name="usuario" placeholder="Digite seu nome de Usuário:"/>
                     </div>
+                </div>
 
 
-                    <div class=" col-12 col-md-6 float-md-left">
+                <div class="row">
+                    <div class=" col-6 col-md-6 float-md-left">
                         <label class="col-12 col-md-12 mt-5 mt-md-5" 
                         for="password">Senha:</label>
                         <input class="col-12 col-md-12 mt-md-1 p-3 textBox" 
                         type="password" name="senha" placeholder="Digite sua Senha:"/>
                     </div>
 
-                    <div class=" col-12 col-md-6 float-md-left">
+                    <div class=" col-6 col-md-6 float-md-left">
                         <label class="col-12 col-md-12  mt-5 mt-md-5" 
                         for="email">E-mail:</label>
                         <input class="col-12 col-md-12 mt-md-1 p-3 textBox" 
                         type="email" name="email" placeholder="Digite seu E-mail:"/>
                     </div>
+                </div>
 
                     <div class="pt-5 col-12 col-md-6 float-md-left">
                         <select class="custom-select" name="nivelFuncionario" id="inputGroupSelect01">
@@ -107,4 +111,5 @@
             crossorigin="anonymous"></script>
         
     </body>
+     <!-- feito por Allysson -->
 </html>

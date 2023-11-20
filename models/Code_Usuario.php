@@ -28,6 +28,12 @@ if (isset($_POST['save_funcionario'])){
         header("location: ../views/V_cadastraUsuario.php");
         exit(0);
     }
+    elseif (strlen($senha) < 8){ 
+        $_SESSION['message'] = "A senha deve possuir no minimo 8 digitos";
+        header("location: ../views/V_cadastraUsuario.php");
+        exit(0);
+    }
+
     elseif ($email == ""){
         $_SESSION['message'] = "email do funcionário não inserido!";
         header("location: ../views/V_cadastraUsuario.php");
@@ -112,8 +118,13 @@ if (isset($_POST['update_funcionario'])){
         header("location: ../views/V_VisualizaUsuarios.php?idUsuario=$funcionario_id");
         exit(0);
     }
+    elseif (strlen($senha) < 8){ 
+        $_SESSION['message'] = "A senha deve possuir no minimo 8 digitos";
+        header("location: ../views/V_VisualizaUsuarios.php?idUsuario=$funcionario_id");
+        exit(0);
+    }
 
-    if ($Confsenha !== $senha){
+    elseif ($Confsenha !== $senha){
         $_SESSION['message'] = 'A senha nova senha e a senha redigitada são diferentes';
         header("location: ../views/V_VisualizaUsuarios.php?idUsuario=$funcionario_id");
         exit(0); 
