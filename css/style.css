@@ -433,6 +433,15 @@ a:hover {
 }
 
 
+#ìmgFoto{
+  max-width: 200px;
+  width: 100%;
+  padding: 10px;
+  border-radius: 30%;
+  
+}
+
+
 /* Tela consulta de peças - Julio */
 .cardPeca {
   background-color: black;

@@ -208,7 +208,7 @@
         </div>
                 <div class="row">
                     <div class="col-12 text-center">
-                        <button class="btn btn-primary btn-lg p-3   ">Ver mais peças...</button>
+                        <button class="btn btn-primary btn-lg p-3">Ver mais peças...</button>
                     </div>
                 </div>            
             </section>
