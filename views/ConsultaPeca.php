@@ -35,10 +35,7 @@
                 <div class="row" style="margin: 0px">
                     <div class="containerPesquisaHome ml-auto">
                         <div class="col-12">
-                            <input
-                                type="text"
-                                class="inputPesquisaHome"
-                                placeholder="Digite o código ou nome da placa...">
+                            <input type="text" class="inputPesquisaHome" placeholder="Digite o código ou nome da placa...">
                         </div>
                     </div>
                 </div>
@@ -65,6 +62,11 @@
                                                 class="img-fluid rounded pb-3"
                                                 alt="..." width="200px" height="200px">
                                         </div>
+                                        <div class="pl-2 itemCard">
+                                            <span>Código:</span>
+                                            <span id=""><?=$pecas['idPeca'] ?></span>
+                                        </div>
+
         
                                         <div class="pl-2 itemCard">
                                             <span>Nome:</span>
@@ -77,10 +79,6 @@
                                         <div class="pl-2 itemCard">
                                             <span>Marca:</span>
                                             <span id=""><?=$pecas['MarcaPeca'] ?></span>
-                                        </div>
-                                        <div class="pl-2 itemCard">
-                                            <span>Código:</span>
-                                            <span id=""><?=$pecas['idPeca'] ?></span>
                                         </div>
 
                                          <div class="col-12 d-flex justify-content-around justify-content-sm-around justify-content-md-around justify-content-lg-around">
@@ -223,6 +221,7 @@
             <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
             integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
             crossorigin="anonymous"></script>
+            
 
     </body>
 </html>
