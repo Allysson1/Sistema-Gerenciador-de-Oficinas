@@ -24,18 +24,26 @@
               <img class="logoNav" src="../images/Logo.svg" alt="imagem de um volande de carro simples">              
             </div>
             <ul>
-                <div class="tituloNav"><span><i class="fas fa-solid fa-car" style="margin-right: 10px; color: #007fff"></i>Serviço</span></div>
-                <li><a class="opcaoNav <?php if($page == 'cadastroServico.php'):echo "disabled"; endif; ?>" href="../views/cadastroServico.php"><i class="fas fa-solid fa-minus" style="margin-right: 10px; font-size: 13px;"></i>Cadastro de Serviços</a></li>
+                <div class="tituloNav" style="margin-bottom: -8px"><span><i class="fa-solid fa-user" style="margin-right: 10px; color: #007fff"></i>Cliente</span></div>
+                <li><a class="opcaoNav <?php if($page == 'cadastroCliente.php'):echo "disabled"; endif; ?>" style="margin-bottom: -8px" href="../views/cadastroPeca.php"><i class="fas fa-solid fa-minus" style="margin-right: 10px; font-size: 13px;"></i>Cadastro de Cliente</a></li>
+                <li><a class="opcaoNav <?php if($page == 'consultaCliente.php'):echo "disabled"; endif; ?>" href="../views/ConsultaPeca.php"><i class="fas fa-solid fa-minus" style="margin-right: 10px; font-size: 13px;"></i>Consulta de Cliente</a></li>
+
+                <div class="tituloNav" style="margin-bottom: -8px"><span><i class="fas fa-solid fa-car" style="margin-right: 10px; color: #007fff"></i>Serviço</span></div>
+                <li><a class="opcaoNav <?php if($page == 'cadastroServico.php'):echo "disabled"; endif; ?>" style="margin-bottom: -8px" href="../views/cadastroServico.php"><i class="fas fa-solid fa-minus" style="margin-right: 10px; font-size: 13px;"></i>Cadastro de Serviços</a></li>
                 <li><a class="opcaoNav <?php if($page == 'home.php'):echo "disabled"; endif; ?>" href="../views/home.php"><i class="fas fa-solid fa-minus" style="margin-right: 10px; font-size: 13px;"></i>Consulta de Serviços </a></li>
                 
-                <div class="tituloNav"><span> <i class="fa-solid fa-user" style="margin-right: 10px; color: #007fff"></i>Usuário</span></div>
-                <li><a class="opcaoNav <?php if($page == 'V_cadastraUsuario.php'):echo "disabled"; endif; ?>" href="../views/V_cadastraUsuario.php"><i class="fas fa-solid fa-minus" style="margin-right: 10px; font-size: 13px;"></i>Cadastro de Usuário</a></li>
+                <div class="tituloNav" style="margin-bottom: -8px"><span> <i class="fa-solid fa-computer" style="margin-right: 10px; color: #007fff"></i>Usuário</span></div>
+                <li><a class="opcaoNav <?php if($page == 'V_cadastraUsuario.php'):echo "disabled"; endif; ?>" style="margin-bottom: -8px" href="../views/V_cadastraUsuario.php"><i class="fas fa-solid fa-minus" style="margin-right: 10px; font-size: 13px;"></i>Cadastro de Usuário</a></li>
                 <li><a class="opcaoNav <?php if($page == 'V_VisualizaUsuarios.php'):echo "disabled"; endif; ?>" href="../views/V_VisualizaUsuarios.php"><i class="fas fa-solid fa-minus" style="margin-right: 10px; font-size: 13px;"></i>Consulta de Usuários</a></li>
 
-                <div class="tituloNav"><span><i class="fa-solid fa-screwdriver-wrench" style="margin-right: 10px; color: #007fff"></i>Peças</span></div>
-                <li><a class="opcaoNav <?php if($page == 'cadastroPeca.php'):echo "disabled"; endif; ?>" href="../views/cadastroPeca.php"><i class="fas fa-solid fa-minus" style="margin-right: 10px; font-size: 13px;"></i>Cadastro de Peças</a></li>
+                <div class="tituloNav" style="margin-bottom: -8px"><span><i class="fa-solid fa-screwdriver-wrench" style="margin-right: 10px; color: #007fff"></i>Peças</span></div>
+                <li><a class="opcaoNav <?php if($page == 'cadastroPeca.php'):echo "disabled"; endif; ?>" style="margin-bottom: -8px" href="../views/cadastroPeca.php"><i class="fas fa-solid fa-minus" style="margin-right: 10px; font-size: 13px;"></i>Cadastro de Peças</a></li>
                 <li><a class="opcaoNav <?php if($page == 'ConsultaPeca.php'):echo "disabled"; endif; ?>" href="../views/ConsultaPeca.php"><i class="fas fa-solid fa-minus" style="margin-right: 10px; font-size: 13px;"></i>Consulta de Peças</a></li>
                 
+                <div class="tituloNav" style="margin-bottom: -8px"><span><i class="fa-solid fa-truck" style="margin-right: 10px; color: #007fff"></i>Fornecedor</span></div>
+                <li><a class="opcaoNav <?php if($page == 'cadastroFornecedor.php'):echo "disabled"; endif; ?>" style="margin-bottom: -8px" href="../views/cadastroPeca.php"><i class="fas fa-solid fa-minus" style="margin-right: 10px; font-size: 13px;"></i>Cadastro de Fornecedor</a></li>
+                <li><a class="opcaoNav <?php if($page == 'consultaFornecedor.php'):echo "disabled"; endif; ?>" href="../views/ConsultaPeca.php"><i class="fas fa-solid fa-minus" style="margin-right: 10px; font-size: 13px;"></i>Consulta de Fornecedor</a></li>
+
                 <div class="sairNav "><span><a href="../utils/logout.php">Sair</a></span></div>
             </ul>
         </nav>

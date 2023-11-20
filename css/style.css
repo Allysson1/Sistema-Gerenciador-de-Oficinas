@@ -32,10 +32,9 @@ a:hover {
 }
 
 /* codigo utilizado no filtro de pesquisa - Allysson */
- .invisivel{
+.invisivel {
   display: none;
- }
- 
+}
 
 /* configuração header.php 
 .bgNav {
@@ -182,81 +181,24 @@ a:hover {
   }
 }
 
-/*Tela Ordem de Serviço - Ana*/
-.divHeaderTopoSite {
-  padding: 30px 0 12px 0;
-  width: 100%;
-  border-bottom: 2px solid #000000;
-}
-
-.nameHeaderTopoSite {
-  padding-left: 30px;
-  font-size: 30px;
-}
-
-.campoDigitar {
+/*Tela Cadastro de Serviço - Ana*/
+.campoDigitarCadasServico {
   color: #fff;
   background-color: #000;
   padding: 20px 10px;
 }
 
-.campoDigitar:focus {
+.campoDigitarCadasServico:focus {
   color: #fff;
   background-color: #000;
 }
 
-.selectStatus {
-  width: 100%;
-  padding: 10px;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  background-color: #000;
-  color: #fff;
+/* Seletor genérico para browsers modernos */
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(100%);
 }
 
-.selectStatus option {
-  background-color: #fff;
-  color: #333;
-}
-
-.selectStatus:focus {
-  outline: none;
-  border-color: #007bff;
-  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-}
-
-.SelectServico {
-  width: 100%;
-  padding: 10px;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  background-color: #000;
-  color: #fff;
-}
-
-.SelectServico option {
-  background-color: #fff;
-  color: #333;
-}
-
-.SelectServico:focus {
-  outline: none;
-  border-color: #007bff;
-  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-}
-
-.campoObservacoes {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  background-color: #000;
-  color: #fff;
-}
-
-.botaoOrdem {
+.botaoCadastroServico {
   background-color: #007fff;
   color: #fff;
   padding: 15px 100px;
@@ -265,20 +207,8 @@ a:hover {
   margin: 15px;
 }
 
-.botaoOrdem:hover {
+.botaoCadastroServico:hover {
   background-color: #0070e0;
-}
-
-/*Tela Cadastro de Serviço - Ana*/
-.campoDigitarCadasServico {
-  color: #000;
-  background-color: #000;
-  padding: 20px 0;
-}
-
-.campoDigitarCadasServico:focus {
-  color: #000;
-  background-color: #c7c7c7;
 }
 
 .campoObservacoesCadasServico {
@@ -286,8 +216,8 @@ a:hover {
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  background-color: #c7c7c7;
-  color: #000;
+  background-color: #000;
+  color: #fff;
 }
 
 .SelectServicoCadasServico {
@@ -296,8 +226,8 @@ a:hover {
   font-size: 16px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  background-color: #c7c7c7;
-  color: #000;
+  background-color: #000;
+  color: #fff;
 }
 
 .SelectServicoCadasServico option {
@@ -395,7 +325,6 @@ a:hover {
   margin-right: 5px;
   border: 1px solid #ccc;
   border-radius: 10px;
-  
 }
 
 .botaoPesquisaHome {
@@ -411,6 +340,119 @@ a:hover {
   background-color: #000;
 }
 
+/* Modal botão ver mais ordem de serviço da tela Home*/
+.divHeaderTopoSite {
+  padding: 30px 0 12px 0;
+  width: 100%;
+  border-bottom: 2px solid #000000;
+}
+
+.nameHeaderTopoSite {
+  padding-left: 30px;
+  font-size: 30px;
+}
+
+.campoDigitar {
+  color: #fff;
+  background-color: #000;
+  padding: 20px 10px;
+}
+
+.campoDigitar:focus {
+  color: #fff;
+  background-color: #000;
+}
+
+.selectStatus {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #000;
+  color: #fff;
+}
+
+.selectStatus option {
+  background-color: #fff;
+  color: #333;
+}
+
+.selectStatus:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.SelectServico {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #000;
+  color: #fff;
+}
+
+.SelectServico option {
+  background-color: #fff;
+  color: #333;
+}
+
+.SelectServico:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.campoObservacoes {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #000;
+  color: #fff;
+}
+
+.botaoSalvarOrdem {
+  background-color: #007fff;
+  color: #fff;
+  padding: 15px 100px;
+  border: 0;
+  border-radius: 15px;
+  margin: 15px;
+}
+
+.botaoSalvarOrdem:hover {
+  background-color: #0070e0;
+}
+
+.botaoFinalizaOrdem {
+  background-color: green;
+  color: #fff;
+  padding: 15px 100px;
+  border: 0;
+  border-radius: 15px;
+  margin: 15px;
+}
+
+.botaoFinalizaOrdem:hover {
+  background-color: rgb(0, 97, 0);
+}
+
+.botaoDeleteOrdem {
+  background-color: red;
+  color: #fff;
+  padding: 15px 100px;
+  border: 0;
+  border-radius: 15px;
+  margin: 15px;
+}
+
+.botaoDeleteOrdem:hover {
+  background-color: rgb(171, 0, 0);
+}
+
 /* Tela cadastro de peças - Julio */
 .campodescricaopeca {
   width: 100%;
@@ -421,24 +463,15 @@ a:hover {
   color: #fff;
 }
 
-.campoPeca{
+.campoPeca {
   color: #fff;
   background-color: #000;
   padding: 20px 10px;
 }
-.campoPeca:focus{
+.campoPeca:focus {
   color: #fff;
   background-color: #000;
   padding: 20px 10px;
-}
-
-
-#ìmgFoto{
-  max-width: 200px;
-  width: 100%;
-  padding: 10px;
-  border-radius: 30%;
-  
 }
 
 
@@ -450,7 +483,33 @@ a:hover {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   margin: 20px 5px;
   padding-bottom: 50px;
-  height: 500px;
+  height: 550px;
+}
+
+.botaoSalvarPeca {
+  background-color: #007fff;
+  color: #fff;
+  padding: 15px 100px;
+  border: 0;
+  border-radius: 15px;
+  margin: 15px;
+}
+
+.botaoSalvarPeca:hover {
+  background-color: #0070e0;
+}
+
+.botaoDeletePeca {
+  background-color: red;
+  color: #fff;
+  padding: 15px 100px;
+  border: 0;
+  border-radius: 15px;
+  margin: 15px;
+}
+
+.botaoDeletePeca:hover {
+  background-color: rgb(171, 0, 0);
 }
 
 /* Tela Alterar peças - Julio */
@@ -463,6 +522,31 @@ a:hover {
 .nameHeaderAlterar {
   padding-left: 30px;
   font-size: 30px;
+}
+
+.verMaisPeca {
+  background-color: #007fff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  float: right;
+}
+
+.verMaisPeca:hover {
+  background-color: #0070e0;
+}
+
+.campoDigitarCodPeca {
+  color: #fff !important;
+  background-color: #000 !important;
+  padding: 20px 10px;
+}
+
+.campoDigitarCodPeca:focus {
+  color: #fff;
+  background-color: #000;
 }
 
 /*Menu - Ana Clara*/
