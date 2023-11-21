@@ -73,7 +73,7 @@
                             </div>
                             <div class="pl-2 itemCard">
                                 <span>Código:</span>
-                                <span id=""><?=$pecas['idPeca'] ?></span>
+                                <span id=""><b><?=$pecas['idPeca'] ?></b></span>
                             </div>
                             <div class="pl-2 itemCard">
                                 <span>Nome:</span>
@@ -205,10 +205,10 @@
 
                 ?>   
         </div>
-                <div class="row">
+                <!-- <div class="row">
                     <div class="col-12 text-center">
                         <button class="btn btn-primary btn-lg p-3   ">Ver mais peças...</button>
-                    </div>
+                    </div> -->
                 </div>            
             </section>
 

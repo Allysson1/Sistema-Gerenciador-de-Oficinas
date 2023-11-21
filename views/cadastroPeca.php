@@ -5,15 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/style.css" type="text/css">
     <title>Cadastro de Peça</title>
     <link rel="shortcut icon" type="imagex/png" href="../images/icon.volante.svg">
 </head>
 
 <body>
 
+    
     <?php include ('../utils/message.php'); ?>
-
     <?php include ('../utils/header.php'); ?>
 
     <main class="main-content">   
@@ -22,6 +22,8 @@
                 <p class="nameHeaderTopoSite">Cadastro de Peça</p>
             </div>
         </div>    
+
+        
 
         <section class="section-content">
 
@@ -34,12 +36,12 @@
                             <label for="codpeca">Código Peça:</label>
                             <input type="text" name="username" class="form-control p-2 campoDigitar">
                         </div>                            -->
-                        <div class="col-6">
+                        <div class="col-12 col-sm-12 col-md-6 col-lg-6">
                             <label for="nomepeça">Nome da Peça:</label>
                             <input type="text" name="NomePeca" class="form-control p-2 campoPeca">
                         </div>         
 
-                        <div class="col-6">
+                        <div class="col-12 col-sm-12 col-md-6 col-lg-6">
                             <label for="marca">Marca:</label>
                             <input type="text" name="MarcaPeca" class="form-control p-2 campoPeca   ">
                         </div>
@@ -47,11 +49,11 @@
 
                     <div class="col-12" style="display: flex; margin-bottom: 30px;">
    
-                        <div class="col-6">
+                        <div class="col-12 col-sm-12 col-md-6 col-lg-6">
                             <label for="quantidade">Quantidade:</label>
                             <input type="text" name="QtdPeca" class="form-control p-2 campoPeca ">
                         </div>       
-                        <div class="col-6">
+                        <div class="col-12 col-sm-12 col-md-6 col-lg-6">
                             <label for="cnpjfornecedor">CNPJ do Fornecedor:</label>
                             <input type="text" name="CnpjFornecedor" class="form-control p-2 campoPeca  ">
                         </div>           
@@ -59,12 +61,12 @@
 
                     <div class="col-12" style="display: flex; margin-bottom: 30px;">
 
-                        <div class="col-6">
+                        <div class="col-12 col-sm-12 col-md-6 col-lg-6">
                             <label for="nomefornecedor">Nome do Fornecedor:</label>
                             <input type="text" name="NomeFornecedor" class="form-control p-2 campoPeca  ">
                         </div>   
                         
-                        <div class="col-6">
+                        <div class="col-12 col-sm-12 col-md-6 col-lg-6">
                             <label for="telefone">Contato do Fornecedor:</label>
                             <input type="tel" name="TelFornecedor" class="form-control p-2 campoPeca" required placeholder="(xx) xxxxx-xxxx">
                         </div>
@@ -72,12 +74,12 @@
 
                     <div class="col-12" style="display: flex; margin-bottom: 30px;">
 
-                        <div class="col-6">
+                        <div class="col-12 col-sm-12 col-md-6 col-lg-6">
                             <label for="datapedido">Data de Pedido:</label>
                             <input type="date" name="DataPedido" class="form-control p-2 campoPeca  ">
                         </div>  
                         
-                        <div class="col-6">
+                        <div class="col-12 col-sm-12 col-md-6 col-lg-6">
                             <label for="datarecebimento">Data Recebimento:</label>
                             <input type="date" name="DataRecebimento" class="form-control p-2 campoPeca ">
                         </div>
@@ -88,11 +90,18 @@
                         <div class="col-6 left">
                             <label for="fotopeca">Adicione imagens da peça:</label>
                             <div class="input-group">
-                                <input type="file" name="ImagemPeca" class="form-control p-2" style = "border: none;" accept="image/*">
+                                
+                                <input type="file" name="ImagemPeca" id="imgPeca" class="form-control p-2" style = "border: none;" accept="image/*">
                                 <button class="btn btn-outline-secondary excluirFoto, border-0" type ="reset">X</button>
+                                
                             </div>
-                        </div>                   
+                        </div>   
+               
                     </div>
+
+                    <div class="col-6 left"> 
+                            <img src="" id="imgFoto" class="img-fluid"> 
+                    </div> 
 
                     <div class="col-12" style="display: flex; margin-bottom: 20px;">
                         <div class="col-12">
@@ -101,8 +110,8 @@
                         </div>                  
                     </div>  
 
-                    <div class="col-12 text-right">
-                        <button type="submit" name="SavePeca" class="botaoOrdem">Cadastrar</button>
+                    <div class="col-12  text-right">
+                        <button class="btn btn-primary p-3 col-sm-12 col-md-4 col-lg-4" type="submit" name="SavePeca" class="botaoOrdem">Cadastrar</button>
                     </div>
                     
                 </div>               
@@ -111,7 +120,16 @@
         </section>
 
     </main>
-    
+    <script src="../js/preview.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+            integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+            crossorigin="anonymous"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+            integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+            crossorigin="anonymous"></script>
 
     
 </body>
