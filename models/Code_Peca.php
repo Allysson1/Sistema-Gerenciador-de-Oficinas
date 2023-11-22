@@ -124,6 +124,26 @@ if (isset($_POST['SavePeca'])) {
 
 }
 
+if (isset($_POST['deletePeca'])){
+
+    $IdPeca = mysqli_real_escape_string($con, $_POST['idPeca']);
+
+    $query = "UPDATE pecas SET StatusPeca = 'D' WHERE idPeca = '$IdPeca'";
+    $query_run = mysqli_query($con, $query);
+
+    if ($query_run){
+        $_SESSION['message'] = "Peça excluída com sucesso.";
+        header("location: ../views/ConsultaPeca.php");
+        exit(0);
+    }
+    else{
+        $_SESSION['message'] = "Não foi possivel excluir a peça !";
+        header("location: ../views/ConsultaPeca.php");
+        exit(0);
+    }
+}
+
+
 if (isset($_POST['UpdatePeca'])) {
 
     $idPeca = mysqli_real_escape_string($con, $_POST['idPeca']);
