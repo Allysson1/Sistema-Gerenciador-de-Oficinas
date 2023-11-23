@@ -1,5 +1,5 @@
 <?php
-
+    include('../utils/protect.php');
     require ('../utils/conexao.php');
    
     // variável com o nivel exigido do usuario para acessar a página
@@ -23,7 +23,7 @@
 
     <body>
 
-        <?php include ('../utils/message.php'); ?>
+        
 
         <?php include ('../utils/header.php'); ?>
 
@@ -47,12 +47,15 @@
                     </div>
                 </div>
 
+                <?php include ('../utils/message.php'); ?>
+
             <div class="row" style="margin: 0px">
 
                 <?php
 
-                    $query = "SELECT * FROM pecas";
-                    $query_run = mysqli_query($con,$query);
+                    $query = "SELECT * FROM pecas where StatusPeca != 'D'";
+                    
+                    $query_run = mysqli_query($con, $query);
 
                     if (mysqli_num_rows($query_run) > 0) {
                         
@@ -94,7 +97,7 @@
                         </div>
                     </div>
                 </div>
-
+                            
                 <!-- Modal -->
                 <div class="modal fade" id="exampleModal<?= $pecas['idPeca'];?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog modal-lg modal-dialog-centered">
@@ -152,7 +155,7 @@
                                             <div class="col-12" style="display: flex; margin-bottom: 30px;">
                                                 <div class="col-6">
                                                     <label for="username">Contato do Fornecedor:</label>
-                                                    <input type="text" name="TelFornecedor" class="form-control p-2 campoDigitar" required placeholder="(xx) xxxxx-xxxx">
+                                                    <input type="text" name="TelFornecedor" class="form-control p-2 campoDigitar" placeholder="(xx) xxxxx-xxxx">
                                                 </div>
 
                                                 <div class="col-6">
@@ -196,8 +199,9 @@
                     </div>
                 </div>
                 <?php
-                            }
                         }
+                       ;
+                }
                         else{
                             echo "<h5> Nenhuma peça cadastrada ! </h5>";
                         }
