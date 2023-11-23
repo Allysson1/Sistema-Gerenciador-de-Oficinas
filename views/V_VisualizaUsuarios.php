@@ -35,7 +35,7 @@
         
             <div class="row">            
                     <div class="col-12 divHeaderTopoSite">
-                        <p class="nameHeaderTopoSite">Visualizar Usuários</p>
+                        <p class="nameHeaderTopoSite">Visualizar Funcionários</p>
                     </div>  
                 </div> 
 
@@ -45,7 +45,6 @@
                     <div class="containerPesquisaHome ml-auto">
                         <div class="col-12">
                             <input type="text" class="inputPesquisaHome" id="filtrar-tabela" placeholder="Digite o usuario...">
-                            <button class="botaoPesquisaHome">Pesquisar</button>
                         </div>
                     </div>                
                 </div>  

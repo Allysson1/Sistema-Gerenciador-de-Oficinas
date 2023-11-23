@@ -13,9 +13,8 @@
 <!-- utiliza a mesma classe da tela de login para evitar escrever código -->
 <body class="TelaLogin container-fluid row justify-content-center">
 
-    <div class="row mt-3 pt-md-5 pt-lg-0">
-    <img class="pt-4 pl-4" src="../images/icon.volante.svg" alt="imagem de um volande de carro simples"> 
-    <p class="TICar pt-5 pl-4">TI Car</p>
+    <div class="row mt-5 pt-md-5 pt-lg-0">
+        <img class="pt-4 pl-4" src="../images/logo.svg" alt="imagem de um volande de carro simples, com o nome Ti Car escrito ao lado"> 
     </div>
 
     
