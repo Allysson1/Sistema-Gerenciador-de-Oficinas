@@ -51,7 +51,7 @@ create table cliente(
 	CPF bigint not null primary key,
     nome varchar(140) not null,
     contato bigint not null, 
-    endereco varchar(200) not null,ordemServico
+    endereco varchar(200) not null,
     cidade varchar(60) not null,
     UF varchar(60) not null,
     statusCliente char(1) default ''
