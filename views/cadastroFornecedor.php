@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css?v=<?php echo time(); ?>">
     <link rel="stylesheet" href="../css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/style.css">
     <title>Cadastro de Fornecedor</title>
     <link rel="shortcut icon" type="imagex/png" href="../images/icon.volante.svg">
 </head>
@@ -28,7 +28,7 @@
 
 
 
-            <form method="POST" class="ml-3 ml-md-3 ml-lg-3 col-12 col-lg-12">
+            <form method="POST">
                 <div class="row">
                     <div class="col-12" style="display: flex; margin-bottom: 30px; margin-top: 45px">
 
@@ -45,17 +45,18 @@
 
                     <div class="col-12" style="display: flex; margin-bottom: 30px;">
                         <div class="col-6">
-                            <label for="telefone">Contato do Fornecedor:</label>
+                            <label for="telefone">Telefone do Fornecedor:</label>
                             <input type="tel" name="TelFornecedor" class="form-control p-2 campoPeca" required placeholder="(xx) xxxxx-xxxx">
-                        </div>
-                    
+                        </div> 
+                        
                         <div class="col-6">
                             <label for="cnpjfornecedor">Endereço do Fornecedor:</label>
                             <input type="text" name="EnderecoFornecedor" class="form-control p-2 campoPeca  ">
                         </div>
+                        
                     </div>
 
-                    <div class="col-12" style="display: flex; margin-bottom: 30px;">
+                    <div class="col-12" style="display: flex; margin-bottom: 30px;">                        
 
                         <div class="col-6">
                             <label for="nomefornecedor">Cidade:</label>
@@ -96,10 +97,11 @@
                                 <option value=" EX "> Estrangeiro </option>
                             </select>
                         </div>
+                        
                     </div>
 
                     <div class="col-12 text-right">
-                        <button type="submit" name="SaveFornecedor" class="botaoOrdem">Cadastrar</button>
+                        <button type="submit" name="SaveFornecedor" class="botaoCadastroForne">Cadastrar</button>
                     </div>
 
                 </div>

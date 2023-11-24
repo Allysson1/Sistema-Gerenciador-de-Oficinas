@@ -16,7 +16,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/style.css?v=<?php echo time(); ?>">
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <script src="../js/bootstrap.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -103,7 +103,7 @@
 
                                         <div class="modal-body" style="margin-top: -25px">                                            
                                             <section class="section-content">  
-                                                <form enctype="multipart/form-data" action="../models/Code_ordem_servico.php" method="POST" class="col-12 col-lg-12">
+                                                <form enctype="multipart/form-data" action="../models/Code_ordem_servico.php" method="POST">
 
                                                     <input type="hidden" name="idOrdemServico" value="<?= $ordemServico['idOrdemServico']?>">
 
@@ -178,9 +178,9 @@
                                                 </form>
                                             </section>
                                             <div class="modal-footer"> 
-                                                <button type="submit" name="delete_ordem_servico" class="botaoDeleteOrdem" style="padding: 12px 30px;  border-radius: 12px;" value="<?= $ordemServico['idOrdemServico'];?>">Deletar Ordem</button>
-                                                <button type="submit" name="finaliza_ordem_servico" class="botaoFinalizaOrdem" style="padding: 12px 30px;  border-radius: 12px;" value="<?= $ordemServico['idOrdemServico'];?>">Finalizar Ordem</button>
-                                                <button type="submit" name="update_ordem_servico" class="botaoSalvarOrdem" style="padding: 12px 30px;  border-radius: 12px;">Salvar Alterações</button>
+                                                <button type="submit" name="delete_ordem_servico" class="botaoDeleteOrdem"  value="<?= $ordemServico['idOrdemServico'];?>">Deletar Ordem</button>
+                                                <button type="submit" name="finaliza_ordem_servico" class="botaoFinalizaOrdem"  value="<?= $ordemServico['idOrdemServico'];?>">Finalizar Ordem</button>
+                                                <button type="submit" name="update_ordem_servico" class="botaoSalvarOrdem" >Salvar Alterações</button>
                                             </div>
                                         </div>
                                     </div>
