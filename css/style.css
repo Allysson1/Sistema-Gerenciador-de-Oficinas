@@ -124,6 +124,19 @@ a:hover {
   border-color: black;
 }
 
+.botaoOrdem {
+  background-color: #007fff !important;
+  color: #fff !important;
+  padding: 15px 100px !important;
+  border: 0 !important;
+  border-radius: 15px !important;
+  margin: 15px !important;
+}
+
+.botaoOrdem:hover {
+  background-color: #0070e0 !important;
+}
+
 /* tela de visualiza usuários - Allysson */
 .TabelaUsuario {
   overflow-x: scroll;
@@ -135,15 +148,23 @@ a:hover {
   color: #fff;
 }
 
+.botaoVisualUsu {
+  background-color: #007fff !important;
+  color: #fff !important;
+  padding: 15px 50px !important;
+  border: 0 !important;
+  border-radius: 15px !important;
+  margin: 15px !important;
+}
+
+.botaoVisualUsu:hover {
+  background-color: #0070e0 !important;
+}
+
 /* modal de redefinição de senha - Allysson */
 .colorModal {
   color: black;
 }
-
-/* Small devices (landscape phones, 576px and up) - Allysson */
-/* @media (min-width: 576px) and (max-width: 767.98px) {
-    
- } */
 
 /* Medium devices (tablets, 768px and up) - Allysson */
 @media (min-width: 768px) and (max-width: 991.98px) {
@@ -417,10 +438,10 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 .botaoSalvarOrdem {
   background-color: #007fff;
   color: #fff;
-  padding: 15px 100px;
+  padding: 15px 35px;
   border: 0;
-  border-radius: 15px;
-  margin: 15px;
+  border-radius: 12px;
+  margin: 5px !important;
 }
 
 .botaoSalvarOrdem:hover {
@@ -430,10 +451,10 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 .botaoFinalizaOrdem {
   background-color: green;
   color: #fff;
-  padding: 15px 100px;
+  padding: 15px 40px;
   border: 0;
-  border-radius: 15px;
-  margin: 15px;
+  border-radius: 12px;
+  margin: 5px !important;
 }
 
 .botaoFinalizaOrdem:hover {
@@ -443,10 +464,10 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 .botaoDeleteOrdem {
   background-color: red;
   color: #fff;
-  padding: 15px 100px;
+  padding: 15px 40px;
   border: 0;
-  border-radius: 15px;
-  margin: 15px;
+  border-radius: 12px;
+  margin: 5px !important;
 }
 
 .botaoDeleteOrdem:hover {
@@ -546,6 +567,36 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 .campoDigitarCodPeca:focus {
   color: #fff;
   background-color: #000;
+}
+
+/*Cadastro Cliente Nayara/Ana */
+
+.botaoCadastroCliente {
+  background-color: #007fff !important;
+  color: #fff !important;
+  padding: 15px 100px !important;
+  border: 0 !important;
+  border-radius: 15px !important;
+  margin: 15px !important;
+}
+
+.botaoCadastroCliente:hover {
+  background-color: #0070e0 !important;
+}
+
+/*Cadastro Fornecedor Nayara/Ana */
+
+.botaoCadastroForne {
+  background-color: #007fff !important;
+  color: #fff !important;
+  padding: 15px 100px !important;
+  border: 0 !important;
+  border-radius: 15px !important;
+  margin: 15px !important;
+}
+
+.botaoCadastroForne:hover {
+  background-color: #0070e0 !important;
 }
 
 /*Menu - Ana Clara*/
@@ -684,5 +735,49 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
   .divLogoNav {
     margin-top: -35px;
+  }
+}
+
+@media (max-width: 992px) {
+  .botaoSalvarOrdem {
+    background-color: #007fff;
+    color: #fff;
+    font-size: 13px;
+    padding: 10px 11px !important;
+    border: 0;
+    border-radius: 12px;
+    margin: 1 !important;
+  }
+
+  .botaoSalvarOrdem:hover {
+    background-color: #0070e0;
+  }
+
+  .botaoFinalizaOrdem {
+    background-color: green;
+    color: #fff;
+    font-size: 13px;
+    padding: 10px 11px !important;
+    border: 0;
+    border-radius: 12px;
+    margin: 1 !important;
+  }
+
+  .botaoFinalizaOrdem:hover {
+    background-color: rgb(0, 97, 0);
+  }
+
+  .botaoDeleteOrdem {
+    background-color: red;
+    color: #fff;
+    font-size: 13px;
+    padding: 10px 11px !important;
+    border: 0;
+    border-radius: 12px;
+    margin: 1 !important;
+  }
+
+  .botaoDeleteOrdem:hover {
+    background-color: rgb(171, 0, 0);
   }
 }
