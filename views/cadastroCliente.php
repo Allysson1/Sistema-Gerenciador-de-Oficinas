@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css?v=<?php echo time(); ?>">
     <link rel="stylesheet" href="../css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/style.css">
     <title>Cadastro de Cliente</title>
     <link rel="shortcut icon" type="imagex/png" href="../images/icon.volante.svg">
 </head>
@@ -27,7 +27,7 @@
 
             
 
-        <form method="POST" class="ml-3 ml-md-3 ml-lg-3 col-12 col-lg-12">
+        <form method="POST" >
                 <div class="row">
                     <div class="col-12" style="display: flex; margin-bottom: 30px; margin-top: 45px">
 
@@ -45,22 +45,22 @@
                     <div class="col-12" style="display: flex; margin-bottom: 30px;">
 
                         <div class="col-6">
-                            <label for="telefone">Contato do Cliente:</label>
+                            <label for="telefone">Telefone do Cliente:</label>
                             <input type="tel" name="TelCliente" class="form-control p-2 campoPeca" required placeholder="(xx) xxxxx-xxxx">
-                        </div>                   
+                        </div> 
 
                         <div class="col-6">
                             <label for="enderecocliente">Endereço do Cliente:</label>
                             <input type="text" name="EnderecoCliente" class="form-control p-2 campoPeca  ">
                         </div> 
+                        
                     </div>
 
-                    <div class="col-12" style="display: flex; margin-bottom: 30px;">
-
+                    <div class="col-12" style="display: flex; margin-bottom: 30px;">                        
                         <div class="col-6">
                             <label for="cidadecliente">Cidade:</label>
                             <input type="text" name="CidadeCliente" class="form-control p-2 campoPeca  ">
-                        </div>   
+                        </div>  
                         
                         <div class="col-6">
                             <label for="nomeSelectCliente">Estado:</label>  
@@ -96,11 +96,12 @@
                                 <option value=" EX "> Estrangeiro </option>
                             </select>
 
-                        </div>                    
+                        </div>    
+                        
                     </div>
 
                     <div class="col-12 text-right">
-                        <button type="submit" name="SaveCliente" class="botaoOrdem">Cadastrar</button>
+                        <button type="submit" name="SaveCliente" class="botaoCadastroCliente">Cadastrar</button>
                     </div>
                     
                 </div>               

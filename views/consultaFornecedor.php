@@ -23,7 +23,7 @@
         <link rel="stylesheet" href="../css/bootstrap.min.css">
         <link rel="stylesheet" href="../css/bootstrap-grid.min.css" />
         <link rel="stylesheet" href="../css/bootstrap-reboot.min.css" >        
-        <title>Visualizar Funcionários - SGO</title>
+        <title>Visualizar Fornecedor - SGO</title>
         <link rel="shortcut icon" type="imagex/png" href="../images/icon.volante.svg">
     </head>
     
@@ -35,7 +35,7 @@
         
             <div class="row">            
                     <div class="col-12 divHeaderTopoSite">
-                        <p class="nameHeaderTopoSite">Visualizar Funcionários</p>
+                        <p class="nameHeaderTopoSite">Visualizar Fornecedor</p>
                     </div>  
                 </div> 
 
@@ -44,7 +44,7 @@
                 <div class="row">
                     <div class="containerPesquisaHome ml-auto">
                         <div class="col-12">
-                            <input type="text" class="inputPesquisaHome" id="filtrar-tabela" placeholder="Digite o usuario...">
+                            <input type="text" class="inputPesquisaHome" id="filtrar-tabela" placeholder="Digite cnpj do fornecedor...">
                         </div>
                     </div>                
                 </div>  
@@ -56,10 +56,9 @@
 
                         <thead class="thead-light align-center">
                             <th class="">ID</th>
-                            <th class="">Nome do Usuário</th>
-                            <th class="">Usuário</th>
-                            <th class="">E-mail</th>
-                            <th>Nível de Acesso</th>
+                            <th class="">Nome do Fornecedor</th>
+                            <th class="">CNPJ do Fornecedor</th>
+                            <th class="">Telefone do Fornecedor</th>
                             <th class="">Ações</th>
                         </thead>
 
@@ -78,7 +77,6 @@
                                             <td><?php echo $funcionario['idUsuario'];?></td>
                                             <td class="info-nome"><?= $funcionario['nome'];?></td>
                                             <td><?= $funcionario['usuario'];?></td>
-                                            <td><?= $funcionario['email'];?></td>
                                             <td><?= $funcionario['nivelFuncionario'];?></td>
                                             <td>
                                                 <form action="../models/Code_Usuario.php" method="POST" class="d-inline">
@@ -99,7 +97,7 @@
                                             <div class="modal-dialog modal-lg modal-dialog-centered">
                                                 <div class="row modal-content">
                                                     <div class="col-12 modal-header">
-                                                        <h3 class="col-11 modal-title" id="myModalLabel" style="text-align: center; margin: auto; font-weight: bold">Alterar dados da peça</h3>
+                                                        <h3 class="col-11 modal-title" id="myModalLabel" style="text-align: center; margin: auto; font-weight: bold">Alterar dados do Cliente</h3>
                                                         <button type="button" class="close" data-dismiss="modal" aria-label="Fechar" style="text-align: end;">
                                                             <i class="fas fa-solid fa-circle-xmark" style="color: #000000;"></i>
                                                         </button>
@@ -112,53 +110,76 @@
 
                                                                 <!-- linha abaixo necessária para encontrar o id do usuario no comando sql-->
                                                                 <input type="hidden" name="funcionario_id" value="<?= $funcionario['idUsuario']; ?>">
-
                                                                 <div class="row">
                                                                     <div class="col-12" style="display: flex; margin-bottom: 30px; margin-top: 45px">
+
+                                                                        <div class="col-6">
+                                                                            <label for="nomefornecedor">Nome do Fornecedor:</label>
+                                                                            <input type="text" name="NomeFornecedor" class="form-control p-2 campoPeca  ">
+                                                                        </div>
+                                                                    
+                                                                        <div class="col-6">
+                                                                            <label for="cnpjfornecedor">CNPJ do Fornecedor:</label>
+                                                                            <input type="text" name="CnpjFornecedor" class="form-control p-2 campoPeca" required placeholder="xx.xxx.xxx/xxxx-xx">
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="col-12" style="display: flex; margin-bottom: 30px;">
+                                                                        <div class="col-6">
+                                                                            <label for="telefone">Telefone do Fornecedor:</label>
+                                                                            <input type="tel" name="TelFornecedor" class="form-control p-2 campoPeca" required placeholder="(xx) xxxxx-xxxx">
+                                                                        </div>   
                                                                         
                                                                         <div class="col-6">
-                                                                            <label for="text">Nome do Funcionário:</label>
-                                                                            <input type="text" name="nomeFuncionario" class="form-control p-2 p-2 campoDigitar" 
-                                                                            value="<?= $funcionario['nome'];?>"/>
-                                                                        </div>
-
-                                                                        <div class="col-6">
-                                                                            <label for="text">Usuário:</label>
-                                                                            <input type="text" name="usuario" class="form-control p-2 campoDigitar"
-                                                                            value="<?= $funcionario['usuario'];?>"/>
-                                                                        </div>   
+                                                                            <label for="cnpjfornecedor">Endereço do Fornecedor:</label>
+                                                                            <input type="text" name="EnderecoFornecedor" class="form-control p-2 campoPeca  ">
+                                                                        </div>               
+                                                                        
                                                                     </div>
 
                                                                     <div class="col-12" style="display: flex; margin-bottom: 30px;">
+
                                                                         <div class="col-6">
-                                                                            <label for="password">Digite a nova Senha:</label>
-                                                                            <input type="password" name="senha" class="form-control p-2 campoDigitar"/>
-                                                                        </div>
-                                                                        <div class="col-6">
-                                                                            <label for="email">E-mail</label>
-                                                                            <input type="email" name="email" class="form-control p-2 campoDigitar"
-                                                                            value="<?= $funcionario['email'];?>"/>
-                                                                        </div>                   
-                                                                    </div>
-                                                    
-                                                                    <div class="col-12" style="display: flex; margin-bottom: 30px;">
-                                                                        <div class="col-6">
-                                                                            <label for="password">Repita a nova Senha:</label>
-                                                                            <input type="password" name="confSenha" class="form-control p-2 campoDigitar"/>
+                                                                            <label for="nomefornecedor">Cidade:</label>
+                                                                            <input type="text" name="CidadeFornecedor" class="form-control p-2 campoPeca  ">
                                                                         </div>
 
                                                                         <div class="col-6">
-                                                                            <label for="username" style="font-size: 14px;">Nivel de acesso do Usuário:</label>
-                                                                            <select class="custom-select" name="nivelFuncionario" id="inputGroupSelect01">
-                                                                                <option selected><?= $funcionario['nivelFuncionario'];?></option>
-                                                                                <option value="1">1 - Consulta de Serviços</option>
-                                                                                <option value="2">2 - Manipulção de Serviços</option>
-                                                                                <option value="3">3 - Manipulção de Peças</option>
-                                                                                <option value="4">4 - Acesso total ao Sistema</option>
+                                                                            <label for="nomeSelectFornecedor">Estado:</label>
+                                                                            <select name="select" class="SelectServicoCadasServico">
+                                                                                <option value="#" selected disabled>Selecione o estado...</option>
+                                                                                <option value="AC">Acre</option>
+                                                                                <option value=" AL "> Alagoas </option>
+                                                                                <option value=" AP "> Amapá </option>
+                                                                                <option value=" AM "> Amazonas </option>
+                                                                                <option value=" BA "> Bahia </option>
+                                                                                <option value=" CE "> Ceará </ option>
+                                                                                <option value=" DF "> Distrito Federal </option>
+                                                                                <option value=" ES "> Espírito Santo </option>
+                                                                                <option value=" GO "> Goiás </option>
+                                                                                <option value=" MA "> Maranhão </option>
+                                                                                <option value=" MT "> Mato Grosso </option>
+                                                                                <option value=" MS "> Mato Grosso do Sul </option>
+                                                                                <option value=" MG "> Minas Gerais </option>
+                                                                                <option value=" PA "> Pará </option>
+                                                                                <option value=" PB "> Paraíba </option>
+                                                                                <option value=" PR "> Paraná </option>
+                                                                                <option value=" PE "> Pernambuco </option>
+                                                                                <option value=" PI "> Piauí </option>
+                                                                                <option value=" RJ "> Rio de Janeiro </option>
+                                                                                <option value=" RN "> Rio Grande do Norte </option>
+                                                                                <option value=" RS "> Rio Grande do Sul </option>
+                                                                                <option value=" RO "> Rondônia </option>
+                                                                                <option value=" RR "> Roraima </option>
+                                                                                <option value=" SC "> Santa Catarina </option>
+                                                                                <option value=" SP "> São Paulo </option>
+                                                                                <option value=" SE "> Sergipe </option>
+                                                                                <option value=" TO "> Tocantins </option>
+                                                                                <option value=" EX "> Estrangeiro </option>
                                                                             </select>
                                                                         </div>
+                                                                        
                                                                     </div>
-
 
                                                                     <div class="col-12 text-right modal-footer">
                                                                             <button class="botaoVisualUsu" type="submit" name="update_funcionario">
@@ -199,5 +220,4 @@
         <script src="../js/filtar.js"></script>
     </body>    
 
-    <!-- feito por Allysson -->
 </html>
