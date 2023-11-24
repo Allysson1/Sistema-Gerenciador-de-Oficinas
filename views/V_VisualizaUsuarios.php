@@ -35,7 +35,7 @@
         
             <div class="row">            
                     <div class="col-12 divHeaderTopoSite">
-                        <p class="nameHeaderTopoSite">Visualizar Usuários</p>
+                        <p class="nameHeaderTopoSite">Visualizar Funcionários</p>
                     </div>  
                 </div> 
 

@@ -737,7 +737,6 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     margin-top: -35px;
   }
 }
-
 @media (max-width: 992px) {
   .botaoSalvarOrdem {
     background-color: #007fff;
