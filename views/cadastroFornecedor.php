@@ -1,3 +1,11 @@
+<?php
+    include('../utils/protect.php');
+    require ('../utils/conexao.php');
+   
+    // variável com o nivel exigido do usuario para acessar a página
+    $nivel_necessario = 3;
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -13,7 +21,7 @@
 
 <body>
 
-    <?php include('../utils/message.php'); ?>
+    
 
     <?php include('../utils/header.php'); ?>
 
@@ -26,9 +34,9 @@
 
         <section class="section-content">
 
+        <?php include('../utils/message.php'); ?>
 
-
-            <form method="POST">
+            <form method="POST" action="../models/Code_fornecedor.php">
                 <div class="row">
                     <div class="col-12" style="display: flex; margin-bottom: 30px; margin-top: 45px">
 
@@ -65,7 +73,7 @@
 
                         <div class="col-6">
                             <label for="nomeSelectFornecedor">Estado:</label>
-                            <select name="select" class="SelectServicoCadasServico">
+                            <select name="EstadoFornecedor" class="SelectServicoCadasServico">
                                 <option value="#" selected disabled>Selecione o estado...</option>
                                 <option value="AC">Acre</option>
                                 <option value=" AL "> Alagoas </option>
