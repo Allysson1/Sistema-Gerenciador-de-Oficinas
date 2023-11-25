@@ -49,51 +49,57 @@
                     </div>                
                 </div>  
 
+                <?php include('../utils/message.php'); ?>
+
                 
                 <div class="TabelaUsuario">
                     <table class="table table-bordered col-12 tabelaVerUsuario">
                     
 
-                        <thead class="thead-light align-center">
-                            <th class="">ID</th>
+                    <thead class="thead-light align-center">
                             <th class="">Nome do Fornecedor</th>
                             <th class="">CNPJ do Fornecedor</th>
-                            <th class="">Telefone do Fornecedor</th>
+                            <th class="">Contato do Fornecedor</th>
+                            <th class="">Endereço do Fornecedor</th>
+                            <th class="">Cidade</th>
+                            <th class="">Estado</th>
                             <th class="">Ações</th>
                         </thead>
 
                         <tbody>
                             <?php
-                                $query = "SELECT * FROM usuario WHERE status ='' ";
+                                $query = "SELECT * FROM fornecedores WHERE  StatusFornecedor ='' ";
                                 $query_run = mysqli_query($con, $query);
 
                                 if (mysqli_num_rows($query_run) > 0){
 
-                                    foreach($query_run as $funcionario){
+                                    foreach($query_run as $fornecedor){
 
                                         ?>
                                         <!-- classe "consulta" destinada a manipulação de filtro -->
                                         <tr class="consulta">
-                                            <td><?php echo $funcionario['idUsuario'];?></td>
-                                            <td class="info-nome"><?= $funcionario['nome'];?></td>
-                                            <td><?= $funcionario['usuario'];?></td>
-                                            <td><?= $funcionario['nivelFuncionario'];?></td>
+                                            <td class="info-nome"><?= $fornecedor['NomeFornecedor'];?></td>
+                                            <td><?php echo $fornecedor['CnpjFornecedor'];?></td>
+                                            <td><?= $fornecedor['TelFornecedor'];?></td>
+                                            <td><?= $fornecedor['EnderecoFornecedor'];?></td>
+                                            <td><?= $fornecedor['CidadeForncedor'];?></td>
+                                            <td><?= $fornecedor['EstadoFornecedor'];?></td>
                                             <td>
-                                                <form action="../models/Code_Usuario.php" method="POST" class="d-inline">
+                                                <form action="../models/Code_fornecedor.php" method="POST" class="d-inline">
 
-                                                    <a data-toggle="modal" data-target="#ModalUsuario<?= $funcionario['idUsuario'];?>"
+                                                    <a data-toggle="modal" data-target="#ModalUsuario<?= $fornecedor['CnpjFornecedor'];?>"
                                                     class="m-1 btn btn-sm btn_visualizar">Visualizar</a>
                                                     
-                                                    <button type="submit" name="delete_funcionario" 
-                                                    value="<?= $funcionario['idUsuario'];?>" 
+                                                    <button type="submit" name="DeleteFornecedor" 
+                                                    value="<?= $fornecedor['CnpjFornecedor'];?>" 
                                                     class="m-1 btn btn-danger btn-sm">Deletar</button>
                                                 </form>
                                             </td>
                                         </tr>
                                         
-                                        <?php include ('../utils/message.php'); ?>
+                                    
 
-                                        <div class="modal fade" id="ModalUsuario<?= $funcionario['idUsuario'];?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal fade" id="ModalUsuario<?= $fornecedor['CnpjFornecedor'];?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                             <div class="modal-dialog modal-lg modal-dialog-centered">
                                                 <div class="row modal-content">
                                                     <div class="col-12 modal-header">
@@ -106,33 +112,33 @@
                                                     <div class="modal-body">
                                                     
                                                         <section class="section-content" style="margin-top: -25px">  
-                                                            <form action="../models/Code_Usuario.php" method="POST" >
+                                                            <form action="../models/Code_fornecedor.php" method="POST" >
 
                                                                 <!-- linha abaixo necessária para encontrar o id do usuario no comando sql-->
-                                                                <input type="hidden" name="funcionario_id" value="<?= $funcionario['idUsuario']; ?>">
+                                                                <input type="hidden" name="funcionario_id" value="<?= $fornecedor['CnpjFornecedor']; ?>">
                                                                 <div class="row">
                                                                     <div class="col-12" style="display: flex; margin-bottom: 30px; margin-top: 45px">
 
                                                                         <div class="col-6">
                                                                             <label for="nomefornecedor">Nome do Fornecedor:</label>
-                                                                            <input type="text" name="NomeFornecedor" class="form-control p-2 campoPeca  ">
+                                                                            <input type="text" name="NomeFornecedor" class="form-control p-2 campoPeca  " value="<?= $fornecedor['NomeFornecedor']; ?>">
                                                                         </div>
                                                                     
                                                                         <div class="col-6">
                                                                             <label for="cnpjfornecedor">CNPJ do Fornecedor:</label>
-                                                                            <input type="text" name="CnpjFornecedor" class="form-control p-2 campoPeca" required placeholder="xx.xxx.xxx/xxxx-xx">
+                                                                            <input type="text" name="CnpjFornecedor" class="form-control p-2 campoPeca" required placeholder="xx.xxx.xxx/xxxx-xx" value="<?= $fornecedor['CnpjFornecedor']; ?>">
                                                                         </div>
                                                                     </div>
 
                                                                     <div class="col-12" style="display: flex; margin-bottom: 30px;">
                                                                         <div class="col-6">
                                                                             <label for="telefone">Telefone do Fornecedor:</label>
-                                                                            <input type="tel" name="TelFornecedor" class="form-control p-2 campoPeca" required placeholder="(xx) xxxxx-xxxx">
+                                                                            <input type="tel" name="TelFornecedor" class="form-control p-2 campoPeca" required placeholder="(xx) xxxxx-xxxx" value="<?= $fornecedor['TelFornecedor']; ?>">
                                                                         </div>   
                                                                         
                                                                         <div class="col-6">
                                                                             <label for="cnpjfornecedor">Endereço do Fornecedor:</label>
-                                                                            <input type="text" name="EnderecoFornecedor" class="form-control p-2 campoPeca  ">
+                                                                            <input type="text" name="EnderecoFornecedor" class="form-control p-2 campoPeca  " value="<?= $fornecedor['EnderecoFornecedor']; ?>">
                                                                         </div>               
                                                                         
                                                                     </div>
@@ -141,13 +147,13 @@
 
                                                                         <div class="col-6">
                                                                             <label for="nomefornecedor">Cidade:</label>
-                                                                            <input type="text" name="CidadeFornecedor" class="form-control p-2 campoPeca  ">
+                                                                            <input type="text" name="CidadeFornecedor" class="form-control p-2 campoPeca  " value="<?= $fornecedor['CidadeForncedor']; ?>">
                                                                         </div>
 
                                                                         <div class="col-6">
                                                                             <label for="nomeSelectFornecedor">Estado:</label>
                                                                             <select name="select" class="SelectServicoCadasServico">
-                                                                                <option value="#" selected disabled>Selecione o estado...</option>
+                                                                                <option selected><?= $fornecedor['EstadoFornecedor'];?></option>
                                                                                 <option value="AC">Acre</option>
                                                                                 <option value=" AL "> Alagoas </option>
                                                                                 <option value=" AP "> Amapá </option>
