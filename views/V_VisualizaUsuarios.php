@@ -3,8 +3,6 @@
     include('../utils/protect.php');
     // variável com o nivel exigido do usuario para acessar a página
     $nivel_necessario = 4;
-    
-
 
     if ($_SESSION['nivelFuncionario'] < $nivel_necessario){
         header("location: ../views/home.php");
