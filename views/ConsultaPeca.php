@@ -64,7 +64,7 @@
 
                 ?>
                 
-                <div class="col-sm-12 col-4">
+                <div class="col-sm-4 col-4">
                     <div class="cardPeca">
 
                         <div class="todosItensCard">
@@ -147,18 +147,6 @@
                                                 </div>
 
                                                 <div class="col-6">
-                                                    <label for="username">Nome do Fornecedor:</label>
-                                                    <input type="text" name="NomeFornecedor"  class="form-control p-2 campoDigitar">
-                                                </div>
-                                            </div>
-
-                                            <div class="col-12" style="display: flex; margin-bottom: 30px;">
-                                                <div class="col-6">
-                                                    <label for="username">Contato do Fornecedor:</label>
-                                                    <input type="text" name="TelFornecedor" class="form-control p-2 campoDigitar" placeholder="(xx) xxxxx-xxxx">
-                                                </div>
-
-                                                <div class="col-6">
                                                     <label for="username">Data do Pedido:</label>
                                                     <input type="date" name="DataPedido" value="<?=$pecas['DataPedido'];?>" class="form-control p-2 campoDigitar">
                                                 </div>
@@ -173,7 +161,7 @@
                                                     <label for="username">Adicione imagens da peça:</label>
                                                     <div class="input-group">
 
-                                                        <input type="file" class="form-control" style = "border: none;" accept="image/*">
+                                                        <input type="file" name="ImagemPeca" class="form-control" style = "border: none;" accept="image/*">
                                                         <button class="btn btn-outline-secondary excluirFoto, border-0" type ="reset">X</button>
                                                     
                                                     </div>

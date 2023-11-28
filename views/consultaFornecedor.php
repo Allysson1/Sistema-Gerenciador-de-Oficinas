@@ -152,7 +152,7 @@
 
                                                                         <div class="col-6">
                                                                             <label for="nomeSelectFornecedor">Estado:</label>
-                                                                            <select name="select" class="SelectServicoCadasServico">
+                                                                            <select name="EstadoFornecedor" class="SelectServicoCadasServico">
                                                                                 <option selected><?= $fornecedor['EstadoFornecedor'];?></option>
                                                                                 <option value="AC">Acre</option>
                                                                                 <option value=" AL "> Alagoas </option>
@@ -188,7 +188,7 @@
                                                                     </div>
 
                                                                     <div class="col-12 text-right modal-footer">
-                                                                            <button class="botaoVisualUsu" type="submit" name="update_funcionario">
+                                                                            <button class="botaoVisualUsu" type="submit" name="UpdateFornecedor">
                                                                             Salvar Alterações
                                                                             </button>
                                                                     </div>                    

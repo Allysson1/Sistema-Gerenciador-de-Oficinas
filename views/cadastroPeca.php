@@ -1,3 +1,16 @@
+<?php
+    require('../utils/conexao.php');
+    include('../utils/protect.php');
+    // variável com o nivel exigido do usuario para acessar a página
+    $nivel_necessario = 2;
+
+    if ($_SESSION['nivelFuncionario'] < $nivel_necessario){
+        header("location: ../views/home.php");
+        $_SESSION['message'] = "Você não tem acesso a está página";
+        exit;
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -13,7 +26,7 @@
 <body>
 
     
-    <?php include ('../utils/message.php'); ?>
+    
     <?php include ('../utils/header.php'); ?>
 
     <main class="main-content">   
@@ -27,6 +40,7 @@
 
         <section class="section-content">
 
+        <?php include ('../utils/message.php'); ?>
             
 
             <form enctype="multipart/form-data" action="../models/Code_Peca.php" method="POST" >
@@ -55,21 +69,24 @@
                         </div>       
                         <div class="col-12 col-sm-12 col-md-6 col-lg-6">
                             <label for="cnpjfornecedor">CNPJ do Fornecedor:</label>
-                            <input type="text" name="CnpjFornecedor" class="form-control p-2 campoPeca  ">
+                            <select name="CnpjFornecedor" class="SelectServicoCadasServico">
+                            <option value="#" selected disabled>Selecione um fornecedor...</option>
+                                <?php 
+                                    $query = "SELECT CnpjFornecedor, NomeFornecedor FROM fornecedores WHERE StatusFornecedor != 'D' ORDER BY NomeFornecedor ASC ";
+                                    $query_run = mysqli_query($con, $query);
+
+                                    if (mysqli_num_rows($query_run) > 0){
+
+                                        foreach($query_run as $fornecedores){
+
+                                            ?>
+                                            <option value="<?= $fornecedores['CnpjFornecedor']?>";><?= $fornecedores['NomeFornecedor'] . " - " . $fornecedores['CnpjFornecedor']?></option>
+                                <?php
+                                        }
+                                    }
+                                ?>
+                            </select>
                         </div>           
-                    </div>
-
-                    <div class="col-12" style="display: flex; margin-bottom: 30px;">
-
-                        <div class="col-12 col-sm-12 col-md-6 col-lg-6">
-                            <label for="nomefornecedor">Nome do Fornecedor:</label>
-                            <input type="text" name="NomeFornecedor" class="form-control p-2 campoPeca  ">
-                        </div>   
-                        
-                        <div class="col-12 col-sm-12 col-md-6 col-lg-6">
-                            <label for="telefone">Contato do Fornecedor:</label>
-                            <input type="tel" name="TelFornecedor" class="form-control p-2 campoPeca" required placeholder="(xx) xxxxx-xxxx">
-                        </div>
                     </div>
 
                     <div class="col-12" style="display: flex; margin-bottom: 30px;">
@@ -92,7 +109,7 @@
                             <div class="input-group">
                                 
                                 <input type="file" name="ImagemPeca" id="imgPeca" class="form-control p-2" style = "border: none;" accept="image/*">
-                                <button class="btn btn-outline-secondary excluirFoto, border-0" type ="reset">X</button>
+                                <button id="ResetPeca" class="btn btn-outline-secondary excluirFoto, border-0" type ="reset" onclick="this.parentNode.removeChild(imagem)">X</button>
                                 
                             </div>
                         </div>   
@@ -121,6 +138,7 @@
 
     </main>
     <script src="../js/preview.js"></script>
+    <script>var imagem = document.getElementById("imgFoto");</script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
             integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
             crossorigin="anonymous"></script>
