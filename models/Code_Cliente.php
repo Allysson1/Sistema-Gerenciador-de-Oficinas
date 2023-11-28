@@ -7,66 +7,74 @@ require '../utils/conexao.php';
 if (isset($_POST['save_cliente'])){
          
     $nomecliente = mysqli_real_escape_string($con, $_POST['nomeCliente']);
-    $cpfcliente = mysqli_real_escape_string($con, $_POST['cpfcliente']);
+    $cpfcliente = mysqli_real_escape_string($con, $_POST['cpfCliente']);
     $contato = mysqli_real_escape_string($con, $_POST['contato']);
-    $endereco = mysqli_real_escape_string($con, $_POST['endereço']);
+    $endereco = mysqli_real_escape_string($con, $_POST['endereco']);
     $cidade = mysqli_real_escape_string($con, $_POST['cidade']);
     $estado = mysqli_real_escape_string($con, $_POST['estado']);
 
+    // echo($_POST['nomeCliente']);
+    // var_dump($_POST['cpfCliente']);
+    // var_dump($_POST['contato']);
+    // var_dump($_POST['endereco']);
+    // var_dump($_POST['cidade']);
+    // var_dump($_POST['estado']);
 
-//     if ($nome == ""){ 
-//         $_SESSION['message'] = "Nome do cliente não inserido!";
-//         header("location: ../views/V_cadastraUsuario.php");
-//         exit(0);
-//     }
-//     elseif ($usuario == ""){
-//         $_SESSION['message'] = "Usuário do funcionário não inserido!";
-//         header("location: ../views/V_cadastraUsuario.php");
-//         exit(0);
-//     }
-//     elseif ($senha == ""){
-//         $_SESSION['message'] = "Senha do funcionário não inserida!";
-//         header("location: ../views/V_cadastraUsuario.php");
-//         exit(0);
-//     }
-//     elseif (strlen($senha) < 8){ 
-//         $_SESSION['message'] = "A senha deve possuir no minimo 8 digitos";
-//         header("location: ../views/V_cadastraUsuario.php");
-//         exit(0);
-//     }
 
-//     elseif ($email == ""){
-//         $_SESSION['message'] = "email do funcionário não inserido!";
-//         header("location: ../views/V_cadastraUsuario.php");
-//         exit(0);
-//     }
-//     elseif ($nivelFuncionario == ""){
-//         $_SESSION['message'] = "Nivel de acesso do funcionário não inserido!";
-//         header("location: ../views/V_cadastraUsuario.php");
-//         exit(0);
-//     }
 
-//     else{
-//         $query = "INSERT INTO usuario (Nome, Usuario, Senha, Email, nivelFuncionario) 
-//                 VALUES ('$nome', '$usuario', md5('$senha'), '$email', '$nivelFuncionario')";
+    if ($nomecliente == ""){ 
+        $_SESSION['message'] = "Nome do cliente não inserido!";
+        header("location: ../views/cadastroCliente.php");
+        exit(0);
+    }
+    elseif ($cpfcliente == ""){
+        $_SESSION['message'] = "CPF do cliente não inserido!";
+        header("location: ../views/cadastroCliente.php");
+        exit(0);
+    }
+    elseif ($contato == ""){
+        $_SESSION['message'] = "contado do cliente não inserido!";
+        header("location: ../views/cadastroCliente.php");
+        exit(0);
+    }
+    elseif ($endereco == ""){ 
+        $_SESSION['message'] = "Endereço do cliente não inserido";
+        header("location: ../views/cadastroCliente.php");
+        exit(0);
+    }
+
+    elseif ($cidade == ""){
+        $_SESSION['message'] = "cidade do cliente não inserida!";
+        header("location: ../views/cadastroCliente.php");
+        exit(0);
+    }
+    elseif ($estado == ""){
+        $_SESSION['message'] = "estado do cliente não inserido!";
+        header("location: ../views/cadastroCliente.php");
+        exit(0);
+    }
+
+    else{
+        $query = "insert into cliente (CPF, nome, contato, endereco, cidade, UF)
+        values ($cpfcliente,'$nomecliente', $contato, '$endereco', '$cidade', '$estado')";
     
-//         $query_run = $con->query($query) or die ("Falha na conexao");
+        $query_run = $con->query($query) or die ("Falha na conexao");
 
-//         if ($query_run){
+        if ($query_run){
 
-//             $_SESSION['message'] = "Funcionario cadastrado com sucesso!";
-//             header("location: ../views/V_cadastraUsuario.php");
-//             exit(0);
-//         }
-//         else {
-//             $_SESSION['message'] = "Funcionário não cadastrado";
-//             header("location: ../views/V_cadastraUsuario.php");
-//             exit(0);
-//         }
+            $_SESSION['message'] = "Cliente cadastrado com sucesso!";
+            header("location: ../views/cadastroCliente.php");
+            exit(0);
+        }
+        else {
+            $_SESSION['message'] = "Cliente não cadastrado";
+            header("location: ../views/cadastroCliente.php");
+            exit(0);
+        }
 
-//     }
+    }
     
-// }
+}
 
 
 // if (isset($_POST['delete_funcionario'])){
@@ -150,7 +158,7 @@ if (isset($_POST['save_cliente'])){
 
 //     }
     
-}
+// }
    
     
 

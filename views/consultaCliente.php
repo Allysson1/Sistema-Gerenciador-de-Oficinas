@@ -2,9 +2,7 @@
     require('../utils/conexao.php');
     include('../utils/protect.php');
     // variável com o nivel exigido do usuario para acessar a página
-    $nivel_necessario = 4;
-    
-
+    $nivel_necessario = 2;
 
     if ($_SESSION['nivelFuncionario'] < $nivel_necessario){
         header("location: ../views/home.php");
@@ -55,37 +53,41 @@
                     
 
                         <thead class="thead-light align-center">
-                            <th class="">ID</th>
+                            <th class="">CPF</th>
                             <th class="">Nome do Cliente</th>
-                            <th class="">CPF do Cliente</th>
-                            <th class="">Telefone do Cliente</th>
+                            <th class="">Endereco</th>
+                            <th class="">Cidade</th>
+                            <th class="">UF</th>
+                            <th class="">Contato</th>
                             <th class="">Ações</th>
                         </thead>
 
                         <tbody>
                             <?php
-                                $query = "SELECT * FROM usuario WHERE status ='' ";
+                                $query = "SELECT * FROM cliente WHERE statusCliente ='' ";
                                 $query_run = mysqli_query($con, $query);
 
                                 if (mysqli_num_rows($query_run) > 0){
 
-                                    foreach($query_run as $funcionario){
+                                    foreach($query_run as $cliente){
 
                                         ?>
                                         <!-- classe "consulta" destinada a manipulação de filtro -->
                                         <tr class="consulta">
-                                            <td><?php echo $funcionario['idUsuario'];?></td>
-                                            <td class="info-nome"><?= $funcionario['nome'];?></td>
-                                            <td><?= $funcionario['usuario'];?></td>
-                                            <td><?= $funcionario['nivelFuncionario'];?></td>
+                                            <td><?= $cliente['CPF'];?></td>
+                                            <td class="info-nome"><?= $cliente['nome'];?></td>
+                                            <td><?= $cliente['endereco'];?></td>
+                                            <td><?= $cliente['cidade'];?></td>
+                                            <td><?= $cliente['UF'];?></td>
+                                            <td><?= $cliente['contato'];?></td>
                                             <td>
                                                 <form action="../models/Code_Usuario.php" method="POST" class="d-inline">
 
-                                                    <a data-toggle="modal" data-target="#ModalUsuario<?= $funcionario['idUsuario'];?>"
+                                                    <a data-toggle="modal" data-target="#ModalUsuario<?= $cliente['CPF'];?>"
                                                     class="m-1 btn btn-sm btn_visualizar">Visualizar</a>
                                                     
                                                     <button type="submit" name="delete_funcionario" 
-                                                    value="<?= $funcionario['idUsuario'];?>" 
+                                                    value="<?= $cliente['CPF'];?>" 
                                                     class="m-1 btn btn-danger btn-sm">Deletar</button>
                                                 </form>
                                             </td>
@@ -93,7 +95,7 @@
                                         
                                         <?php include ('../utils/message.php'); ?>
 
-                                        <div class="modal fade" id="ModalUsuario<?= $funcionario['idUsuario'];?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal fade" id="ModalUsuario<?= $cliente['CPF'];?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                             <div class="modal-dialog modal-lg modal-dialog-centered">
                                                 <div class="row modal-content">
                                                     <div class="col-12 modal-header">
@@ -109,45 +111,45 @@
                                                             <form action="../models/Code_Usuario.php" method="POST" >
 
                                                                 <!-- linha abaixo necessária para encontrar o id do usuario no comando sql-->
-                                                                <input type="hidden" name="funcionario_id" value="<?= $funcionario['idUsuario']; ?>">
+                                                
                                                                 <div class="row">
                                                                     <div class="col-12" style="display: flex; margin-bottom: 30px; margin-top: 45px">
 
                                                                         <div class="col-6">
-                                                                            <label for="nomecliente">Nome do Cliente:</label>
-                                                                            <input type="text" name="NomeCliente" class="form-control p-2 campoPeca  ">
+                                                                            <label for="nomecliente">CPF:</label>
+                                                                            <input type="text" name="NomeCliente" value="<?= $cliente['CPF']; ?>" class="form-control p-2 campoPeca  ">
                                                                         </div>          
                                                                     
                                                                         <div class="col-6">
-                                                                            <label for="cpfcliente">CPF do Cliente:</label>
-                                                                            <input type="text" name="CpfCliente" class="form-control p-2 campoPeca" placeholder="xxx.xxx.xxx-xx">
+                                                                            <label for="cpfcliente">Nome Cliente:</label>
+                                                                            <input type="text" name="CpfCliente" value="<?= $cliente['nome'];?>" class="form-control p-2 campoPeca">
                                                                         </div>
                                                                     </div>
 
                                                                     <div class="col-12" style="display: flex; margin-bottom: 30px;">
 
                                                                         <div class="col-6">
-                                                                            <label for="telefone">Telefone do Cliente:</label>
-                                                                            <input type="tel" name="TelCliente" class="form-control p-2 campoPeca" required placeholder="(xx) xxxxx-xxxx">
+                                                                            <label for="telefone">Endereço:</label>
+                                                                            <input type="tel" name="TelCliente" value="<?= $cliente['endereco'];?>" class="form-control p-2 campoPeca">
                                                                         </div>
                                                                         
                                                                         <div class="col-6">
-                                                                            <label for="enderecocliente">Endereço do Cliente:</label>
-                                                                            <input type="text" name="EnderecoCliente" class="form-control p-2 campoPeca  ">
+                                                                            <label for="enderecocliente">Cidade:</label>
+                                                                            <input type="text" name="EnderecoCliente" value="<?= $cliente['cidade'];?>" class="form-control p-2 campoPeca  ">
                                                                         </div> 
                                                                         
                                                                     </div>
 
                                                                     <div class="col-12" style="display: flex; margin-bottom: 30px;">                                                                        
                                                                         <div class="col-6">
-                                                                            <label for="cidadecliente">Cidade:</label>
-                                                                            <input type="text" name="CidadeCliente" class="form-control p-2 campoPeca  ">
+                                                                            <label for="cidadecliente">Contato:</label>
+                                                                            <input type="text" name="CidadeCliente" value="<?= $cliente['contato'];?>" class="form-control p-2 campoPeca  ">
                                                                         </div>   
                                                                         
                                                                         <div class="col-6">
                                                                             <label for="nomeSelectCliente">Estado:</label>  
                                                                             <select name="select" class="SelectServicoCadasServico">
-                                                                                <option value="#" selected disabled>Selecione o estado...</option>
+                                                                                <option value="#" selected><?= $cliente['UF'];?></option>
                                                                                 <option value="AC">Acre</option>
                                                                                 <option value=" AL "> Alagoas </option>
                                                                                 <option value=" AP "> Amapá </option>
