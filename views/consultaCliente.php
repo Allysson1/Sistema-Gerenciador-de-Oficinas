@@ -81,12 +81,12 @@
                                             <td><?= $cliente['UF'];?></td>
                                             <td><?= $cliente['contato'];?></td>
                                             <td>
-                                                <form action="../models/Code_Usuario.php" method="POST" class="d-inline">
+                                                <form action="../models/Code_Cliente.php" method="POST" class="d-inline">
 
                                                     <a data-toggle="modal" data-target="#ModalUsuario<?= $cliente['CPF'];?>"
                                                     class="m-1 btn btn-sm btn_visualizar">Visualizar</a>
                                                     
-                                                    <button type="submit" name="delete_funcionario" 
+                                                    <button type="submit" name="delete_cliente" 
                                                     value="<?= $cliente['CPF'];?>" 
                                                     class="m-1 btn btn-danger btn-sm">Deletar</button>
                                                 </form>
@@ -108,7 +108,7 @@
                                                     <div class="modal-body">
                                                     
                                                         <section class="section-content" style="margin-top: -25px">  
-                                                            <form action="../models/Code_Usuario.php" method="POST" >
+                                                            <form action="../models/Code_Cliente.php" method="POST" >
 
                                                                 <!-- linha abaixo necessária para encontrar o id do usuario no comando sql-->
                                                 
@@ -116,40 +116,40 @@
                                                                     <div class="col-12" style="display: flex; margin-bottom: 30px; margin-top: 45px">
 
                                                                         <div class="col-6">
-                                                                            <label for="nomecliente">CPF:</label>
-                                                                            <input type="text" name="NomeCliente" value="<?= $cliente['CPF']; ?>" class="form-control p-2 campoPeca  ">
+                                                                            <label for="cpfCliente">CPF:</label>
+                                                                            <input type="text" name="cpfCliente" value="<?= $cliente['CPF']; ?>" class="form-control p-2 campoPeca  ">
                                                                         </div>          
                                                                     
                                                                         <div class="col-6">
-                                                                            <label for="cpfcliente">Nome Cliente:</label>
-                                                                            <input type="text" name="CpfCliente" value="<?= $cliente['nome'];?>" class="form-control p-2 campoPeca">
+                                                                            <label for="nomeCliente">Nome Cliente:</label>
+                                                                            <input type="text" name="nomeCliente" value="<?= $cliente['nome'];?>" class="form-control p-2 campoPeca">
                                                                         </div>
                                                                     </div>
 
                                                                     <div class="col-12" style="display: flex; margin-bottom: 30px;">
 
                                                                         <div class="col-6">
-                                                                            <label for="telefone">Endereço:</label>
-                                                                            <input type="tel" name="TelCliente" value="<?= $cliente['endereco'];?>" class="form-control p-2 campoPeca">
+                                                                            <label for="endereco">Endereço:</label>
+                                                                            <input type="tel" name="endereco" value="<?= $cliente['endereco'];?>" class="form-control p-2 campoPeca">
                                                                         </div>
                                                                         
                                                                         <div class="col-6">
-                                                                            <label for="enderecocliente">Cidade:</label>
-                                                                            <input type="text" name="EnderecoCliente" value="<?= $cliente['cidade'];?>" class="form-control p-2 campoPeca  ">
+                                                                            <label for="cidade">Cidade:</label>
+                                                                            <input type="text" name="cidade" value="<?= $cliente['cidade'];?>" class="form-control p-2 campoPeca  ">
                                                                         </div> 
                                                                         
                                                                     </div>
 
                                                                     <div class="col-12" style="display: flex; margin-bottom: 30px;">                                                                        
                                                                         <div class="col-6">
-                                                                            <label for="cidadecliente">Contato:</label>
-                                                                            <input type="text" name="CidadeCliente" value="<?= $cliente['contato'];?>" class="form-control p-2 campoPeca  ">
+                                                                            <label for="cidade">Contato:</label>
+                                                                            <input type="text" name="contato" value="<?= $cliente['contato'];?>" class="form-control p-2 campoPeca  ">
                                                                         </div>   
                                                                         
                                                                         <div class="col-6">
-                                                                            <label for="nomeSelectCliente">Estado:</label>  
-                                                                            <select name="select" class="SelectServicoCadasServico">
-                                                                                <option value="#" selected><?= $cliente['UF'];?></option>
+                                                                            <label for="estado">Estado:</label>  
+                                                                            <select name="estado" class="SelectServicoCadasServico">
+                                                                                <option selected><?= $cliente['UF'];?></option>
                                                                                 <option value="AC">Acre</option>
                                                                                 <option value=" AL "> Alagoas </option>
                                                                                 <option value=" AP "> Amapá </option>
@@ -184,7 +184,7 @@
                                                                     </div>
 
                                                                     <div class="col-12 text-right modal-footer">
-                                                                            <button class="botaoVisualUsu" type="submit" name="update_funcionario">
+                                                                            <button class="botaoVisualUsu" type="submit" name="update_cliente">
                                                                             Salvar Alterações
                                                                             </button>
                                                                     </div>                    

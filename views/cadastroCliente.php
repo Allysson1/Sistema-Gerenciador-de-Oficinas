@@ -80,7 +80,7 @@
                         <div class="col-6">
                             <label for="estado">Estado:</label>  
                             <select name="estado" class="SelectServicoCadasServico">
-                                <option value="#" selected disabled>Selecione o estado...</option>
+                                <option selected disabled>Selecione o estado...</option>
                                 <option value="AC">Acre</option>
                                 <option value="AL"> Alagoas </option>
                                 <option value="AP"> Amapá </option>
