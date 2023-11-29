@@ -75,9 +75,9 @@ if (isset($_POST['save_cliente'])){
 
 if (isset($_POST['delete_cliente'])){
 
-    $cpfcliente = mysqli_real_escape_string($con, $_POST['delete_cliente']);
+    $Cliente_id = mysqli_real_escape_string($con, $_POST['delete_cliente']);
 
-    $query = "UPDATE cliente SET statusCliente = 'D' WHERE CPF = '$cpfcliente'";
+    $query = "UPDATE cliente SET statusCliente = 'D' WHERE idCliente = '$Cliente_id'";
     $query_run = mysqli_query($con, $query);
 
     if ($query_run){
@@ -95,8 +95,9 @@ if (isset($_POST['delete_cliente'])){
 
 if (isset($_POST['update_cliente'])){
 
+    $Cliente_id = mysqli_real_escape_string($con, $_POST['idCliente']);
     $nomecliente = mysqli_real_escape_string($con, $_POST['nomeCliente']);
-    $cpfcliente = mysqli_real_escape_string($con, $_POST['cpfCliente']);
+    $cpfcliente2 = mysqli_real_escape_string($con, $_POST['cpfCliente']);
     $contato = mysqli_real_escape_string($con, $_POST['contato']);
     $endereco = mysqli_real_escape_string($con, $_POST['endereco']);
     $cidade = mysqli_real_escape_string($con, $_POST['cidade']);
@@ -115,12 +116,12 @@ if (isset($_POST['update_cliente'])){
         header("location: ../views/consultaCliente.php");
         exit(0);
     }
-    elseif ($cpfcliente == ""){
+    elseif ($cpfcliente2 == ""){
         $_SESSION['message'] = "CPF do cliente não inserido!";
         header("location: ../views/consultaCliente.php");
         exit(0);
     }
-    elseif (strlen($cpfcliente) > 11 || strlen($cpfcliente) < 11) {
+    elseif (strlen($cpfcliente2) > 11 || strlen($cpfcliente2) < 11) {
         $_SESSION['message'] = "CPF do cliente deve conter 11 números!";
         header("location: ../views/consultaCliente.php");
         exit(0);
@@ -149,8 +150,9 @@ if (isset($_POST['update_cliente'])){
 
     else{
 
-        $query = "UPDATE cliente SET CPF = '$cpfcliente', nome = '$nomecliente', contato = '$contato',
-         endereco = '$endereco', cidade = '$cidade', UF = '$estado'";
+        $query = "UPDATE cliente SET CPF = '$cpfcliente2', nome = '$nomecliente', contato = '$contato',
+         endereco = '$endereco', cidade = '$cidade', UF = '$estado' 
+         where idCliente = '$Cliente_id'";
         $query_run = mysqli_query($con, $query);
 
         if($query_run){

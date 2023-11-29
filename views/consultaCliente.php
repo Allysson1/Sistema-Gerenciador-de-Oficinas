@@ -83,11 +83,11 @@
                                             <td>
                                                 <form action="../models/Code_Cliente.php" method="POST" class="d-inline">
 
-                                                    <a data-toggle="modal" data-target="#ModalUsuario<?= $cliente['CPF'];?>"
+                                                    <a data-toggle="modal" data-target="#ModalUsuario<?= $cliente['idCliente'];?>"
                                                     class="m-1 btn btn-sm btn_visualizar">Visualizar</a>
                                                     
                                                     <button type="submit" name="delete_cliente" 
-                                                    value="<?= $cliente['CPF'];?>" 
+                                                    value="<?= $cliente['idCliente'];?>" 
                                                     class="m-1 btn btn-danger btn-sm">Deletar</button>
                                                 </form>
                                             </td>
@@ -95,7 +95,7 @@
                                         
                                         <?php include ('../utils/message.php'); ?>
 
-                                        <div class="modal fade" id="ModalUsuario<?= $cliente['CPF'];?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal fade" id="ModalUsuario<?= $cliente['idCliente'];?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                             <div class="modal-dialog modal-lg modal-dialog-centered">
                                                 <div class="row modal-content">
                                                     <div class="col-12 modal-header">
@@ -111,6 +111,7 @@
                                                             <form action="../models/Code_Cliente.php" method="POST" >
 
                                                                 <!-- linha abaixo necessária para encontrar o id do usuario no comando sql-->
+                                                                <input type="hidden" name="idCliente" value="<?= $cliente['idCliente']; ?>">
                                                 
                                                                 <div class="row">
                                                                     <div class="col-12" style="display: flex; margin-bottom: 30px; margin-top: 45px">
