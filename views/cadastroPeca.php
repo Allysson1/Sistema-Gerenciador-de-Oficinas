@@ -1,3 +1,17 @@
+<?php
+    include('../utils/protect.php');
+    require ('../utils/conexao.php');
+   
+    // variável com o nivel exigido do usuario para acessar a página
+    $nivel_necessario = 3;
+
+    if ($_SESSION['nivelFuncionario'] < $nivel_necessario){
+        header("location: ../views/cadastroPeca.php");
+        $_SESSION['message'] = "Você não tem acesso a está página";
+        exit;
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>

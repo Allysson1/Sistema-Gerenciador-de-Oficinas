@@ -5,7 +5,7 @@
     $nivel_necessario = 3;
 
     if ($_SESSION['nivelFuncionario'] < $nivel_necessario){
-        header("location: ../views/home.php");
+        header("location: ../views/ConsultaPeca.php");
         $_SESSION['message'] = "Você não tem acesso a está página";
         exit;
     }
