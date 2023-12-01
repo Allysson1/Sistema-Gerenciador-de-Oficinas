@@ -54,7 +54,13 @@
 
 
                 <?php 
-                    $query = "SELECT * FROM ordemServico where statusServico != 'Finalizado' and statusServico != 'Desativada'";
+                    $query = "SELECT cli.nome, OS.idOrdemServico, OS.placa,
+                    OS.nomeVeiculo, OS.prazoEntrega, OS.statusServico,
+                    OS.anoVeiculo, OS.tipoServico, OS.valor, OS.observacao, OS.qtdPeca, OS.peca
+                    from ordemServico OS left join cliente cli
+                        on cli.idCliente = OS.cliente
+                        where statusServico != 'Desativada' and 
+                        statusServico != 'Finalizado' ";
                     $query_run = mysqli_query($con, $query);
 
                     if (mysqli_num_rows($query_run) > 0){
@@ -71,7 +77,7 @@
                                     <div class="todosItensCard">                        
                                         <div class="itemCard">
                                             <span>Nome do Cliente:</span>
-                                            <span id=""><?= $ordemServico['cliente']?></span>
+                                            <span id=""><?= $ordemServico['nome']?></span>
                                         </div>
                                         <div class="itemCard">
                                             <span>Modelo do veículo:</span>
@@ -134,10 +140,20 @@
                                                             <div class="col-6">
                                                                 <label for="Cliente">Cliente</label>
                                                                 <select name="cliente" class="SelectServicoCadasServico" id="inputGroupSelect01">
-                                                                    <option selected><?= $ordemServico['cliente']?></option>
-                                                                    <option value="1">Um</option>
-                                                                    <option value="2">Dois</option>
-                                                                    <option value="3">Três</option>
+                                                                    <?php 
+                                                                        $query = "SELECT idCliente, CPF, nome FROM cliente ";
+                                                                        $query_run = mysqli_query($con, $query);
+
+                                                                        if (mysqli_num_rows($query_run) > 0){
+
+                                                                            foreach($query_run as $cliente){
+
+                                                                                ?>
+                                                                                <option value="<?= $cliente['idCliente']?>";><?= $cliente['CPF'] . " - " . $cliente['nome']?></option>
+                                                                    <?php
+                                                                            }
+                                                                        }
+                                                                    ?>
                                                                 </select>
                                                             </div>
                                                             <div class="col-6">
@@ -146,14 +162,51 @@
                                                             </div>                                                        
                                                         </div>
 
+
+                                                        <div class="col-12" style="display: flex; margin-bottom: 30px;">
+
+                                                            <div class="col-6">
+                                                                <label for="pecaUsada">Peças Utilizadas:</label>  
+                                                                <select name="pecaUsada" class="SelectServicoCadasServico">
+                                                                    <?php 
+                                                                        $query = "SELECT idPeca, nomePeca FROM pecas ORDER BY nomePeca ASC ";
+                                                                        $query_run = mysqli_query($con, $query);
+
+                                                                        if (mysqli_num_rows($query_run) > 0){
+
+                                                                            foreach($query_run as $pecas){
+
+                                                                                ?>
+                                                                                <option value="<?= $pecas['idPeca']?>";><?= $pecas['idPeca'] . " - " . $pecas['nomePeca']?></option>
+                                                                    <?php
+                                                                            }
+                                                                        }
+                                                                    ?>
+                                                                </select>
+                                                            </div>
+
+                                                            <div class="col-6">
+                                                                <label for="qtdPeca">Quantidade de Peças:</label>  
+                                                                <input type="text" name="qtdPeca" value=" <?= $ordemServico['qtdPeca'];?> " class="form-control campoDigitarCadasServico">
+                                                            
+                                                            </div>
+                                                        </div>
+
+
                                                         <div class="col-12" style="display: flex; margin-bottom: 30px;">                                                        
                                                             <div class="col-6">
                                                                 <label>Serviço:</label>  
                                                                 <select name="tipoServico" class="SelectServicoCadasServico">
                                                                     <option selected><?= $ordemServico['tipoServico'];?></option>
-                                                                    <option value="1">1</option>
-                                                                    <option value="2">2</option>
-                                                                    <option value="3">3</option>
+                                                                    <option value="Troca de Pneu">Troca de Pneu</option>
+                                                                    <option value="Troca Suspensao">Troca de conjunto de Suspensão</option>
+                                                                    <option value="Troca de Fluidos">Troca de Fluidos</option>
+                                                                    <option value="Troca de Vela">Troca de cabos de Vela</option>
+                                                                    <option value="Revisao da Eletrica">Revisão Elétrica</option>
+                                                                    <option value="Retifica do motor">Retifica de motor</option>
+                                                                    <option value="Troca do Cabecote">Troca de Cabeçote</option>
+                                                                    <option value="Manutencao do Cambio">Manutenção de Câmbio</option>
+                                                                    <option value="Alinhamento">Alinhamento</option>
                                                                 </select>
                                                             </div>
                                                             <div class="col-6">
@@ -174,14 +227,16 @@
                                                             </div>                  
                                                         </div> 
                     
-                                                    </div>                                
+                                                    </div>  
+                                                    
+                                                    <div class="modal-footer"> 
+                                                        <button name="delete_ordem_servico" type="submit"  class="botaoDeleteOrdem"  value="<?= $ordemServico['idOrdemServico'];?>">Deletar Ordem</button>
+                                                        <button name="finaliza_ordem_servico" type="submit"  class="botaoFinalizaOrdem"  value="<?= $ordemServico['idOrdemServico'];?>">Finalizar Ordem</button>
+                                                        <button name="update_ordem_servico" type="submit"  class="botaoSalvarOrdem" >Salvar Alterações</button>
+                                                    </div>
                                                 </form>
                                             </section>
-                                            <div class="modal-footer"> 
-                                                <button type="submit" name="delete_ordem_servico" class="botaoDeleteOrdem"  value="<?= $ordemServico['idOrdemServico'];?>">Deletar Ordem</button>
-                                                <button type="submit" name="finaliza_ordem_servico" class="botaoFinalizaOrdem"  value="<?= $ordemServico['idOrdemServico'];?>">Finalizar Ordem</button>
-                                                <button type="submit" name="update_ordem_servico" class="botaoSalvarOrdem" >Salvar Alterações</button>
-                                            </div>
+                                            
                                         </div>
                                     </div>
                                 </div>
@@ -197,7 +252,12 @@
 
                 <?php
 
-                    $query = "SELECT * FROM ordemServico where statusServico = 'Finalizado'";
+                    $query = "SELECT cli.nome, OS.idOrdemServico, OS.placa,
+                    OS.nomeVeiculo, OS.prazoEntrega, OS.statusServico,
+                    OS.anoVeiculo, OS.tipoServico, OS.valor, OS.observacao, OS.qtdPeca, OS.peca
+                    from ordemServico OS left join cliente cli
+                        on cli.idCliente = OS.cliente
+                        where statusServico = 'Finalizado'";
                     $query_run = mysqli_query($con, $query);
 
                     if (mysqli_num_rows($query_run) > 0){
@@ -214,7 +274,7 @@
                                     <div class="todosItensCard">                        
                                         <div class="itemCard">
                                             <span>Nome do Cliente:</span>
-                                            <span id=""><?= $ordemServico['cliente']?></span>
+                                            <span id=""><?= $ordemServico['nome']?></span>
                                         </div>
                                         <div class="itemCard">
                                             <span>Modelo do veículo:</span>
@@ -266,7 +326,7 @@
                                                             <div class="col-6">
                                                                 <label for="anoVeiculo">Ano do Automóvel:</label>
                                                                 <input type="text" name="anoVeiculo" value=" <?= $ordemServico['anoVeiculo'];?> " class="form-control campoDigitar">
-                                                            </div>
+                                                            </div>   
                                                             <div class="col-6">
                                                                 <label for="nomeVeiculo">Modelo do Automóvel:</label>
                                                                 <input type="text" name="nomeVeiculo" value=" <?= $ordemServico['nomeVeiculo'];?> " class="form-control campoDigitar">
@@ -277,10 +337,20 @@
                                                             <div class="col-6">
                                                                 <label for="Cliente">Cliente</label>
                                                                 <select name="cliente" class="SelectServicoCadasServico" id="inputGroupSelect01">
-                                                                    <option selected><?= $ordemServico['cliente']?></option>
-                                                                    <option value="1">Um</option>
-                                                                    <option value="2">Dois</option>
-                                                                    <option value="3">Três</option>
+                                                                    <?php 
+                                                                        $query = "SELECT idCliente, CPF, nome FROM cliente ";
+                                                                        $query_run = mysqli_query($con, $query);
+
+                                                                        if (mysqli_num_rows($query_run) > 0){
+
+                                                                            foreach($query_run as $cliente){
+
+                                                                                ?>
+                                                                                <option value="<?= $cliente['idCliente']?>";><?= $cliente['CPF'] . " - " . $cliente['nome']?></option>
+                                                                    <?php
+                                                                            }
+                                                                        }
+                                                                    ?>
                                                                 </select>
                                                             </div>
                                                             <div class="col-6">
@@ -289,16 +359,53 @@
                                                             </div>                                                        
                                                         </div>
 
+
+                                                        <div class="col-12" style="display: flex; margin-bottom: 30px;">
+
+                                                            <div class="col-6">
+                                                                <label for="pecaUsada">Peças Utilizadas:</label>  
+                                                                <select name="pecaUsada" class="SelectServicoCadasServico">
+                                                                    <?php 
+                                                                        $query = "SELECT idPeca, nomePeca FROM pecas ORDER BY nomePeca ASC ";
+                                                                        $query_run = mysqli_query($con, $query);
+
+                                                                        if (mysqli_num_rows($query_run) > 0){
+
+                                                                            foreach($query_run as $pecas){
+
+                                                                                ?>
+                                                                                <option value="<?= $pecas['idPeca']?>";><?= $pecas['idPeca'] . " - " . $pecas['nomePeca']?></option>
+                                                                    <?php
+                                                                            }
+                                                                        }
+                                                                    ?>
+                                                                </select>
+                                                            </div>
+
+                                                            <div class="col-6">
+                                                                <label for="qtdPeca">Quantidade de Peças:</label>  
+                                                                <input type="text" name="qtdPeca" value=" <?= $ordemServico['qtdPeca'];?> " class="form-control campoDigitarCadasServico">
+                                                            
+                                                            </div>
+                                                        </div>
+
+
                                                         <div class="col-12" style="display: flex; margin-bottom: 30px;">                                                        
                                                             <div class="col-6">
                                                                 <label>Serviço:</label>  
                                                                 <select name="tipoServico" class="SelectServicoCadasServico">
                                                                     <option selected><?= $ordemServico['tipoServico'];?></option>
-                                                                    <option value="1">1</option>
-                                                                    <option value="2">2</option>
-                                                                    <option value="3">3</option>
+                                                                    <option value="Troca de Pneu">Troca de Pneu</option>
+                                                                    <option value="Troca Suspensao">Troca de conjunto de Suspensão</option>
+                                                                    <option value="Troca de Fluidos">Troca de Fluidos</option>
+                                                                    <option value="Troca de Vela">Troca de cabos de Vela</option>
+                                                                    <option value="Revisao da Eletrica">Revisão Elétrica</option>
+                                                                    <option value="Retifica do motor">Retifica de motor</option>
+                                                                    <option value="Troca do Cabecote">Troca de Cabeçote</option>
+                                                                    <option value="Manutencao do Cambio">Manutenção de Câmbio</option>
+                                                                    <option value="Alinhamento">Alinhamento</option>
                                                                 </select>
-                                                            </div> 
+                                                            </div>
                                                             <div class="col-6">
                                                                 <label for="nomeSelectServico">Estatus:</label>  
                                                                 <select name="statusServico" class="SelectServicoCadasServico">
@@ -311,19 +418,22 @@
                                                         </div>
 
                                                         <div class="col-12" style="display: flex; margin-bottom: 20px;">
-                                                                <div class="col-12">
-                                                                    <label for="username">Observação</label>
-                                                                    <textarea class="p-2 campoObservacoes" name="observacao" rows="6" cols="50"><?= $ordemServico['observacao'];?></textarea>
-                                                                </div>                  
-                                                        </div>                 
+                                                            <div class="col-12">
+                                                                <label for="username">Observação</label>
+                                                                <textarea class="p-2 campoObservacoes" name="observacao" rows="6" cols="50"><?= $ordemServico['observacao'];?></textarea>
+                                                            </div>                  
+                                                        </div> 
+                    
+                                                    </div> 
+                                                    
+                                                    <div class="modal-footer"> 
+                                                        <button type="submit" name="delete_ordem_servico" class="botaoDeleteOrdem" style="padding: 12px 30px;  border-radius: 12px;" value="<?= $ordemServico['idOrdemServico'];?>">Deletar Ordem</button>
+                                                        <button type="submit" name="update_ordem_servico" class="botaoSalvarOrdem" style="padding: 12px 30px;  border-radius: 12px;">Salvar Alterações</button>
                                                     </div>
                                     
                                                 </form>
                                             </section>
-                                            <div class="modal-footer"> 
-                                                <button type="submit" name="delete_ordem_servico" class="botaoDeleteOrdem" style="padding: 12px 30px;  border-radius: 12px;" value="<?= $ordemServico['idOrdemServico'];?>">Deletar Ordem</button>
-                                                <button type="submit" name="update_ordem_servico" class="botaoSalvarOrdem" style="padding: 12px 30px;  border-radius: 12px;">Salvar Alterações</button>
-                                            </div>
+                                            
 
                                         </div>
                                     </div>

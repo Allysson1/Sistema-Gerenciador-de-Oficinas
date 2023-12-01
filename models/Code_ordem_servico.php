@@ -83,9 +83,9 @@
             //quantidade de peças dentro do sistema.
             //começar o crud de clientes
             $query = "INSERT INTO ordemServico (placa, statusServico, cliente, nomeVeiculo,
-                    anoVeiculo, tipoServico, valor, prazoEntrega, observacao)
+                    anoVeiculo, tipoServico, valor, prazoEntrega, observacao, peca, qtdPeca)
                     VALUES ('$placa', '$statusServico', '$cliente', '$nomeVeiculo', '$anoVeiculo',
-                    '$tipoServico', '$valor', '$prazoEntrega', '$observacao')";
+                    '$tipoServico', '$valor', '$prazoEntrega', '$observacao', '$pecaUsada', '$qtdPeca')";
 
             $query_run = mysqli_query($con, $query);
 
@@ -137,6 +137,8 @@
         $valor = mysqli_real_escape_string($con, $_POST['valor']);
         $prazoEntrega = mysqli_real_escape_string($con, $_POST['prazoEntrega']);
         $observacao = mysqli_real_escape_string($con, $_POST['observacao']);
+        $pecaUsada = mysqli_real_escape_string($con, $_POST['pecaUsada']);
+        $qtdPeca = mysqli_real_escape_string($con, $_POST['qtdPeca']);
 
         // var_dump($_POST['idOrdemServico']);
         // var_dump($_POST['placa']);
@@ -198,6 +200,17 @@
             header("location: ../views/home.php");
             exit(0);
         }
+        elseif ($pecaUsada == ""){ 
+            $_SESSION['message'] = "Peça a ser usada não inserida!";
+            header("location: ../views/home.php");
+            exit(0);
+        }
+        elseif ($qtdPeca == ""){ 
+            $_SESSION['message'] = "Quantidade de peças não inserida!";
+            header("location: ../views/home.php");
+            exit(0);
+        }
+
         else{
 
             if ($observacao == ""){ 
@@ -213,7 +226,9 @@
                         tipoServico = '$tipoServico', 
                         valor = '$valor', 
                         prazoEntrega = '$prazoEntrega', 
-                        observacao = '$observacao' 
+                        observacao = '$observacao',
+                        qtdPeca = '$qtdPeca',
+                        peca = '$pecaUsada' 
                         where idOrdemServico = '$idOrdem' ";
 
             $query_run = mysqli_query($con, $query);

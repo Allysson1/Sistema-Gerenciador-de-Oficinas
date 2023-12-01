@@ -73,10 +73,20 @@
                         <div class="col-6">
                             <label for="Cliente">Cliente</label>
                             <select name="cliente" class="SelectServicoCadasServico" id="inputGroupSelect01">
-                                <option selected>Selecione o Cliente...</option>
-                                <option value="um">Um</option>
-                                <option value="2">Dois</option>
-                                <option value="3">Três</option>
+                            <?php 
+                                    $query = "SELECT idCliente, CPF, nome FROM cliente ";
+                                    $query_run = mysqli_query($con, $query);
+
+                                    if (mysqli_num_rows($query_run) > 0){
+
+                                        foreach($query_run as $cliente){
+
+                                            ?>
+                                            <option value="<?= $cliente['idCliente']?>";><?= $cliente['CPF'] . " - " . $cliente['nome']?></option>
+                                <?php
+                                        }
+                                    }
+                                ?>
                             </select>
                         </div>
 
@@ -122,14 +132,14 @@
                                 <label>Serviço:</label>  
                                 <select name="tipoServico" class="SelectServicoCadasServico">
                                     <option selected>Selecione o serviço....</option>
-                                    <option value="TrocaPneu">Troca de Pneu</option>
-                                    <option value="TrocaSuspensao">Troca de conjunto de Suspensão</option>
-                                    <option value="TrocaFluidos">Troca de Fluidos</option>
-                                    <option value="TrocaVela">Troca de cabos de Vela</option>
-                                    <option value="RevisaoEletrica">Revisão Elétrica</option>
-                                    <option value="Retificamotor">Retifica de motor</option>
-                                    <option value="TrocaCabecote">Troca de Cabeçote</option>
-                                    <option value="ManutencaoCambio">Manutenção de Câmbio</option>
+                                    <option value="Troca de Pneu">Troca de Pneu</option>
+                                    <option value="Troca Suspensao">Troca de conjunto de Suspensão</option>
+                                    <option value="Troca de Fluidos">Troca de Fluidos</option>
+                                    <option value="Troca de Vela">Troca de cabos de Vela</option>
+                                    <option value="Revisao da Eletrica">Revisão Elétrica</option>
+                                    <option value="Retifica do motor">Retifica de motor</option>
+                                    <option value="Troca do Cabecote">Troca de Cabeçote</option>
+                                    <option value="Manutencao do Cambio">Manutenção de Câmbio</option>
                                     <option value="Alinhamento">Alinhamento</option>
                                 </select>
                             </div>  
