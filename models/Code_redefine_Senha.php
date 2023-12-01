@@ -21,11 +21,23 @@
             exit(0); 
         }
 
+        elseif (strlen($senha) < 8){ 
+            $_SESSION['message'] = "A senha deve possuir no minimo 8 digitos";
+            header("location: ../views/V_redefineSenha.php");
+            exit(0);
+        }
+
         elseif (strlen($_POST['confSenha']) == 0){
             $_SESSION['message'] = "confirmação de senha não informada";
             header("location: ../views/V_redefineSenha.php");
             exit(0);  
 
+        }
+
+        elseif (strlen($Confsenha) < 8){ 
+            $_SESSION['message'] = "A senha deve possuir no minimo 8 digitos";
+            header("location: ../views/V_redefineSenha.php");
+            exit(0);
         }
 
         elseif ($Confsenha !== $senha){

@@ -5,7 +5,7 @@
     $nivel_necessario = 3;
 
     if ($_SESSION['nivelFuncionario'] < $nivel_necessario){
-        header("location: ../views/consultaFornecedor.php");
+        header("location: ../views/home.php");
         $_SESSION['message'] = "Você não tem acesso a está página";
         exit;
     }
@@ -76,8 +76,8 @@
                                         ?>
                                         <!-- classe "consulta" destinada a manipulação de filtro -->
                                         <tr class="consulta">
-                                            <td class="info-nome"><?= $fornecedor['NomeFornecedor'];?></td>
-                                            <td><?php echo $fornecedor['CnpjFornecedor'];?></td>
+                                            <td><?= $fornecedor['NomeFornecedor'];?></td>
+                                            <td class="info-nome"><?php echo $fornecedor['CnpjFornecedor'];?></td>
                                             <td><?= $fornecedor['TelFornecedor'];?></td>
                                             <td><?= $fornecedor['EnderecoFornecedor'];?></td>
                                             <td><?= $fornecedor['CidadeForncedor'];?></td>
