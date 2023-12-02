@@ -215,7 +215,6 @@
                                                                     <option ><?= $ordemServico['statusServico']?></option>
                                                                     <option value="Iniciado">Iniciado</option>
                                                                     <option value="Em Andamento">Em andamento</option>
-                                                                    <option value="Finalizado">Fianlizado</option>
                                                                 </select>
                                                             </div>         
                                                         </div>
@@ -412,7 +411,6 @@
                                                                     <option ><?= $ordemServico['statusServico']?></option>
                                                                     <option value="Iniciado">Iniciado</option>
                                                                     <option value="Em Andamento">Em andamento</option>
-                                                                    <option value="Finalizado">Fianlizado</option>
                                                                 </select>
                                                             </div>         
                                                         </div>

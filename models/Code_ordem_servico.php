@@ -78,10 +78,8 @@
 
             // o que falta
 
-            //inserir as colunas referente a peças dentro da ordem de servico
             //terminar as validações no crud da ordem de serviço referente ao desconto de
             //quantidade de peças dentro do sistema.
-            //começar o crud de clientes
             $query = "INSERT INTO ordemServico (placa, statusServico, cliente, nomeVeiculo,
                     anoVeiculo, tipoServico, valor, prazoEntrega, observacao, peca, qtdPeca)
                     VALUES ('$placa', '$statusServico', '$cliente', '$nomeVeiculo', '$anoVeiculo',
@@ -253,9 +251,29 @@
     if (isset($_POST['finaliza_ordem_servico'])){
 
         $ordem_id = mysqli_real_escape_string($con, $_POST['finaliza_ordem_servico']);
+        $qtdPeca = mysqli_real_escape_string($con, $_POST['qtdPeca']);
+        $pecaUsada = mysqli_real_escape_string($con, $_POST['pecaUsada']);
     
+        $requisicao = "SELECT peca, qtdPeca from ordemServico where idOrdemServico = $ordem_id"; 
+        $query_run = mysqli_query($con, $requisicao);
+
+        // var_dump($query_run);
+
+        $row = mysqli_fetch_assoc($query_run);
+
+        $IdPeca = $row['peca'];
+        $qtdPeca = $row['qtdPeca'];
+        
+        // echo $peca, "<br/>";
+        // echo $qtdPeca;
+
+        // execução da query para finalizar ordens de serviço
         $query = " UPDATE ordemServico SET statusServico = 'Finalizado' WHERE idOrdemServico = '$ordem_id' ";
         $query_run = mysqli_query($con, $query);
+
+        // execução da query para subtrair peças usadas no serviço da tabela de peças
+        $query2 = "UPDATE pecas set QtdPeca = QtdPeca - '$qtdPeca' WHERE idPeca = '$IdPeca'";
+        $query_run2 = mysqli_query($con, $query2);
     
         if ($query_run){
             $_SESSION['message'] = "Ordem de Serviço finalizada com sucesso.";

@@ -47,7 +47,8 @@
                             <input
                                 type="text"
                                 class="inputPesquisaHome"
-                                placeholder="Digite o código ou nome da placa...">
+                                id="filtrar-tabela"
+                                placeholder="Digite o código da peça">
                         </div>
                     </div>
                 </div>
@@ -69,19 +70,19 @@
 
                 ?>
                 
-                <div class="col-sm-4 col-4">
+                <div class="col-sm-4 col-4 consulta">
                     <div class="cardPeca">
 
-                        <div class="todosItensCard">
+                        <div class="todosItensCard ">
                             <div class="text-center">
                                 <img
                                     src="<?=$pecas['Path'] ?>"
                                     class="img-fluid rounded pb-3"
                                     alt="..." width="250px" height="200px">
                             </div>
-                            <div class="pl-2 itemCard">
+                            <div class="pl-2 itemCard ">
                                 <span>Código:</span>
-                                <span id=""><b><?=$pecas['idPeca'] ?></b></span>
+                                <span class="info-nome"><b><?=$pecas['idPeca'] ?></b></span>
                             </div>
                             <div class="pl-2 itemCard">
                                 <span>Nome:</span>
@@ -220,6 +221,8 @@
             <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
             integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
             crossorigin="anonymous"></script>
+            <script src="../js/filtar.js"></script>
+
 
     </body>
 </html>
