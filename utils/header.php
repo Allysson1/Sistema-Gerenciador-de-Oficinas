@@ -44,7 +44,7 @@
                 <li><a class="opcaoNav <?php if($page == 'cadastroFornecedor.php'):echo "disabled"; endif; ?>" style="margin-bottom: -8px" href="../views/cadastroFornecedor.php"><i class="fas fa-solid fa-minus" style="margin-right: 10px; font-size: 13px;"></i>Cadastro de Fornecedor</a></li>
                 <li><a class="opcaoNav <?php if($page == 'consultaFornecedor.php'):echo "disabled"; endif; ?>" href="../views/consultaFornecedor.php"><i class="fas fa-solid fa-minus" style="margin-right: 10px; font-size: 13px;"></i>Consulta de Fornecedor</a></li>
 
-                <div class="sairNav "><span><a href="../utils/logout.php">Sair</a></span></div>
+                <div class="sairNav "><span><a href="../utils/logout.php">Trocar Usuário</a></span></div>
             </ul>
         </nav>
 
