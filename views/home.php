@@ -54,11 +54,15 @@
 
 
                 <?php 
-                    $query = "SELECT cli.nome, OS.idOrdemServico, OS.placa,
+                    $query = "SELECT cli.nome, cli.CPF, OS.idOrdemServico, OS.placa,
                     OS.nomeVeiculo, OS.prazoEntrega, OS.statusServico,
-                    OS.anoVeiculo, OS.tipoServico, OS.valor, OS.observacao, OS.qtdPeca, OS.peca
-                    from ordemServico OS left join cliente cli
-                        on cli.idCliente = OS.cliente
+                    OS.anoVeiculo, OS.tipoServico, OS.valor, OS.observacao, 
+                    OS.qtdPeca, OS.peca, PC.NomePeca
+                    from ordemServico OS 
+                        left join cliente cli
+                            on cli.idCliente = OS.cliente 
+                                left join pecas PC 
+                                    on OS.peca = PC.idPeca 
                         where statusServico != 'Desativada' and 
                         statusServico != 'Finalizado' ";
                     $query_run = mysqli_query($con, $query);
@@ -139,22 +143,7 @@
                                                         <div class="col-12" style="display: flex; margin-bottom: 30px;">
                                                             <div class="col-6">
                                                                 <label for="Cliente">Cliente</label>
-                                                                <select name="cliente" class="SelectServicoCadasServico" id="inputGroupSelect01">
-                                                                    <?php 
-                                                                        $query = "SELECT idCliente, CPF, nome FROM cliente ";
-                                                                        $query_run = mysqli_query($con, $query);
-
-                                                                        if (mysqli_num_rows($query_run) > 0){
-
-                                                                            foreach($query_run as $cliente){
-
-                                                                                ?>
-                                                                                <option value="<?= $cliente['idCliente']?>";><?= $cliente['CPF'] . " - " . $cliente['nome']?></option>
-                                                                    <?php
-                                                                            }
-                                                                        }
-                                                                    ?>
-                                                                </select>
+                                                                <input type="text" name="pecaUsada" value="<?= $ordemServico['nome'] . " - " . $ordemServico['CPF'];?>" class="form-control campoDigitarCadasServico">
                                                             </div>
                                                             <div class="col-6">
                                                                 <label for="valor">Valor:</label>
@@ -167,22 +156,7 @@
 
                                                             <div class="col-6">
                                                                 <label for="pecaUsada">Peças Utilizadas:</label>  
-                                                                <select name="pecaUsada" class="SelectServicoCadasServico">
-                                                                    <?php 
-                                                                        $query = "SELECT idPeca, nomePeca FROM pecas ORDER BY nomePeca ASC ";
-                                                                        $query_run = mysqli_query($con, $query);
-
-                                                                        if (mysqli_num_rows($query_run) > 0){
-
-                                                                            foreach($query_run as $pecas){
-
-                                                                                ?>
-                                                                                <option value="<?= $pecas['idPeca']?>";><?= $pecas['idPeca'] . " - " . $pecas['nomePeca']?></option>
-                                                                    <?php
-                                                                            }
-                                                                        }
-                                                                    ?>
-                                                                </select>
+                                                                <input type="text" name="pecaUsada" value="<?= $ordemServico['peca'] . " - " . $ordemServico['NomePeca'];?>" class="form-control campoDigitarCadasServico">
                                                             </div>
 
                                                             <div class="col-6">
@@ -251,11 +225,15 @@
 
                 <?php
 
-                    $query = "SELECT cli.nome, OS.idOrdemServico, OS.placa,
+                    $query = "SELECT cli.nome, cli.CPF, OS.idOrdemServico, OS.placa,
                     OS.nomeVeiculo, OS.prazoEntrega, OS.statusServico,
-                    OS.anoVeiculo, OS.tipoServico, OS.valor, OS.observacao, OS.qtdPeca, OS.peca
-                    from ordemServico OS left join cliente cli
-                        on cli.idCliente = OS.cliente
+                    OS.anoVeiculo, OS.tipoServico, OS.valor, OS.observacao, 
+                    OS.qtdPeca, OS.peca, PC.NomePeca
+                    from ordemServico OS 
+                        left join cliente cli
+                            on cli.idCliente = OS.cliente 
+                                left join pecas PC 
+                                    on OS.peca = PC.idPeca
                         where statusServico = 'Finalizado'";
                     $query_run = mysqli_query($con, $query);
 
@@ -335,23 +313,9 @@
                                                         <div class="col-12" style="display: flex; margin-bottom: 30px;">
                                                             <div class="col-6">
                                                                 <label for="Cliente">Cliente</label>
-                                                                <select name="cliente" class="SelectServicoCadasServico" id="inputGroupSelect01">
-                                                                    <?php 
-                                                                        $query = "SELECT idCliente, CPF, nome FROM cliente ";
-                                                                        $query_run = mysqli_query($con, $query);
-
-                                                                        if (mysqli_num_rows($query_run) > 0){
-
-                                                                            foreach($query_run as $cliente){
-
-                                                                                ?>
-                                                                                <option value="<?= $cliente['idCliente']?>";><?= $cliente['CPF'] . " - " . $cliente['nome']?></option>
-                                                                    <?php
-                                                                            }
-                                                                        }
-                                                                    ?>
-                                                                </select>
+                                                                <input type="text" name="pecaUsada" value="<?= $ordemServico['nome'] . " - " . $ordemServico['CPF'];?>" class="form-control campoDigitarCadasServico">
                                                             </div>
+                                                            
                                                             <div class="col-6">
                                                                 <label for="valor">Valor:</label>
                                                                 <input type="text" name="valor" value=" <?= $ordemServico['valor'];?> " class="form-control campoDigitar">
@@ -363,22 +327,7 @@
 
                                                             <div class="col-6">
                                                                 <label for="pecaUsada">Peças Utilizadas:</label>  
-                                                                <select name="pecaUsada" class="SelectServicoCadasServico">
-                                                                    <?php 
-                                                                        $query = "SELECT idPeca, nomePeca FROM pecas ORDER BY nomePeca ASC ";
-                                                                        $query_run = mysqli_query($con, $query);
-
-                                                                        if (mysqli_num_rows($query_run) > 0){
-
-                                                                            foreach($query_run as $pecas){
-
-                                                                                ?>
-                                                                                <option value="<?= $pecas['idPeca']?>";><?= $pecas['idPeca'] . " - " . $pecas['nomePeca']?></option>
-                                                                    <?php
-                                                                            }
-                                                                        }
-                                                                    ?>
-                                                                </select>
+                                                                <input type="text" name="pecaUsada" value="<?= $ordemServico['peca'] . " - " . $ordemServico['NomePeca'];?>" class="form-control campoDigitarCadasServico">
                                                             </div>
 
                                                             <div class="col-6">
