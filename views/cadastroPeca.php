@@ -125,7 +125,7 @@
                     </div>  
 
                     <div class="col-12  text-right">
-                        <button class="btn btn-primary p-3 col-sm-12 col-md-4 col-lg-4" type="submit" name="SavePeca" class="botaoOrdem">Cadastrar</button>
+                        <button class="botaoCadastroServico" type="submit" name="SavePeca">Cadastrar</button>
                     </div>
                     
                 </div>               

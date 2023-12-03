@@ -91,7 +91,7 @@
                     </div>
 
                     <div class="float-right col-5 col-md-12 mt-5 mt-md-5">
-                        <button class="float-md-right col-12 col-md-3 ml-1 p-3 btn botaoOrdem" type="submit" name="save_funcionario">Cadastrar</button>      
+                        <button class="float-md-right col-12 col-md-2 ml-1 p-3 btn botaoCadastroServico" type="submit" name="save_funcionario">Cadastrar</button>      
                     </div>
 
                 </form>

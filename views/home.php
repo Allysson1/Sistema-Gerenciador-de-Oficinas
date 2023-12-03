@@ -95,13 +95,13 @@
                                             <span>Status do serviço:</span>
                                             <span id=""><?= $ordemServico['statusServico']?></span>
                                         </div>
-                                        <button class="botaoVerMaisCard" data-toggle="modal" data-target="#modalOrdemServico<?= $ordemServico['idOrdemServico'];?>">Ver Mais...</button>
+                                        <button class="botaoVerMaisCard" data-toggle="modal" data-target="#modalOrdemServico<?=$ordemServico['idOrdemServico'];?>">Ver Mais...</button>
                                     </div>                        
                                 </div>                    
                             </div>
 
                             <!-- Modal -->
-                            <div class="modal fade" id="modalOrdemServico<?= $ordemServico['idOrdemServico'];?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal fade" id="modalOrdemServico<?=$ordemServico['idOrdemServico'];?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                 <div class="modal-dialog modal-lg modal-dialog-centered">
                                     <div class="row modal-content">
                                         <div class="col-12 modal-header">
@@ -121,7 +121,7 @@
                                                         <div class="col-12" style="display: flex; margin-bottom: 30px; margin-top: 45px">
                                                             <div class="col-6">
                                                                 <label for="placa">Placa:</label>
-                                                                <input type="text" name="placa" value=" <?= $ordemServico['placa'];?> " class="form-control p-2 campoDigitar">
+                                                                <input type="text" name="placa" value="<?= $ordemServico['placa'];?>" class="form-control p-2 campoDigitar">
                                                             </div>
                                                             <div class="col-6">
                                                                 <label for="prazoEntrega">Prazo de entrega:</label>
@@ -132,22 +132,22 @@
                                                         <div class="col-12" style="display: flex; margin-bottom: 30px;">
                                                             <div class="col-6">
                                                                 <label for="anoVeiculo">Ano do Automóvel:</label>
-                                                                <input type="text" name="anoVeiculo" value=" <?= $ordemServico['anoVeiculo'];?> " class="form-control campoDigitar">
+                                                                <input type="text" name="anoVeiculo" value="<?= $ordemServico['anoVeiculo'];?>" class="form-control campoDigitar">
                                                             </div>   
                                                             <div class="col-6">
                                                                 <label for="nomeVeiculo">Modelo do Automóvel:</label>
-                                                                <input type="text" name="nomeVeiculo" value=" <?= $ordemServico['nomeVeiculo'];?> " class="form-control campoDigitar">
+                                                                <input type="text" name="nomeVeiculo" value="<?= $ordemServico['nomeVeiculo'];?>" class="form-control campoDigitar">
                                                             </div> 
                                                         </div>
                                         
                                                         <div class="col-12" style="display: flex; margin-bottom: 30px;">
                                                             <div class="col-6">
                                                                 <label for="Cliente">Cliente</label>
-                                                                <input type="text" name="pecaUsada" value="<?= $ordemServico['nome'] . " - " . $ordemServico['CPF'];?>" class="form-control campoDigitarCadasServico">
+                                                                <input readonly type="text" name="cliente" value="<?= $ordemServico['nome'] . " - " . $ordemServico['CPF'];?>" class="form-control campoDigitarCodPeca">
                                                             </div>
                                                             <div class="col-6">
                                                                 <label for="valor">Valor:</label>
-                                                                <input type="text" name="valor" value=" <?= $ordemServico['valor'];?> " class="form-control campoDigitar">
+                                                                <input type="text" name="valor" value="<?= $ordemServico['valor'];?>" class="form-control campoDigitar">
                                                             </div>                                                        
                                                         </div>
 
@@ -155,13 +155,13 @@
                                                         <div class="col-12" style="display: flex; margin-bottom: 30px;">
 
                                                             <div class="col-6">
-                                                                <label for="pecaUsada">Peças Utilizadas:</label>  
-                                                                <input type="text" name="pecaUsada" value="<?= $ordemServico['peca'] . " - " . $ordemServico['NomePeca'];?>" class="form-control campoDigitarCadasServico">
+                                                                <label for="pecaUsada">Peça Utilizada:</label>  
+                                                                <input readonly type="text" name="pecaUsada" value="<?= $ordemServico['peca'] . " - " . $ordemServico['NomePeca'];?>" class="form-control campoDigitarCodPeca">
                                                             </div>
 
                                                             <div class="col-6">
                                                                 <label for="qtdPeca">Quantidade de Peças:</label>  
-                                                                <input type="text" name="qtdPeca" value=" <?= $ordemServico['qtdPeca'];?> " class="form-control campoDigitarCadasServico">
+                                                                <input type="text" name="qtdPeca" value="<?= $ordemServico['qtdPeca'];?>" class="form-control campoDigitarCadasServico">
                                                             
                                                             </div>
                                                         </div>
@@ -172,15 +172,17 @@
                                                                 <label>Serviço:</label>  
                                                                 <select name="tipoServico" class="SelectServicoCadasServico">
                                                                     <option selected><?= $ordemServico['tipoServico'];?></option>
-                                                                    <option value="Troca de Pneu">Troca de Pneu</option>
-                                                                    <option value="Troca Suspensao">Troca de conjunto de Suspensão</option>
-                                                                    <option value="Troca de Fluidos">Troca de Fluidos</option>
-                                                                    <option value="Troca de Vela">Troca de cabos de Vela</option>
-                                                                    <option value="Revisao da Eletrica">Revisão Elétrica</option>
-                                                                    <option value="Retifica do motor">Retifica de motor</option>
-                                                                    <option value="Troca do Cabecote">Troca de Cabeçote</option>
-                                                                    <option value="Manutencao do Cambio">Manutenção de Câmbio</option>
+                                                                    <option value="Troca de pneu">Troca de Pneu</option>
+                                                                    <option value="Troca de suspensão">Troca de conjunto de Suspensão</option>
+                                                                    <option value="Troca de fluídos">Troca de Fluidos</option>
+                                                                    <option value="Troca de vela">Troca de cabos de Vela</option>
+                                                                    <option value="Revisao da elétrica">Revisão Elétrica</option>
+                                                                    <option value="Retífica do motor">Retifica de motor</option>
+                                                                    <option value="Troca do cabecote">Troca de Cabeçote</option>
+                                                                    <option value="Manutenção do câmbio">Manutenção de Câmbio</option>
                                                                     <option value="Alinhamento">Alinhamento</option>
+                                                                    <option value="Preparação do motor">Preparação do motor</option>
+
                                                                 </select>
                                                             </div>
                                                             <div class="col-6">
@@ -291,34 +293,34 @@
                                                         <div class="col-12" style="display: flex; margin-bottom: 30px; margin-top: 45px">
                                                             <div class="col-6">
                                                                 <label for="placa">Placa:</label>
-                                                                <input type="text" name="placa" value=" <?= $ordemServico['placa'];?> " class="form-control p-2 campoDigitar">
+                                                                <input type="text" name="placa" value="<?= $ordemServico['placa'];?>" class="form-control p-2 campoDigitar">
                                                             </div>
                                                             <div class="col-6">
                                                                 <label for="prazoEntrega">Prazo de entrega:</label>
-                                                                <input type="date" name="prazoEntrega" value="<?= $ordemServico['prazoEntrega']?>" class="form-control campoDigitar">
+                                                                <input type="date" name="prazoEntrega" value="<?=$ordemServico['prazoEntrega']?>" class="form-control campoDigitar">
                                                             </div>
                                                         </div>
 
                                                         <div class="col-12" style="display: flex; margin-bottom: 30px;">
                                                             <div class="col-6">
                                                                 <label for="anoVeiculo">Ano do Automóvel:</label>
-                                                                <input type="text" name="anoVeiculo" value=" <?= $ordemServico['anoVeiculo'];?> " class="form-control campoDigitar">
+                                                                <input type="text" name="anoVeiculo" value="<?= $ordemServico['anoVeiculo'];?>" class="form-control campoDigitar">
                                                             </div>   
                                                             <div class="col-6">
                                                                 <label for="nomeVeiculo">Modelo do Automóvel:</label>
-                                                                <input type="text" name="nomeVeiculo" value=" <?= $ordemServico['nomeVeiculo'];?> " class="form-control campoDigitar">
+                                                                <input type="text" name="nomeVeiculo" value="<?= $ordemServico['nomeVeiculo'];?>" class="form-control campoDigitar">
                                                             </div> 
                                                         </div>
                                         
                                                         <div class="col-12" style="display: flex; margin-bottom: 30px;">
                                                             <div class="col-6">
                                                                 <label for="Cliente">Cliente</label>
-                                                                <input type="text" name="pecaUsada" value="<?= $ordemServico['nome'] . " - " . $ordemServico['CPF'];?>" class="form-control campoDigitarCadasServico">
+                                                                <input readonly type="text" name="cliente" value="<?= $ordemServico['nome'] . " - " . $ordemServico['CPF'];?>" class="form-control campoDigitarCodPeca">
                                                             </div>
                                                             
                                                             <div class="col-6">
                                                                 <label for="valor">Valor:</label>
-                                                                <input type="text" name="valor" value=" <?= $ordemServico['valor'];?> " class="form-control campoDigitar">
+                                                                <input type="text" name="valor" value="<?= $ordemServico['valor'];?>" class="form-control campoDigitar">
                                                             </div>                                                        
                                                         </div>
 
@@ -326,13 +328,13 @@
                                                         <div class="col-12" style="display: flex; margin-bottom: 30px;">
 
                                                             <div class="col-6">
-                                                                <label for="pecaUsada">Peças Utilizadas:</label>  
-                                                                <input type="text" name="pecaUsada" value="<?= $ordemServico['peca'] . " - " . $ordemServico['NomePeca'];?>" class="form-control campoDigitarCadasServico">
+                                                                <label for="pecaUsada">Peça Utilizada:</label>  
+                                                                <input readonly type="text" name="pecaUsada" value="<?= $ordemServico['peca'] . " - " . $ordemServico['NomePeca'];?>" class="form-control campoDigitarCodPeca">
                                                             </div>
 
                                                             <div class="col-6">
                                                                 <label for="qtdPeca">Quantidade de Peças:</label>  
-                                                                <input type="text" name="qtdPeca" value=" <?= $ordemServico['qtdPeca'];?> " class="form-control campoDigitarCadasServico">
+                                                                <input type="text" name="qtdPeca" value="<?= $ordemServico['qtdPeca'];?>" class="form-control campoDigitarCadasServico">
                                                             
                                                             </div>
                                                         </div>
@@ -343,15 +345,17 @@
                                                                 <label>Serviço:</label>  
                                                                 <select name="tipoServico" class="SelectServicoCadasServico">
                                                                     <option selected><?= $ordemServico['tipoServico'];?></option>
-                                                                    <option value="Troca de Pneu">Troca de Pneu</option>
-                                                                    <option value="Troca Suspensao">Troca de conjunto de Suspensão</option>
-                                                                    <option value="Troca de Fluidos">Troca de Fluidos</option>
-                                                                    <option value="Troca de Vela">Troca de cabos de Vela</option>
-                                                                    <option value="Revisao da Eletrica">Revisão Elétrica</option>
-                                                                    <option value="Retifica do motor">Retifica de motor</option>
-                                                                    <option value="Troca do Cabecote">Troca de Cabeçote</option>
-                                                                    <option value="Manutencao do Cambio">Manutenção de Câmbio</option>
+                                                                    <option value="Troca de pneu">Troca de Pneu</option>
+                                                                    <option value="Troca de suspensão">Troca de conjunto de Suspensão</option>
+                                                                    <option value="Troca de fluídos">Troca de Fluidos</option>
+                                                                    <option value="Troca de vela">Troca de cabos de Vela</option>
+                                                                    <option value="Revisao da elétrica">Revisão Elétrica</option>
+                                                                    <option value="Retífica do motor">Retifica de motor</option>
+                                                                    <option value="Troca do cabecote">Troca de Cabeçote</option>
+                                                                    <option value="Manutenção do câmbio">Manutenção de Câmbio</option>
                                                                     <option value="Alinhamento">Alinhamento</option>
+                                                                    <option value="Preparação do motor">Preparação do motor</option>
+
                                                                 </select>
                                                             </div>
                                                             <div class="col-6">

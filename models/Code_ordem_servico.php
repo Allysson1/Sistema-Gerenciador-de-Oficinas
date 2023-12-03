@@ -14,11 +14,7 @@
         $prazoEntrega = mysqli_real_escape_string($con, $_POST['prazoEntrega']);
         $observacao = mysqli_real_escape_string($con, $_POST['observacao']);
         $pecaUsada = mysqli_real_escape_string($con, $_POST['pecaUsada']);
-        $qtdPeca = mysqli_real_escape_string($con, $_POST['qtdPeca']);
-
-
-        // var_dump($_POST['pecaUsada']);
-        
+        $qtdPeca = mysqli_real_escape_string($con, $_POST['qtdPeca']);        
     
         if ($placa == ""){ 
             $_SESSION['message'] = "Placa do Carro não inserida!";
@@ -76,10 +72,6 @@
                 $observacao = 'não inserido';
             }
 
-            // o que falta
-
-            //terminar as validações no crud da ordem de serviço referente ao desconto de
-            //quantidade de peças dentro do sistema.
             $query = "INSERT INTO ordemServico (placa, statusServico, cliente, nomeVeiculo,
                     anoVeiculo, tipoServico, valor, prazoEntrega, observacao, peca, qtdPeca)
                     VALUES ('$placa', '$statusServico', '$cliente', '$nomeVeiculo', '$anoVeiculo',
@@ -101,7 +93,6 @@
         }
     
     }
-
 
     if (isset($_POST['delete_ordem_servico'])){
 
@@ -135,23 +126,8 @@
         $valor = mysqli_real_escape_string($con, $_POST['valor']);
         $prazoEntrega = mysqli_real_escape_string($con, $_POST['prazoEntrega']);
         $observacao = mysqli_real_escape_string($con, $_POST['observacao']);
-        $pecaUsada = mysqli_real_escape_string($con, $_POST['pecaUsada']);
         $qtdPeca = mysqli_real_escape_string($con, $_POST['qtdPeca']);
-
-        // var_dump($_POST['idOrdemServico']);
-        // var_dump($_POST['placa']);
-        // var_dump($_POST['statusServico']);
-        // var_dump($_POST['cliente']);
-        // var_dump($_POST['nomeVeiculo']);
-        // var_dump($_POST['nomeVeiculo']);
-        // var_dump($_POST['anoVeiculo']);
-        // var_dump($_POST['tipoServico']);
-        // var_dump($_POST['valor']);
-        // var_dump($_POST['prazoEntrega']);
-        // var_dump($_POST['observacao']);
-
-        
-    
+   
         if ($placa == ""){ 
             $_SESSION['message'] = "Placa do Carro não inserida!";
             header("location: ../views/home.php");
@@ -165,11 +141,6 @@
 
         elseif ($statusServico == ""){ 
             $_SESSION['message'] = "Estatus não inserido!";
-            header("location: ../views/home.php");
-            exit(0);
-        }
-        elseif ($cliente == ""){ 
-            $_SESSION['message'] = "Cliente não inserido(a)!";
             header("location: ../views/home.php");
             exit(0);
         }
@@ -198,19 +169,12 @@
             header("location: ../views/home.php");
             exit(0);
         }
-        elseif ($pecaUsada == ""){ 
-            $_SESSION['message'] = "Peça a ser usada não inserida!";
-            header("location: ../views/home.php");
-            exit(0);
-        }
         elseif ($qtdPeca == ""){ 
             $_SESSION['message'] = "Quantidade de peças não inserida!";
             header("location: ../views/home.php");
             exit(0);
         }
-
         else{
-
             if ($observacao == ""){ 
                 $observacao = 'não inserido';
             }
@@ -218,15 +182,13 @@
             $query = " UPDATE ordemServico
                         set placa = '$placa', 
                         statusServico = '$statusServico', 
-                        cliente = '$cliente', 
                         nomeVeiculo = '$nomeVeiculo', 
                         anoVeiculo = '$anoVeiculo', 
                         tipoServico = '$tipoServico', 
                         valor = '$valor', 
                         prazoEntrega = '$prazoEntrega', 
-                        observacao = '$observacao',
                         qtdPeca = '$qtdPeca',
-                        peca = '$pecaUsada' 
+                        observacao = '$observacao'
                         where idOrdemServico = '$idOrdem' ";
 
             $query_run = mysqli_query($con, $query);
@@ -243,9 +205,7 @@
             }
             
         }
-
-
-    
+ 
     }
    
     if (isset($_POST['finaliza_ordem_servico'])){
@@ -255,17 +215,12 @@
         $pecaUsada = mysqli_real_escape_string($con, $_POST['pecaUsada']);
     
         $requisicao = "SELECT peca, qtdPeca from ordemServico where idOrdemServico = $ordem_id"; 
-        $query_run = mysqli_query($con, $requisicao);
+        $query_run_requisicao = mysqli_query($con, $requisicao);
 
-        // var_dump($query_run);
-
-        $row = mysqli_fetch_assoc($query_run);
+        $row = mysqli_fetch_assoc($query_run_requisicao);
 
         $IdPeca = $row['peca'];
         $qtdPeca = $row['qtdPeca'];
-        
-        // echo $peca, "<br/>";
-        // echo $qtdPeca;
 
         // execução da query para finalizar ordens de serviço
         $query = " UPDATE ordemServico SET statusServico = 'Finalizado' WHERE idOrdemServico = '$ordem_id' ";
