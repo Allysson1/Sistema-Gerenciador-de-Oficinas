@@ -148,7 +148,7 @@
                             
                             
                             <div class="col-6">
-                                <label for="nomeSelectServico">Estatus:</label>  
+                                <label for="nomeSelectServico">Status:</label>  
                                 <select name="statusServico" class="SelectServicoCadasServico">
                                     <option selected>Selecione o Status....</option>
                                     <option value="Iniciado">Iniciado</option>

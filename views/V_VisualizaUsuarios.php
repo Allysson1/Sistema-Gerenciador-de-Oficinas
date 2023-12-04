@@ -97,7 +97,7 @@
                                             <div class="modal-dialog modal-lg modal-dialog-centered">
                                                 <div class="row modal-content">
                                                     <div class="col-12 modal-header">
-                                                        <h3 class="col-11 modal-title" id="myModalLabel" style="text-align: center; margin: auto; font-weight: bold">Alterar dados da peça</h3>
+                                                        <h3 class="col-11 modal-title" id="myModalLabel" style="text-align: center; margin: auto; font-weight: bold">Alterar dados de Usuário</h3>
                                                         <button type="button" class="close" data-dismiss="modal" aria-label="Fechar" style="text-align: end;">
                                                             <i class="fas fa-solid fa-circle-xmark" style="color: #000000;"></i>
                                                         </button>

@@ -186,7 +186,7 @@
                                                                 </select>
                                                             </div>
                                                             <div class="col-6">
-                                                                <label for="nomeSelectServico">Estatus:</label>  
+                                                                <label for="nomeSelectServico">Status:</label>  
                                                                 <select name="statusServico" class="SelectServicoCadasServico">
                                                                     <option ><?= $ordemServico['statusServico']?></option>
                                                                     <option value="Iniciado">Iniciado</option>
@@ -359,7 +359,7 @@
                                                                 </select>
                                                             </div>
                                                             <div class="col-6">
-                                                                <label for="nomeSelectServico">Estatus:</label>  
+                                                                <label for="nomeSelectServico">Status:</label>  
                                                                 <select name="statusServico" class="SelectServicoCadasServico">
                                                                     <option ><?= $ordemServico['statusServico']?></option>
                                                                     <option value="Iniciado">Iniciado</option>
