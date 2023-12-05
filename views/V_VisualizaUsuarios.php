@@ -147,7 +147,7 @@
 
                                                                         <div class="col-6">
                                                                             <label for="username" style="font-size: 14px;">Nivel de acesso do Usuário:</label>
-                                                                            <select class="custom-select" name="nivelFuncionario" id="inputGroupSelect01">
+                                                                            <select class="SelectServicoCadasServico" name="nivelFuncionario" id="inputGroupSelect01">
                                                                                 <option selected><?= $funcionario['nivelFuncionario'];?></option>
                                                                                 <option value="1">1 - Consulta de Serviços</option>
                                                                                 <option value="2">2 - Manipulção de Serviços</option>
